@@ -1,0 +1,10 @@
+mixin text-field(textFieldData)
+    -
+        var pClass = "input-title"
+        pClass += " " + textFieldData.pClass
+        const inputType = textFieldData.inputType
+        var inputClass = "input-box"
+        inputClass += " " + textFieldData.inputClass
+        const inputPlaceholder = textFieldData.inputPlaceholder
+    p(class = pClass)= textFieldData.pTitle
+    input(type=inputType class=inputClass placeholder=inputPlaceholder)
