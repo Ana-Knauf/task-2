@@ -64,7 +64,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: `${PATHS.assets}css/[name].css`
+          filename: `${PATHS.assets}css/[name].css`,
         }),
         new HtmlWebpackPlugin({
           hash: false,

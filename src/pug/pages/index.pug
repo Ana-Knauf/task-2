@@ -1,4 +1,4 @@
-include ../includes/text-field.pug
+include ../../common.elements/text-field/text-field.pug
 
 doctype html
 html(lang="en")
@@ -7,9 +7,9 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        .simple
-            - const c = { pClass: "simple__input-title", pTitle: "Text field", inputType: "email", inputClass: "simple__input-box", inputPlaceholder: "Email" }
+        .default
+            - const c = { pClass: "default__input-title", pTitle: "Text field", inputType: "email", inputClass: "default__input-box default__input-box_width_lg", inputPlaceholder: "Email" }
             +text-field(c)
         .focus
-            - const c1 = { pClass: "focus__input-title", pTitle: "Text field", iputType: "email", inputClass: "focus__input-box", inputPlaceholder: "Email" }
+            - const c1 = { pClass: "focus__input-title", pTitle: "Text field", iputType: "email", inputClass: "focus__input-box focus__input-box_width_lg", inputPlaceholder: "This is pretty awesome" }
             +text-field(c1)

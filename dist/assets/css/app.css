@@ -1,2 +1,2 @@
-p{color:red}
+.input-box{border:1px solid rgba(31,32,65,0.25);box-sizing:border-box;border-radius:4px;height:44px}.input-box ::placeholder{color:#1F2041}.input-box:hover,.input-box:focus{border:1px solid rgba(31,32,65,0.5)}.input-title{color:#1F2041;font-size:12px;line-height:15px;text-transform:uppercase}[class*="input-box_width_lg"]{width:320px}[class*="input-box_width_md"]{width:266px}[class*="input-box_width_sm"]{width:150px}
 

@@ -1,0 +1,24 @@
+@import "../../scss/includes/colors";
+
+.input-box {
+    border: 1px solid $darkShade25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 44px;
+
+    &:focus, &:hover {
+        border: 1px solid $darkShade50;  
+        outline-color: $darkShade50;
+
+        &::placeholder {
+        color: $darkShade75
+        }
+    }
+}
+
+.input-title {
+    color: $darkShade100;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
