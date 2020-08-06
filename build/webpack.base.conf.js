@@ -35,11 +35,17 @@ module.exports = {
             options: { pretty: true }
           }]
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]'
-            }
+          test: /\.(png|jpg|gif|svg)$/,
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
+      }, {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
         }, {
             test: /\.css$/,
             use: [
@@ -54,6 +60,8 @@ module.exports = {
                 {
                   loader: 'css-loader',
                   options: { sourceMap: true }
+                }, {
+                  loader: 'resolve-url-loader'
                 }, {
                   loader: 'sass-loader',
                   options: { sourceMap: true }
@@ -75,7 +83,7 @@ module.exports = {
         new CopyWebpackPlugin({
           patterns: [
             { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
-            // { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+            { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
             { from: `${PATHS.src}/static`, to: '' }
         ]
         }),
