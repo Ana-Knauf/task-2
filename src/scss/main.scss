@@ -1,3 +1,9 @@
 @import "../../src/common.elements/text-field/text-field.scss";
 @import "../pug/pages/modifiers.scss";
-@import "./includes/fonts.scss"
+@import "./includes/fonts.scss";
+
+* {
+    font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+}
