@@ -5,14 +5,15 @@
     box-sizing: border-box;
     border-radius: 4px;
     height: 44px;
-
+    text-indent: 15px;
     &::placeholder {
-        padding-left: 15px;
-    }
+        color: $darkShade25;
+        }
 
-    &:focus, &:hover {
+    &:hover, &:focus {
         border: 1px solid $darkShade50;  
-        outline-color: $darkShade50;
+        outline: none;
+        
 
         &::placeholder {
         color: $darkShade75;
@@ -25,5 +26,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
