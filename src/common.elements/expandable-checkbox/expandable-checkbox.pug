@@ -1,0 +1,29 @@
+mixin expand-checkbox(expandCheckboxData)
+    -
+        let btnClass = "expand-checkbox-button"
+        btnClass += " " + expandCheckboxData.btnClass
+        let divClass = "expand-checkbox-div"
+        divClass += " " + expandCheckboxData.divClass
+        let checkboxClass = "expand-checkbox-box"
+        checkboxClass += " " + expandCheckboxData.checkboxClass
+        let labelClass = "expand-checkbox-label"
+        labelClass += " " + expandCheckboxData.labelClass
+    button(class = btnClass) Дополнительные удобства
+    div(class = divClass)
+        input(type = "checkbox" class = checkboxClass id = "appliance1")
+        label(for="appliance1" class = labelClass) Завтрак
+        br
+        input(type = "checkbox" class = checkboxClass id = "appliance2")
+        label(for="appliance2" class = labelClass) Письменный стол
+        br
+        input(type = "checkbox" class = checkboxClass id = "appliance3")
+        label(for="appliance3" class = labelClass) Стул для кормления
+        br
+        input(type = "checkbox" class = checkboxClass id = "appliance4")
+        label(for="appliance4" class = labelClass) Кроватка
+        br
+        input(type = "checkbox" class = checkboxClass id = "appliance5")
+        label(for="appliance5" class = labelClass) Телевизор
+        br
+        input(type = "checkbox" class = checkboxClass id = "appliance6")
+        label(for="appliance6" class = labelClass) Шампунь
