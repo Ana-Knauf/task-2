@@ -1,5 +1,6 @@
 .expand-checkbox-div {
     display: none;
+    margin-top: 17.44px;
 }
 
 .expand-checkbox-label {
@@ -8,33 +9,12 @@
     color: $darkShade50;
 }
 
-.expand-checkbox-button {
-    border: none;
-    background-color: white;
+.expand-checkbox-title {
     color: $darkShade100;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 12px;
     line-height: 15px;
-    margin-bottom: 17.44px;
-    padding-left: 0;
-
-    &:focus {
-        outline: none;
-    }
-
-    &::after {
-        content: "";
-        display: inline-block;
-        width: 6px;
-        height: 6px;
-        border-right: 2px solid $darkShade50;
-        border-bottom: 2px solid $darkShade50;
-        top: 50%;
-        left: 40%;
-        transform: translate(-25%, -70%) rotate(225deg);
-        margin-left: 30px;
-    }
 }
 
 .expand-checkbox-box + .expand-checkbox-checkmark {
@@ -68,12 +48,30 @@
     display: inline-block;
 }
 
-.align {
+.expand-checkbox-alignblock {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
 
-// .expand-checkbox-button:focus::after {
-//     transform: rotate(45deg);
-// }
+.expand-checkbox-title::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid $darkShade50;
+    border-bottom: 2px solid $darkShade50;
+    top: 50%;
+    left: 40%;
+    transform: translate(0, 20%) rotate(225deg);
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.expand-checkbox-button:checked ~ .expand-checkbox-div {
+    display: block;
+}
+
+.expand-checkbox-button:checked ~ .expand-checkbox-title::after {
+    transform: translate(0, -20%) rotate(45deg);
+}

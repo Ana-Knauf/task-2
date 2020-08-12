@@ -16,5 +16,5 @@ html(lang="en")
             +text-field(c1)
         p Можно курить
         .expand
-            - const c2 = { btnClass: "expand__expand-checkbox-button", divClass: "expand__expand-checkbox-div", checkboxClass: "expand__expand-checkbox-box", checkmarkClass: "expand", labelClass: "expand__expand-checkbox-label" }
-            +expand-checkbox(c2)
+            - const expandCheckboxData = { blockName: "expand" }
+            +expand-checkbox(expandCheckboxData)

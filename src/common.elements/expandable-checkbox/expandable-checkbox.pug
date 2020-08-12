@@ -1,39 +1,44 @@
 mixin expand-checkbox(expandCheckboxData)
     -
         let btnClass = "expand-checkbox-button"
-        btnClass += " " + expandCheckboxData.btnClass
+        btnClass += " " + expandCheckboxData.blockName + "__expand-checkbox-button"
+        let titleClass = "expand-checkbox-title"
+        titleClass += " " + expandCheckboxData.blockName + "__expand-checkbox-title"
         let divClass = "expand-checkbox-div"
-        divClass += " " + expandCheckboxData.divClass
+        divClass += " " + expandCheckboxData.blockName + "__expand-checkbox-div"
+        let alignBlockClass = "expand-checkbox-alignblock"
+        alignBlockClass += " " + expandCheckboxData.blockName + "__expand-checkbox-alignblock"
         let checkmarkClass = "expand-checkbox-checkmark"
-        checkmarkClass += " " + expandCheckboxData.checkmarkClass + "__expand-checkbox-checkmark"
+        checkmarkClass += " " + expandCheckboxData.blockName + "__expand-checkbox-checkmark"
         let checkboxClass = "expand-checkbox-box"
-        checkboxClass += " " + expandCheckboxData.checkboxClass
+        checkboxClass += " " + expandCheckboxData.blockName + "__expand-checkbox-box"
         let labelClass = "expand-checkbox-label"
-        labelClass += " " + expandCheckboxData.labelClass
+        labelClass += " " + expandCheckboxData.blockName + "__expand-checkbox-label"
     
-    button(class = btnClass) Дополнительные удобства
+    input(class = btnClass type = "checkbox" id = "btn" hidden)
+    label(for = "btn" class = titleClass) Дополнительные удобства
     div(class = divClass)
-        div(class = "align")
+        div(class = alignBlockClass)
             input(type = "checkbox" class = checkboxClass id = "appliance1" hidden)
             label(for = "appliance1" class = checkmarkClass)
             label(for = "appliance1" class = labelClass) Завтрак
-        div(class = "align")
+        div(class = alignBlockClass)
             input(type = "checkbox" class = checkboxClass id = "appliance2" hidden)
             label(for = "appliance2" class = checkmarkClass)
             label(for = "appliance2" class = labelClass) Письменный стол
-        div(class = "align")
+        div(class = alignBlockClass)
             input(type = "checkbox" class = checkboxClass id = "appliance3" hidden)
             label(for = "appliance3" class = checkmarkClass)
             label(for = "appliance3" class = labelClass) Стул для кормления
-        div(class = "align")
+        div(class = alignBlockClass)
             input(type = "checkbox" class = checkboxClass id = "appliance4" hidden)
             label(for = "appliance4" class = checkmarkClass)
             label(for = "appliance4" class = labelClass) Кроватка
-        div(class = "align")
+        div(class = alignBlockClass)
             input(type = "checkbox" class = checkboxClass id = "appliance5" hidden)
             label(for = "appliance5" class = checkmarkClass)
             label(for = "appliance5" class = labelClass) Телевизор
-        div(class = "align")
+        div(class = alignBlockClass)
             input(type = "checkbox" class = checkboxClass id = "appliance6" hidden)
             label(for = "appliance6" class = checkmarkClass)
             label(for="appliance6" class = labelClass) Шампунь
