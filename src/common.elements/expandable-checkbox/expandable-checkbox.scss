@@ -22,6 +22,19 @@
     &:focus {
         outline: none;
     }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-right: 2px solid $darkShade50;
+        border-bottom: 2px solid $darkShade50;
+        top: 50%;
+        left: 40%;
+        transform: translate(-25%, -70%) rotate(225deg);
+        margin-left: 30px;
+    }
 }
 
 .expand-checkbox-box + .expand-checkbox-checkmark {
@@ -60,3 +73,7 @@
     align-items: center;
     margin-bottom: 10px;
   }
+
+// .expand-checkbox-button:focus::after {
+//     transform: rotate(45deg);
+// }
