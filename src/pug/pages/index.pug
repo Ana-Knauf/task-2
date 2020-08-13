@@ -1,6 +1,7 @@
 include ../../common.elements/text-field/text-field.pug
 include ../../common.elements/expandable-checkbox/expandable-checkbox.pug
 
+
 doctype html
 html(lang="en")
     head
@@ -18,3 +19,5 @@ html(lang="en")
         .expand
             - const expandCheckboxData = { blockName: "expand" }
             +expand-checkbox(expandCheckboxData)
+        .dropdown
+            include ../../common.elements/dropdown-guests/dropdown-guests.pug
