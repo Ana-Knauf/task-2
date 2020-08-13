@@ -32,7 +32,6 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "jquery": "^3.5.1"
   }
 }
