@@ -1,11 +1,9 @@
 mixin text-field(textFieldData)
     -
-        let pClass = "input-title"
-        pClass += " " + textFieldData.pClass
-        const inputType = textFieldData.inputType
-        let inputClass = "input-box"
-        inputClass += " " + textFieldData.inputClass
-        const inputPlaceholder = textFieldData.inputPlaceholder
-    p(class = pClass)= textFieldData.pTitle
-    input(type=inputType class=inputClass placeholder=inputPlaceholder)
-    
+        let pClass = "text-field__input-title"
+        pClass += textFieldData.pClass ? " " + textFieldData.pClass : "" //для миксования модификаторов, если есть
+        let inputClass = "text-field__input-box"
+        inputClass += textFieldData.inputClass ? " " + textFieldData.inputClass : ""
+    .text-field
+        p(class = pClass)= textFieldData.pTitle
+        input(type = textFieldData.inputType class = inputClass placeholder = textFieldData.inputPlaceholder)

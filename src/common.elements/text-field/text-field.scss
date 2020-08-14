@@ -1,10 +1,11 @@
 @import "../../scss/includes/colors";
 
-.input-box {
+.text-field__input-box {
     border: 1px solid $darkShade25;
     box-sizing: border-box;
     border-radius: 4px;
     height: 44px;
+    width: 320px;
     text-indent: 15px;
     &::placeholder {
         color: $darkShade25;
@@ -21,7 +22,7 @@
     }
 }
 
-.input-title {
+.text-field__input-title {
     color: $darkShade100;
     font-size: 12px;
     line-height: 15px;
@@ -30,3 +31,14 @@
     margin-bottom: 5px;
 }
 
+.input-box_width_lg {
+    width: 320px;
+}
+
+.input-box_width_md {
+    width: 266px;
+}
+
+.input-box_width_sm {
+    width: 150px;
+}

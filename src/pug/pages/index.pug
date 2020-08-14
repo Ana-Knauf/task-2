@@ -9,12 +9,8 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        .default
-            - const c = { pClass: "default__input-title", pTitle: "Text field", inputType: "email", inputClass: "default__input-box default__input-box_width_lg", inputPlaceholder: "Email" }
-            +text-field(c)
-        .focus
-            - const c1 = { pClass: "focus__input-title", pTitle: "Text field", iputType: "email", inputClass: "focus__input-box focus__input-box_width_lg", inputPlaceholder: "This is pretty awesome" }
-            +text-field(c1)
+        - const textFieldData = { inputClass: "input-box_width_md", pTitle: "Text field", iputType: "email", inputPlaceholder: "This is pretty awesome" }
+        +text-field(textFieldData)
         p Можно курить
         .expand
             - const expandCheckboxData = { blockName: "expand" }
