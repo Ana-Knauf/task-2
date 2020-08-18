@@ -1,15 +1,15 @@
-.expand-checkbox-div {
+.expand-checkbox__exp-block {
     display: none;
     margin-top: 17.44px;
 }
 
-.expand-checkbox-label {
+.expand-checkbox__label {
     font-size: 14px;
     line-height: 18px;
     color: $darkShade50;
 }
 
-.expand-checkbox-title {
+.expand-checkbox__title {
     color: $darkShade100;
     font-weight: 700;
     text-transform: uppercase;
@@ -17,7 +17,7 @@
     line-height: 15px;
 }
 
-.expand-checkbox-box + .expand-checkbox-checkmark {
+.expand-checkbox__checkbox + .expand-checkbox__checkmark {
     display: inline-block;
     width: 19px;
     height: 18px;
@@ -27,7 +27,7 @@
     margin-right: 9.74px;
 }
 
-.expand-checkbox-box + .expand-checkbox-checkmark::before {
+.expand-checkbox__checkbox + .expand-checkbox__checkmark::before {
     content: "";
     position: absolute;
     width: 4px;
@@ -40,21 +40,21 @@
     display: none;
 }
 
-.expand-checkbox-box:checked + .expand-checkbox-checkmark {
+.expand-checkbox__checkbox:checked + .expand-checkbox__checkmark {
     border-color: $purple;
 }
 
-.expand-checkbox-box:checked + .expand-checkbox-checkmark::before {
+.expand-checkbox__checkbox:checked + .expand-checkbox__checkmark::before {
     display: inline-block;
 }
 
-.expand-checkbox-alignblock {
+.expand-checkbox__align-block {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
 
-.expand-checkbox-title::after {
+.expand-checkbox__title::after {
     content: "";
     display: inline-block;
     width: 6px;
@@ -68,10 +68,16 @@
     display: inline-block;
 }
 
-.expand-checkbox-button:checked ~ .expand-checkbox-div {
+.expand-checkbox__hidden-checkbox:checked ~ .expand-checkbox__exp-block {
     display: block;
 }
 
-.expand-checkbox-button:checked ~ .expand-checkbox-title::after {
+.expand-checkbox__hidden-checkbox:checked ~ .expand-checkbox__title::after {
     transform: translate(0, -20%) rotate(45deg);
+}
+
+// модификаторы
+
+.expand-checkbox__label_color_red {
+    color: red;
 }

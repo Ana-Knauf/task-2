@@ -1,9 +1,13 @@
 mixin text-field(textFieldData)
     -
-        let pClass = "text-field__input-title"
-        pClass += textFieldData.pClass ? " " + textFieldData.pClass : "" //для миксования модификаторов, если есть
         let inputClass = "text-field__input-box"
-        inputClass += textFieldData.inputClass ? " " + textFieldData.inputClass : ""
+        if (textFieldData.mod) {
+            const mod = textFieldData.mod.split(/[,\s]\s*/);
+            inputClass += ` text-field__${mod.join(' text-field__')}`;
+        } //- зачем деструктуризация здесь?
+
+        let pClass = "text-field__input-title"
+
     .text-field
         p(class = pClass)= textFieldData.pTitle
         input(type = textFieldData.inputType class = inputClass placeholder = textFieldData.inputPlaceholder)

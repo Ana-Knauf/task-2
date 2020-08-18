@@ -72,7 +72,9 @@
           maxItems: 1 / 0,
           minItems: 0,
           selectionText: "гость",
-          textPlural: "гостя",
+          textPlural: "гостя", // добавить еще с окончанием -тей
+          // override selectionText
+          // setSelectionText: (itemCount, totalItems) => { /* return string */ },
           controls: {
             position: "right",
             displayCls: "iqdropdown-content",
@@ -193,6 +195,6 @@
 });
 
 $(document).ready(() => {
-  $(".iqdropdown").iqDropdown({});
+  $(".iqdropdown").iqDropdown({}); // какая здесь ошибка?
 });
 

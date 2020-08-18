@@ -9,11 +9,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        - const textFieldData = { inputClass: "input-box_width_md", pTitle: "Text field", iputType: "email", inputPlaceholder: "This is pretty awesome" }
+        - const textFieldData = { mod: "input-box_width_md", pTitle: "Text field", iputType: "email", inputPlaceholder: "This is pretty awesome" }
         +text-field(textFieldData)
         p Можно курить
         .expand
-            - const expandCheckboxData = { blockName: "expand" }
+            - const expandCheckboxData = { title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
             +expand-checkbox(expandCheckboxData)
         .dropdown
             include ../../common.elements/dropdown-guests/dropdown-guests.pug

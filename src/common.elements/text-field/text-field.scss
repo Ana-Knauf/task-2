@@ -31,14 +31,16 @@
     margin-bottom: 5px;
 }
 
-.input-box_width_lg {
+// модификаторы
+
+[class*="input-box_width_lg"] {
     width: 320px;
 }
 
-.input-box_width_md {
+[class*="input-box_width_md"] {
     width: 266px;
 }
 
-.input-box_width_sm {
+[class*="input-box_width_sm"] {
     width: 150px;
 }

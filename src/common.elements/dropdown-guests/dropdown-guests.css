@@ -162,6 +162,8 @@
   /* height: 45px; */
   align-items: center;
   margin-top: 7px;
+  width: 94px;
+  justify-content: space-between;
 }
 .iqdropdown .iqdropdown-item-controls .counter {
   color: #1F2041;
@@ -169,7 +171,6 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
-  padding: 0px 13px 0px;
 }
 .iqdropdown .iqdropdown-item-controls button {
   align-items: center;
@@ -240,7 +241,6 @@
     text-transform: uppercase;
     /* Primary Color */
     color: #BC9CFF;
-    
 }
 
 .btn-apply-block {
