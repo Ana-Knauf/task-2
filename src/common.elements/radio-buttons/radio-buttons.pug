@@ -1,0 +1,30 @@
+mixin radio-buttons(radioButtonsData)
+    -
+        let pClass = "radio-buttons__title";
+        if (radioButtonsData.modTitle) { //- модификация надписи
+            const modTitle = radioButtonsData.modTitle.split(/[,\s]\s*/);
+            pClass += ` radio-buttons__${modTitle.join(' radio-buttons__')}`;
+        }
+
+        let radioImitClass = "radio-buttons__radio-imit"
+        if (radioButtonsData.modRadioImit) { //- модификация radio-button-имитаторов
+            const modRadioImit = radioButtonsData.modRadioImit.split(/[,\s]\s*/);
+            radioImitClass += ` radio-buttons__${modRadioImit.join(' radio-buttons__')}`;
+        }
+
+        let labelClass = "radio-buttons__label"
+        if (radioButtonsData.modLabel) { //- модификация label
+            const modLabel = radioButtonsData.modLabel.split(/[,\s]\s*/);
+            labelClass += ` radio-buttons__${modLabel.join(' radio-buttons__')}`;
+        }
+
+    p(class = pClass)= radioButtonsData.title
+    .radio-buttons
+        .radio-buttons__align-block 
+            input(type = "radio" class = "radio-buttons__radio" id = "male" name = "gender" hidden)
+            label(for = "male" class = radioImitClass)
+            label(for = "male" class = labelClass) Мужчина
+        .radio-buttons__align-block
+            input(type = "radio" class = "radio-buttons__radio" id = "female" name = "gender" hidden)
+            label(for = "female" class = radioImitClass)
+            label(for = "female" class = labelClass) Женщина

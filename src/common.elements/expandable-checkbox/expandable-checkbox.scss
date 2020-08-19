@@ -25,12 +25,13 @@
 
 .expand-checkbox__checkbox + .expand-checkbox__checkmark {
     display: inline-block;
-    width: 19px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border: 1px solid $darkShade25;
     border-radius: 4px;
     position: relative;
     margin-right: 9.74px;
+    box-sizing: border-box;
 }
 
 .expand-checkbox__checkbox + .expand-checkbox__checkmark::before {
@@ -40,8 +41,8 @@
     height: 6px;
     border-right: 2px solid $purple;
     border-bottom: 2px solid $purple;
-    top: 50%;
-    left: 40%;
+    top: 55%;
+    left: 42%;
     transform: translate(-25%, -70%) rotate(45deg);
     display: none;
 }

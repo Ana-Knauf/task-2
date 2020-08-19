@@ -29,7 +29,9 @@ mixin checkbox-buttons(checkboxButtonsData)
         each option in options
             - idCounter = "option" + counter;
             - counter++;
-            .checkbox-buttons__align-block
+            .checkbox-buttons__align-block 
                     input(type = "checkbox" class = "checkbox-buttons__checkbox" id = idCounter hidden)
                     label(for = idCounter class = checkmarkClass)
                     label(for = idCounter class = labelClass)= option
+                    //- how to use breakpoints inside "" in index.pug?
+                    //- how to use gradient for checkmarks?
