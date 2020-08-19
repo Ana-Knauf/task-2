@@ -1,5 +1,6 @@
 include ../../common.elements/text-field/text-field.pug
 include ../../common.elements/expandable-checkbox/expandable-checkbox.pug
+include ../../common.elements/checkbox-buttons/checkbox-buttons.pug
 
 
 doctype html
@@ -17,3 +18,5 @@ html(lang="en")
             +expand-checkbox(expandCheckboxData)
         .dropdown
             include ../../common.elements/dropdown-guests/dropdown-guests.pug
+        - const checkboxButtonsData = { title: "Checkbox buttons", options: "Можно курить Можно с питомцами Можно пригласить гостей br (до 10 человек)" }
+        +checkbox-buttons(checkboxButtonsData)

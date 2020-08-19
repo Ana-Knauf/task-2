@@ -1,0 +1,35 @@
+mixin checkbox-buttons(checkboxButtonsData)
+    -
+        //- для динамического создания пунктов списка разбиваем
+        //- строку с пунктами в массив
+        const options = checkboxButtonsData.options.split(/(?=[А-Я])/);
+        let counter = 1;
+        let idCounter;
+
+        let pClass = "checkbox-buttons__title";
+        if (checkboxButtonsData.modTitle) { //- модификация надписи
+            const modTitle = checkboxButtonsData.modTitle.split(/[,\s]\s*/);
+            pClass += ` checkbox-buttons__${modTitle.join(' checkbox-buttons__')}`;
+        }
+
+        let checkmarkClass = "checkbox-buttons__checkmark";
+        if (checkboxButtonsData.modCheckmark) { //- модификация чекбоксов-имитаторов
+            const modCheckmark = checkboxButtonsData.modCheckmark.split(/[,\s]\s*/);
+            checkmarkClass += ` checkbox-buttons__${modCheckmark.join(' checkbox-buttons__')}`;
+        }
+
+        let labelClass = "checkbox-buttons__label";
+        if (checkboxButtonsData.modLabel) { //- модификация label
+            const modLabel = checkboxButtonsData.modLabel.split(/[,\s]\s*/);
+            labelClass += ` checkbox-buttons__${modLabel.join(' checkbox-buttons__')}`;
+        }
+
+    .checkbox-buttons
+        p(class = pClass)= checkboxButtonsData.title
+        each option in options
+            - idCounter = "option" + counter;
+            - counter++;
+            .checkbox-buttons__align-block
+                    input(type = "checkbox" class = "checkbox-buttons__checkbox" id = idCounter hidden)
+                    label(for = idCounter class = checkmarkClass)
+                    label(for = idCounter class = labelClass)= option

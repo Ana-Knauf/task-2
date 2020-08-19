@@ -1,5 +1,11 @@
 @import "../../scss/includes/colors";
 
+.text-field {
+    font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+}
+
 .text-field__input-box {
     border: 1px solid $darkShade25;
     box-sizing: border-box;
