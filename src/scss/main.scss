@@ -5,6 +5,7 @@
 @import "../common.elements/dropdown-guests/dropdown-guests.css";
 @import "../common.elements/checkbox-buttons/checkbox-buttons.scss";
 @import "../common.elements/radio-buttons/radio-buttons.scss";
+@import "../common.elements/bullet-list/bullet-list.scss";
 
 * {
     font-family: 'Montserrat';
@@ -20,4 +21,9 @@ p {
 
 .default {
 	margin-bottom: 20.44px;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
 }

@@ -1,0 +1,23 @@
+mixin bullet-list(bulletListData)
+    -
+        //- для динамического создания пунктов списка разбиваем
+        //- строку с пунктами в массив
+        const points = bulletListData.points.split(/(?=[А-Я])/);
+
+        let pClass = "bullet-list__title";
+        if (bulletListData.modTitle) { //- модификация надписи
+            const modTitle = bulletListData.modTitle.split(/[,\s]\s*/);
+            pClass += ` bullet-list__${modTitle.join(' bullet-list__')}`;
+        }
+
+        let pointClass = "bullet-list__point";
+        if (bulletListData.modPoint) { //- модификация пункта списка
+            const modPoint = bulletListData.modPoint.split(/[,\s]\s*/);
+            pointClass += ` bullet-list__${modPoint.join(' bullet-list__')}`;
+        }
+
+    .bullet-list
+        p(class = pClass)= bulletListData.title
+        ul(class = "bullet-list__list")
+        each point in points
+            li(class = pointClass)= point
