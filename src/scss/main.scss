@@ -6,6 +6,7 @@
 @import "../common.elements/checkbox-buttons/checkbox-buttons.scss";
 @import "../common.elements/radio-buttons/radio-buttons.scss";
 @import "../common.elements/bullet-list/bullet-list.scss";
+@import "../common.elements/date-dropdown/date-dropdown.css";
 
 * {
     font-family: 'Montserrat';
@@ -26,4 +27,8 @@ p {
 .container {
 	display: flex;
 	justify-content: space-around;
+}
+
+.date-dropdown {
+	margin-top: 20px;
 }

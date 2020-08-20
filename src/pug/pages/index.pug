@@ -26,6 +26,9 @@ html(lang="en")
                 .dropdown
                     include ../../common.elements/dropdown-guests/dropdown-guests.pug
 
+                .date-dropdown
+                    include ../../common.elements/date-dropdown/date-dropdown.pug
+
             .container2
                 - const checkboxButtonsData = { title: "Checkbox buttons", options: "Можно курить Можно с питомцами Можно пригласить гостей br (до 10 человек)" }
                 +checkbox-buttons(checkboxButtonsData)
