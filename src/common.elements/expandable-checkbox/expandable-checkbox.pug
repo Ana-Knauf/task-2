@@ -1,36 +1,48 @@
 mixin expand-checkbox(expandCheckboxData)
     -
-        let titleClass = "expand-checkbox__title";
-        if (expandCheckboxData.modTitle) { //- модификация надписи
-            const modTitle = expandCheckboxData.modTitle.split(/[,\s]\s*/);
-            titleClass += ` expand-checkbox__${modTitle.join(' expand-checkbox__')}`;
+        let divClass = "expand-checkbox";
+        let hCheckboxClass = "expand-checkbox-hid-checkbox";
+        let titleClass = "expand-checkbox-title";
+        let expBlockClass = "expand-checkbox-expblock";
+        let alignClass = "expand-checkbox-align-block";
+        let checkboxClass = "expand-checkbox-checkbox";
+        let checkmarkClass = "expand-checkbox-checkmark";
+        let labelClass = "expand-checkbox-label";
+
+        let {blockName, title, options, modCheckmark} = expandCheckboxData;
+
+        if (blockName) {
+            divClass += " " + blockName + "__expand-checkbox";
+            hCheckboxClass += " " + blockName + "__expand-checkbox-hid-checkbox";
+            titleClass += " " + blockName + "__expand-checkbox-title";
+            expBlockClass += " " + blockName + "__expand-checkbox-expblock";
+            alignClass += " " + blockName + "__expand-checkbox-align-block";
+            checkboxClass += " " + blockName + "__expand-checkbox-checkbox";
+            checkmarkClass += " " + blockName + "__expand-checkbox-checkmark";
+            labelClass += " " + blockName + "__expand-checkbox-label";
         }
 
-        let checkmarkClass = "expand-checkbox__checkmark"
-        if (expandCheckboxData.modCheckmark) { //- модификация чекбоксов-имитаторов
-            const modCheckmark = expandCheckboxData.modCheckmark.split(/[,\s]\s*/);
-            checkmarkClass += ` expand-checkbox__${modCheckmark.join(' expand-checkbox__')}`;
+        if (modCheckmark) { //- модификация чекбоксов-имитаторов
+            const modifCheckmark = modCheckmark.split(/[,\s]\s*/);
+            checkmarkClass += " " + blockName + `__${modifCheckmark.join(` ${blockName}__`)}`;
         }
 
-        let labelClass = "expand-checkbox__label"
-        if (expandCheckboxData.modLabel) { //- модификация label
-            const modLabel = expandCheckboxData.modLabel.split(/[,\s]\s*/);
-            labelClass += ` expand-checkbox__${modLabel.join(' expand-checkbox__')}`;
-        }
         //- для динамического создания пунктов списка разбиваем
         //- строку с пунктами в массив
-        const options = expandCheckboxData.options.split(/(?=[А-Я])/);
+        const listOptions = options.split(/(?=[А-Я])/);
         let counter = 1;
-        let idCounter = "appliance";
+        let idCounter;
+        let idDefiner;
     
-    .expand-checkbox
-        input(class = "expand-checkbox__hidden-checkbox" type = "checkbox" id = "btn" hidden)
-        label(for = "btn" class = titleClass)= expandCheckboxData.title
-        .expand-checkbox__exp-block
-            each option in options
-                - idCounter = "appliance" + counter;
+    div(class = divClass)
+        - idDefiner = blockName + "-exp-checkbox-btn";
+        input(class = hCheckboxClass type = "checkbox" id = idDefiner hidden)
+        label(for = idDefiner class = titleClass)= title
+        div(class = expBlockClass)
+            each option in listOptions
+                - idCounter = blockName + "-appliance" + counter;
                 - counter++;
-                .expand-checkbox__align-block
-                    input(type = "checkbox" class = "expand-checkbox__checkbox" id = idCounter hidden)
+                div(class = alignClass)
+                    input(type = "checkbox" class = checkboxClass id = idCounter hidden)
                     label(for = idCounter class = checkmarkClass)
                     label(for = idCounter class = labelClass)= option

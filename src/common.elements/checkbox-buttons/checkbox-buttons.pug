@@ -2,7 +2,7 @@ mixin checkbox-buttons(checkboxButtonsData)
     -
         let divClass = "checkbox-buttons";
         let pClass = "checkbox-buttons-title";
-        let alignClass = "align-block";
+        let alignClass = "checkbox-buttons-align-block";
         let checkboxClass = "checkbox-buttons-checkbox";
         let checkmarkClass = "checkbox-buttons-checkmark";
         let labelClass = "checkbox-buttons-label";
@@ -12,7 +12,7 @@ mixin checkbox-buttons(checkboxButtonsData)
         if (blockName) {
             divClass += " " + blockName + "__checkbox-buttons"
             pClass += " " + blockName + "__checkbox-buttons-title";
-            alignClass += " " + blockName + "__align-block"
+            alignClass += " " + blockName + "__checkbox-buttons-align-block"
             checkboxClass += " " + blockName + "__checkbox-buttons-checkbox";
             checkmarkClass += " " + blockName + "__checkbox-buttons-checkmark";
             labelClass += " " + blockName + "__checkbox-buttons-label";
@@ -32,7 +32,7 @@ mixin checkbox-buttons(checkboxButtonsData)
     div(class = divClass)
         p(class = pClass)= title
         each option in listOptions
-            - idCounter = "option" + counter;
+            - idCounter = blockName + "-option" + counter;
             - counter++;
             div(class = alignClass)
                     input(type = "checkbox" class = checkboxClass id = idCounter hidden)

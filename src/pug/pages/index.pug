@@ -21,7 +21,7 @@ html(lang="en")
                 p Можно курить
 
                 .expand
-                    - const expandCheckboxData = { title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
+                    - const expandCheckboxData = { blockName: "expand", title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
                     +expand-checkbox(expandCheckboxData)
 
                 .dropdown
@@ -44,6 +44,10 @@ html(lang="en")
                 .this-block
                     - const toggleData = { blockName: "this-block", title: "toggle", label: "hello" }
                     +toggle(toggleData)
+
+                    - const expandCheckboxData1 = { blockName: "this-block", title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
+                    +expand-checkbox(expandCheckboxData1)
+
 
             //- .container3
             //-     include ../../common.elements/dropdown-guests/dropdown-guests.pug

@@ -4,7 +4,7 @@ mixin text-field(textFieldData)
         if (textFieldData.mod) {
             const mod = textFieldData.mod.split(/[,\s]\s*/);
             inputClass += ` text-field__${mod.join(' text-field__')}`;
-        } //- зачем деструктуризация здесь?
+        }
 
         let pClass = "text-field__input-title"
 

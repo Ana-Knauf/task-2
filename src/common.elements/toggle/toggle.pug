@@ -18,8 +18,11 @@ mixin toggle(toggleData)
             const modifSlider = modSlider.split(/[,\s]\s*/);
             sliderClass += " " + blockName + `__${modifSlider.join(` ${blockName}__`)}`;
         }
+
+        let idDefiner;
         
     p(class = pClass)= toggleData.title
-    input(type = "checkbox" class = checkboxClass id = "toggleID" hidden)
-    label(for="toggleID" class = sliderClass)
-    label(for="toggleID" class = labelClass)= toggleData.label
+    - idDefiner = blockName + "-toggleID";
+    input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
+    label(for = idDefiner class = sliderClass)
+    label(for = idDefiner class = labelClass)= toggleData.label
