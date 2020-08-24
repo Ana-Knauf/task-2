@@ -15,7 +15,7 @@ html(lang="en")
     body
         .container
             .container1
-                - const textFieldData = { mod: "input-box_width_md", pTitle: "Text field", iputType: "email", inputPlaceholder: "This is pretty awesome" }
+                - const textFieldData = { blockName: "container1", title: "Text field", iputType: "email", inputPlaceholder: "This is pretty awesome" }
                 +text-field(textFieldData)
 
                 p Можно курить
@@ -31,7 +31,7 @@ html(lang="en")
                     include ../../common.elements/date-dropdown/date-dropdown.pug
 
             .container2
-                - const radioButtonsData = { title: "Radio buttons" }
+                - const radioButtonsData = { blockName: "container2", title: "Radio buttons" }
                 +radio-buttons(radioButtonsData)
 
                 .that-block
@@ -44,9 +44,6 @@ html(lang="en")
                 .this-block
                     - const toggleData = { blockName: "this-block", title: "toggle", label: "hello" }
                     +toggle(toggleData)
-
-                    - const expandCheckboxData1 = { blockName: "this-block", title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
-                    +expand-checkbox(expandCheckboxData1)
 
 
             //- .container3

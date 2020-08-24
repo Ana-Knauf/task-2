@@ -1,12 +1,10 @@
-@import "../../scss/includes/colors";
-
 .text-field {
     font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 400;
 }
 
-.text-field__input-box {
+.text-field-input-box {
     border: 1px solid $darkShade25;
     box-sizing: border-box;
     border-radius: 4px;
@@ -28,7 +26,7 @@
     }
 }
 
-.text-field__input-title {
+.text-field-input-title {
     color: $darkShade100;
     font-size: 12px;
     line-height: 15px;

@@ -1,13 +1,19 @@
 mixin text-field(textFieldData)
     -
-        let inputClass = "text-field__input-box"
-        if (textFieldData.mod) {
-            const mod = textFieldData.mod.split(/[,\s]\s*/);
-            inputClass += ` text-field__${mod.join(' text-field__')}`;
+        let pClass = "text-field-title";
+        let inputClass = "text-field-input-box";
+
+        let {blockName, title, iputType, inputPlaceholder, modInput} = textFieldData;
+
+        if (blockName) {
+            pClass += " " + blockName + "__text-field-title";
+            inputClass += " " + blockName + "__text-field-input-box";
         }
 
-        let pClass = "text-field__input-title"
+        if (modInput) {
+            const modifInput = modInput.split(/[,\s]\s*/);
+            inputClass += " " + blockName + `__${modifInput.join(` ${blockName}__`)}`;
+        }
 
-    .text-field
-        p(class = pClass)= textFieldData.pTitle
-        input(type = textFieldData.inputType class = inputClass placeholder = textFieldData.inputPlaceholder)
+    p(class = pClass)= title
+    input(type = inputType class = inputClass placeholder = inputPlaceholder)

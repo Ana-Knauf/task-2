@@ -1,30 +1,42 @@
 mixin radio-buttons(radioButtonsData)
     -
-        let pClass = "radio-buttons__title";
-        if (radioButtonsData.modTitle) { //- модификация надписи
-            const modTitle = radioButtonsData.modTitle.split(/[,\s]\s*/);
-            pClass += ` radio-buttons__${modTitle.join(' radio-buttons__')}`;
+        let pClass = "radio-buttons-title";
+        let divClass = "radio-buttons";
+        let alignClass = "radio-buttons-align-block";
+        let radioClass = "radio-buttons-radio";
+        let radioImitClass = "radio-buttons-radio-imit";
+        let labelClass = "radio-buttons-label";
+
+        let {blockName, title, modRadioImit} = radioButtonsData;
+
+        if (blockName) {
+            pClass += " " + blockName + "__radio-buttons-title";
+            divClass += " " + blockName + "__radio-buttons";
+            alignClass += " " + blockName + "__radio-buttons-align-block";
+            radioClass += " " + blockName + "__radio-buttons-radio";
+            radioImitClass += " " + blockName + "__radio-buttons-radio-imit";
+            labelClass += " " + blockName + "__radio-buttons-label";
         }
 
-        let radioImitClass = "radio-buttons__radio-imit"
-        if (radioButtonsData.modRadioImit) { //- модификация radio-button-имитаторов
-            const modRadioImit = radioButtonsData.modRadioImit.split(/[,\s]\s*/);
-            radioImitClass += ` radio-buttons__${modRadioImit.join(' radio-buttons__')}`;
+        if (modRadioImit) { //- модификация radio-button-имитаторов
+            const modifRadioImit = modRadioImit.split(/[,\s]\s*/);
+            radioImitClass += " " + blockName + `__${modifRadioImit.join(` ${blockName}__`)}`;
         }
 
-        let labelClass = "radio-buttons__label"
-        if (radioButtonsData.modLabel) { //- модификация label
-            const modLabel = radioButtonsData.modLabel.split(/[,\s]\s*/);
-            labelClass += ` radio-buttons__${modLabel.join(' radio-buttons__')}`;
-        }
+        let idDefinerMale;
+        let idDefinerFemale;
+        let nameDefiner;
 
-    p(class = pClass)= radioButtonsData.title
-    .radio-buttons
-        .radio-buttons__align-block 
-            input(type = "radio" class = "radio-buttons__radio" id = "male" name = "gender" hidden)
-            label(for = "male" class = radioImitClass)
-            label(for = "male" class = labelClass) Мужчина
-        .radio-buttons__align-block
-            input(type = "radio" class = "radio-buttons__radio" id = "female" name = "gender" hidden)
-            label(for = "female" class = radioImitClass)
-            label(for = "female" class = labelClass) Женщина
+    p(class = pClass)= title
+    div(class = divClass)
+    - idDefinerMale = blockName + "-male";
+    - nameDefiner = blockName + "-gender";
+    - idDefinerFemale = blockName + "-female"
+        div(class = alignClass)
+            input(type = "radio" class = radioClass id = idDefinerMale name = nameDefiner hidden)
+            label(for = idDefinerMale class = radioImitClass)
+            label(for = idDefinerMale class = labelClass) Мужчина
+        div(class = alignClass)
+            input(type = "radio" class = radioClass id = idDefinerFemale name = nameDefiner hidden)
+            label(for = idDefinerFemale class = radioImitClass)
+            label(for = idDefinerFemale class = labelClass) Женщина

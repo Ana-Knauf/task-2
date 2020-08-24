@@ -1,13 +1,15 @@
-@import "../../src/common.elements/text-field/text-field.scss";
-@import "../common.elements/expandable-checkbox/expandable-checkbox.scss";
 @import "../pug/pages/modifiers.scss";
 @import "./includes/fonts.scss";
+@import "../scss/includes/colors";
+@import "../../src/common.elements/text-field/text-field.scss";
+@import "../common.elements/expandable-checkbox/expandable-checkbox.scss";
 @import "../common.elements/dropdown-guests/dropdown-guests.css";
 @import "../common.elements/checkbox-buttons/checkbox-buttons.scss";
 @import "../common.elements/radio-buttons/radio-buttons.scss";
 @import "../common.elements/bullet-list/bullet-list.scss";
 @import "../common.elements/date-dropdown/date-dropdown.css";
 @import "../common.elements/toggle/toggle.scss";
+
 
 * {
     font-family: 'Montserrat';

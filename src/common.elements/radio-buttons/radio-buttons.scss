@@ -5,7 +5,7 @@
     display: flex;
 }
 
-.radio-buttons__title {
+.radio-buttons-title {
     color: $darkShade100;
     font-weight: 700;
     text-transform: uppercase;
@@ -14,14 +14,14 @@
     margin-bottom: 16px;
 }
 
-.radio-buttons__label {
+.radio-buttons-label {
     font-size: 14px;
     line-height: 18px;
     color: $darkShade50;
     margin-right: 20px;
 }
 
-.radio-buttons__radio + .radio-buttons__radio-imit {
+.radio-buttons-radio + .radio-buttons-radio-imit {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -32,7 +32,7 @@
     margin-right: 9.74px;
 }
 
-.radio-buttons__radio + .radio-buttons__radio-imit::before {
+.radio-buttons-radio + .radio-buttons-radio-imit::before {
     content: "";
     position: absolute;
     width: 12px;
@@ -44,19 +44,19 @@
     display: none;
 }
 
-.radio-buttons__radio:checked + .radio-buttons__radio-imit {
+.radio-buttons-radio:checked + .radio-buttons-radio-imit {
     border-color: $purple;
 }
 
-.radio-buttons__radio:checked + .radio-buttons__radio-imit::before {
+.radio-buttons-radio:checked + .radio-buttons-radio-imit::before {
     display: inline-block;
 }
 
-.radio-buttons__radio:checked ~ .radio-buttons__label {
+.radio-buttons-radio:checked ~ .radio-buttons-label {
     color: $darkShade75;
 }
 
-.radio-buttons__align-block {
+.radio-buttons-align-block {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
