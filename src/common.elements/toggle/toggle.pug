@@ -5,7 +5,7 @@ mixin toggle(toggleData)
         let sliderClass = "toggle-slider";
         let labelClass = "toggle-label";
 
-        let {blockName, title, label, sliderMod} = toggleData;
+        let {blockName, title, label, modSlider} = toggleData;
 
         if (blockName) {
             pClass += " " + blockName + "__toggle-title";
@@ -14,9 +14,9 @@ mixin toggle(toggleData)
             labelClass += " " + blockName + "__toggle-label";
         }
 
-        if (sliderMod) {
-            const sliderMod = sliderMod.split(/[,\s]\s*/);
-            sliderClass += " " + blockName + `__${sliderMod.join(` ${blockName}__`)}`;
+        if (modSlider) {
+            const modifSlider = modSlider.split(/[,\s]\s*/);
+            sliderClass += " " + blockName + `__${modifSlider.join(` ${blockName}__`)}`;
         }
         
     p(class = pClass)= toggleData.title

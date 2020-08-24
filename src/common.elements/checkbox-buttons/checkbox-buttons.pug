@@ -1,36 +1,41 @@
 mixin checkbox-buttons(checkboxButtonsData)
     -
+        let divClass = "checkbox-buttons";
+        let pClass = "checkbox-buttons-title";
+        let alignClass = "align-block";
+        let checkboxClass = "checkbox-buttons-checkbox";
+        let checkmarkClass = "checkbox-buttons-checkmark";
+        let labelClass = "checkbox-buttons-label";
+
+        let {blockName, title, options, modCheckmark} = checkboxButtonsData;
+
+        if (blockName) {
+            divClass += " " + blockName + "__checkbox-buttons"
+            pClass += " " + blockName + "__checkbox-buttons-title";
+            alignClass += " " + blockName + "__align-block"
+            checkboxClass += " " + blockName + "__checkbox-buttons-checkbox";
+            checkmarkClass += " " + blockName + "__checkbox-buttons-checkmark";
+            labelClass += " " + blockName + "__checkbox-buttons-label";
+        }
+
         //- для динамического создания пунктов списка разбиваем
         //- строку с пунктами в массив
-        const options = checkboxButtonsData.options.split(/(?=[А-Я])/);
+        const listOptions = options.split(/(?=[А-Я])/);
         let counter = 1;
         let idCounter;
 
-        let pClass = "checkbox-buttons__title";
-        if (checkboxButtonsData.modTitle) { //- модификация надписи
-            const modTitle = checkboxButtonsData.modTitle.split(/[,\s]\s*/);
-            pClass += ` checkbox-buttons__${modTitle.join(' checkbox-buttons__')}`;
+        if (modCheckmark) { //- модификация чекбоксов-имитаторов
+            const modifCheckmark = modCheckmark.split(/[,\s]\s*/);
+            checkmarkClass += " " + blockName + `__${modifCheckmark.join(` ${blockName}__`)}`;
         }
 
-        let checkmarkClass = "checkbox-buttons__checkmark";
-        if (checkboxButtonsData.modCheckmark) { //- модификация чекбоксов-имитаторов
-            const modCheckmark = checkboxButtonsData.modCheckmark.split(/[,\s]\s*/);
-            checkmarkClass += ` checkbox-buttons__${modCheckmark.join(' checkbox-buttons__')}`;
-        }
-
-        let labelClass = "checkbox-buttons__label";
-        if (checkboxButtonsData.modLabel) { //- модификация label
-            const modLabel = checkboxButtonsData.modLabel.split(/[,\s]\s*/);
-            labelClass += ` checkbox-buttons__${modLabel.join(' checkbox-buttons__')}`;
-        }
-
-    .checkbox-buttons
-        p(class = pClass)= checkboxButtonsData.title
-        each option in options
+    div(class = divClass)
+        p(class = pClass)= title
+        each option in listOptions
             - idCounter = "option" + counter;
             - counter++;
-            .checkbox-buttons__align-block 
-                    input(type = "checkbox" class = "checkbox-buttons__checkbox" id = idCounter hidden)
+            div(class = alignClass)
+                    input(type = "checkbox" class = checkboxClass id = idCounter hidden)
                     label(for = idCounter class = checkmarkClass)
                     label(for = idCounter class = labelClass)= option
                     //- how to use breakpoints inside "" in index.pug?

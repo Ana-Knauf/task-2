@@ -31,15 +31,15 @@ html(lang="en")
                     include ../../common.elements/date-dropdown/date-dropdown.pug
 
             .container2
-                - const checkboxButtonsData = { title: "Checkbox buttons", options: "Можно курить Можно с питомцами Можно пригласить гостей br (до 10 человек)" }
-                +checkbox-buttons(checkboxButtonsData)
-
                 - const radioButtonsData = { title: "Radio buttons" }
                 +radio-buttons(radioButtonsData)
 
                 .that-block
                     - const bulletListData = { blockName: "that-block", title: "Bullet list", points: "Нельзя с питомцами Без вечеринок и мероприятий Время прибытия — после 13:00, br а выезд до 12:00" }
                     +bullet-list(bulletListData)
+
+                    - const checkboxButtonsData = { blockName: "that-block", title: "Checkbox buttons", options: "Можно курить Можно с питомцами Можно пригласить гостей br (до 10 человек)" }
+                    +checkbox-buttons(checkboxButtonsData)
 
                 .this-block
                     - const toggleData = { blockName: "this-block", title: "toggle", label: "hello" }

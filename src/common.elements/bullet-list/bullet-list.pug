@@ -1,12 +1,14 @@
 mixin bullet-list(bulletListData)
     -
+        let divClass = "bullet-list";
         let pClass = "bullet-list-title";
         let listClass = "bullet-list-list";
         let pointClass = "bullet-list-point";
         
-        let {blockName, title, points, pointsMod} = bulletListData;
+        let {blockName, title, points, modPoints} = bulletListData;
 
         if (blockName) {
+            divClass += " " + blockName + "__bullet-list";
             pClass += " " + blockName + "__bullet-list-title";
             listClass += " " + blockName + "__bullet-list-list";
             pointClass += " " + blockName + "__bullet-list-point";
@@ -16,13 +18,13 @@ mixin bullet-list(bulletListData)
         //- строку с пунктами в массив
         const listPoints = points.split(/(?=[А-Я])/);
 
-        if (pointsMod) { //- модификация пунктов списка
-            const pointsMod = pointsMod.split(/[,\s]\s*/);
-            pointClass += " " + blockName + `__${pointsMod.join(` ${blockName}__`)}`;
+        if (modPoints) { //- модификация пунктов списка
+            const modifPoints = modPoints.split(/[,\s]\s*/);
+            pointClass += " " + blockName + `__${modifPoints.join(` ${blockName}__`)}`;
         }
 
-    .bullet-list
-        p(class = pClass)= bulletListData.title
+    div(class = divClass)
+        p(class = pClass)= title
         ul(class = listClass)
             each point in listPoints
                 li(class = pointClass)= point
