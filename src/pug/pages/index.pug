@@ -3,6 +3,7 @@ include ../../common.elements/expandable-checkbox/expandable-checkbox.pug
 include ../../common.elements/checkbox-buttons/checkbox-buttons.pug
 include ../../common.elements/radio-buttons/radio-buttons.pug
 include ../../common.elements/bullet-list/bullet-list.pug
+include ../../common.elements/toggle/toggle.pug
 
 
 doctype html
@@ -36,8 +37,13 @@ html(lang="en")
                 - const radioButtonsData = { title: "Radio buttons" }
                 +radio-buttons(radioButtonsData)
 
-                - const bulletListData = { title: "Bullet list", points: "Нельзя с питомцами Без вечеринок и мероприятий Время прибытия — после 13:00, br а выезд до 12:00" }
-                +bullet-list(bulletListData)
+                .that-block
+                    - const bulletListData = { blockName: "that-block", title: "Bullet list", points: "Нельзя с питомцами Без вечеринок и мероприятий Время прибытия — после 13:00, br а выезд до 12:00" }
+                    +bullet-list(bulletListData)
+
+                .this-block
+                    - const toggleData = { blockName: "this-block", title: "toggle", label: "hello" }
+                    +toggle(toggleData)
 
             //- .container3
             //-     include ../../common.elements/dropdown-guests/dropdown-guests.pug

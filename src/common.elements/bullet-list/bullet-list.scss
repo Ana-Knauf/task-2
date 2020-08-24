@@ -4,7 +4,7 @@
 	font-weight: 400;
 }
 
-.bullet-list__title {
+.bullet-list-title {
     color: $darkShade100;
     font-weight: 700;
     text-transform: uppercase;
@@ -13,11 +13,11 @@
     margin-bottom: 13px;
 }
 
-.bullet-list__list {
+.bullet-list-list {
     margin: 0;
 }
 
-.bullet-list__point {
+.bullet-list-point {
     font-size: 14px;
     line-height: 24px;
     color: $darkShade75;

@@ -1,23 +1,28 @@
 mixin bullet-list(bulletListData)
     -
-        //- для динамического создания пунктов списка разбиваем
-        //- строку с пунктами в массив
-        const points = bulletListData.points.split(/(?=[А-Я])/);
+        let pClass = "bullet-list-title";
+        let listClass = "bullet-list-list";
+        let pointClass = "bullet-list-point";
+        
+        let {blockName, title, points, pointsMod} = bulletListData;
 
-        let pClass = "bullet-list__title";
-        if (bulletListData.modTitle) { //- модификация надписи
-            const modTitle = bulletListData.modTitle.split(/[,\s]\s*/);
-            pClass += ` bullet-list__${modTitle.join(' bullet-list__')}`;
+        if (blockName) {
+            pClass += " " + blockName + "__bullet-list-title";
+            listClass += " " + blockName + "__bullet-list-list";
+            pointClass += " " + blockName + "__bullet-list-point";
         }
 
-        let pointClass = "bullet-list__point";
-        if (bulletListData.modPoint) { //- модификация пункта списка
-            const modPoint = bulletListData.modPoint.split(/[,\s]\s*/);
-            pointClass += ` bullet-list__${modPoint.join(' bullet-list__')}`;
+        //- для динамического создания пунктов списка разбиваем
+        //- строку с пунктами в массив
+        const listPoints = points.split(/(?=[А-Я])/);
+
+        if (pointsMod) { //- модификация пунктов списка
+            const pointsMod = pointsMod.split(/[,\s]\s*/);
+            pointClass += " " + blockName + `__${pointsMod.join(` ${blockName}__`)}`;
         }
 
     .bullet-list
         p(class = pClass)= bulletListData.title
-        ul(class = "bullet-list__list")
-        each point in points
-            li(class = pointClass)= point
+        ul(class = listClass)
+            each point in listPoints
+                li(class = pointClass)= point

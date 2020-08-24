@@ -1,0 +1,33 @@
+.toggle-slider {
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+
+    &::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    }
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+    background-color: #2196F3;
+}
+  
+.toggle-checkbox:focus + .toggle-slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+.toggle-checkbox:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}

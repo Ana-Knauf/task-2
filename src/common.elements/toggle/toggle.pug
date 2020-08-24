@@ -1,0 +1,25 @@
+mixin toggle(toggleData)
+    -
+        let pClass = "toggle-title";
+        let checkboxClass = "toggle-checkbox";
+        let sliderClass = "toggle-slider";
+        let labelClass = "toggle-label";
+
+        let {blockName, title, label, sliderMod} = toggleData;
+
+        if (blockName) {
+            pClass += " " + blockName + "__toggle-title";
+            checkboxClass += " " + blockName + "__toggle-checkbox";
+            sliderClass += " " + blockName + "__toggle-slider";
+            labelClass += " " + blockName + "__toggle-label";
+        }
+
+        if (sliderMod) {
+            const sliderMod = sliderMod.split(/[,\s]\s*/);
+            sliderClass += " " + blockName + `__${sliderMod.join(` ${blockName}__`)}`;
+        }
+        
+    p(class = pClass)= toggleData.title
+    input(type = "checkbox" class = checkboxClass id = "toggleID" hidden)
+    label(for="toggleID" class = sliderClass)
+    label(for="toggleID" class = labelClass)= toggleData.label
