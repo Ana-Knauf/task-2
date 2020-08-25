@@ -1,22 +1,39 @@
-p(class = "title") Dropdown
-div(class = "iqdropdown")
-    p(class = "iqdropdown-selection")
-    div(class = "iqdropdown-menu")
-        div(class = "iqdropdown-menu-option" data-id="item1")
-            div
-                p(class="iqdropdown-item") Взрослые
-        div(class = "iqdropdown-menu-option" data-id="item1")
-            div
-                p(class="iqdropdown-item") Дети
-        div(class = "iqdropdown-menu-option" data-id="item1")
-            div
-                p(class="iqdropdown-item") Младенцы
-        div(class="buttons-block")
-            button(class="btn-clear") Очистить
-            button(class="btn-apply") Применить
+mixin dropdown-guests(dropdownGuestsData)
+    -
+        let {blockName, modSize} = dropdownGuestsData;
+        let divClass = "iqdropdown";
+        let pClass = "iqdropdown-selection";
+
+        if (blockName) {
+            divClass += " " + blockName + "__dropdown-guests"
+        }
+
+        if (modSize) {
+            divClass += " " + modSize;
+            pClass += " dropdown-guests-selection-position";
+        }
+
+    p(class = "title") Dropdown
+    div(class = divClass)
+        p(class = pClass)
+        div(class = "iqdropdown-menu")
+            div(class = "iqdropdown-menu-option" data-id="item1")
+                div
+                    p(class="iqdropdown-item") Взрослые
+            div(class = "iqdropdown-menu-option" data-id="item1")
+                div
+                    p(class="iqdropdown-item") Дети
+            div(class = "iqdropdown-menu-option" data-id="item1")
+                div
+                    p(class="iqdropdown-item") Младенцы
+            div(class="buttons-block")
+                button(class="btn-clear") Очистить
+                button(class="btn-apply") Применить
 //- исправить ошибки в файле js:
 //- disable "-" buttons when 0
 //- apply/clear buttons
-//- override label
+//- override main label
 //- add endings
-//- options error
+//- sum up error
+
+//- modSize: "dropdown-guests_width_md"

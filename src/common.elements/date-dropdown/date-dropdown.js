@@ -38,7 +38,7 @@
           multipleDatesSeparator: ",",
           range: !1,
           todayButton: !1,
-          clearButton: !1,
+          clearButton: true,
           showEvent: "focus",
           autoClose: !1,
           monthsField: "monthsShort",

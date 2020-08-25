@@ -366,8 +366,7 @@
   
   .datepicker--buttons,
   .datepicker--time {
-    border-top: 1px solid #efefef;
-    padding: 4px;
+
   }
   .datepicker--nav-title i {
     font-style: normal;
@@ -385,9 +384,9 @@
     display: flex;
   }
   .datepicker--button {
-    color: #4eb5e6;
+    color: rgba(31, 32, 65, 0.5);
     cursor: pointer;
-    border-radius: 4px;
+    /* border-radius: 4px;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -400,11 +399,15 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 32px;
+    height: 32px; */
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
   }
   .datepicker--button:hover {
-    color: #4a4a4a;
-    background: #f0f0f0;
+
   }
   .datepicker--time {
     display: -webkit-flex;
@@ -668,4 +671,25 @@
     background: 0 0;
     border: none;
   }
-  
+
+.input-box-expand-mark {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid rgba(31, 32, 65, 0.5);
+  border-bottom: 2px solid rgba(31, 32, 65, 0.5);
+  top: 50%;
+  left: 40%;
+  transform: translate(0, 0) rotate(45deg);
+  margin-left: -26px;
+}
+
+.date-dropdown-title {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+  margin-bottom: 5px;
+}

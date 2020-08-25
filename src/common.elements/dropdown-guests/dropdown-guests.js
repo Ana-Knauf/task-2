@@ -195,6 +195,6 @@
 });
 
 $(document).ready(() => {
-  $(".iqdropdown").iqDropdown({}); // какая здесь ошибка?
+  $(".iqdropdown").iqDropdown({});
 });
 

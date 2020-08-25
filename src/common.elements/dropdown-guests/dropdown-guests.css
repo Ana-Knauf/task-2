@@ -238,10 +238,6 @@
   display: inline-block;
 }
 
-.iqdropdown.menu-open .iqdropdown-selection::after {
-  /* background-image: url(./img/expand_more.svg); */
-}
-
 .btn-apply {
     float: right;
     font-family: Montserrat;
@@ -276,4 +272,12 @@
   /* Dark 100% */
   color: #1F2041;
   margin-bottom: 5px;
+}
+
+.dropdown-guests_width_md {
+  width: 266px;
+}
+
+.dropdown-guests-selection-position.iqdropdown-selection::after {
+  margin-left: 170px;
 }
