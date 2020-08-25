@@ -1,0 +1,67 @@
+.rich-checkbox-buttons {
+    font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+}
+
+.rich-checkbox-buttons-title {
+    color: $darkShade100;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 16px;
+}
+
+.rich-checkbox-buttons-label {
+    font-size: 14px;
+    line-height: 18px;
+    color: $darkShade75;
+    font-weight: 700;
+}
+
+.rich-checkbox-buttons-checkbox + .rich-checkbox-buttons-checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $darkShade25;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 9.74px;
+    box-sizing: border-box;
+}
+
+.rich-checkbox-buttons-checkbox + .rich-checkbox-buttons-checkmark::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 6px;
+    border-right: 2px solid $purple;
+    border-bottom: 2px solid $purple;
+    top: 55%;
+    left: 42%;
+    transform: translate(-25%, -70%) rotate(45deg);
+    display: none;
+}
+
+.rich-checkbox-buttons-checkbox:checked + .rich-checkbox-buttons-checkmark {
+    border-color: $purple;
+}
+
+.rich-checkbox-buttons-checkbox:checked + .rich-checkbox-buttons-checkmark::before {
+    display: inline-block;
+}
+
+.rich-checkbox-buttons-align-block {
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+  }
+
+.rich-checkbox-buttons-detail {
+    font-size: 12px;
+    line-height: 14px;
+    color: $darkShade50;
+    margin-left: 30px;
+    margin-bottom: 11px;
+}

@@ -1,0 +1,47 @@
+mixin rich-checkbox-buttons(richCheckboxButtonsData)
+    -
+        let divClass = "rich-checkbox-buttons";
+        let pClass = "rich-checkbox-buttons-title";
+        let alignClass = "rich-checkbox-buttons-align-block";
+        let checkboxClass = "rich-checkbox-buttons-checkbox";
+        let checkmarkClass = "rich-checkbox-buttons-checkmark";
+        let labelClass = "rich-checkbox-buttons-label";
+        let detailClass = "rich-checkbox-buttons-detail";
+
+        let {blockName, title, modCheckmark} = richCheckboxButtonsData;
+
+        if (blockName) {
+            divClass += " " + blockName + "__rich-checkbox-buttons"
+            pClass += " " + blockName + "__rich-checkbox-buttons-title";
+            alignClass += " " + blockName + "__rich-checkbox-buttons-align-block"
+            checkboxClass += " " + blockName + "__rich-checkbox-buttons-checkbox";
+            checkmarkClass += " " + blockName + "__rich-checkbox-buttons-checkmark";
+            labelClass += " " + blockName + "__rich-checkbox-buttons-label";
+            detailClass += " " + blockName + "__rich-checkbox-buttons-detail";
+        }
+
+        //- для динамического создания пунктов списка разбиваем
+        //- строку с пунктами в массив
+        let idDefiner;
+
+        if (modCheckmark) { //- модификация чекбоксов-имитаторов
+            const modifCheckmark = modCheckmark.split(/[,\s]\s*/);
+            checkmarkClass += " " + blockName + `__${modifCheckmark.join(` ${blockName}__`)}`;
+        }
+
+    div(class = divClass)
+        p(class = pClass)= title
+        div(class = alignClass)
+            - idDefiner = blockName + "-option1";
+            input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
+            label(for = idDefiner class = checkmarkClass)
+            label(for = idDefiner class = labelClass) Широкий коридор
+        label(for = idDefiner class = detailClass)
+                                                    | Ширина коридоров в номере
+                                                    | не менее 91 см.
+        div(class = alignClass)
+            - idDefiner = blockName + "-option2";
+            input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
+            label(for = idDefiner class = checkmarkClass)
+            label(for = idDefiner class = labelClass) Помощник для инвалидов
+        label(for = idDefiner class = detailClass) На 1 этаже вас встретит специалист и проводит до номера.

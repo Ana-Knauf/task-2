@@ -6,7 +6,9 @@ include ../../common.elements/bullet-list/bullet-list.pug
 include ../../common.elements/toggle/toggle.pug
 include ../../common.elements/dropdown-guests/dropdown-guests.pug
 include ../../common.elements/date-dropdown/date-dropdown.pug
-
+include ../../common.elements/rich-checkbox-buttons/rich-checkbox-buttons.pug
+//- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
+//- с разными именами (или создавать для каждого отдельный блок)
 
 doctype html
 html(lang="en")
@@ -33,6 +35,9 @@ html(lang="en")
                 .date-dropdown
                     - const dateDropdownData = { blockName: "date-dropdown", modSize: "input-box_width_md" }
                     +date-dropdown(dateDropdownData)
+
+                    - const richCheckboxButtonsData = { blockName: "date-dropdown", title: "Rich checkbox buttons" }
+                    +rich-checkbox-buttons(richCheckboxButtonsData)
 
             .container2
                 - const radioButtonsData = { blockName: "container2", title: "Radio buttons" }
