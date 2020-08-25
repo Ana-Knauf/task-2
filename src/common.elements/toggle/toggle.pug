@@ -4,6 +4,7 @@ mixin toggle(toggleData)
         let checkboxClass = "toggle-checkbox";
         let sliderClass = "toggle-slider";
         let labelClass = "toggle-label";
+        let alignClass = "toggle-align-block"
 
         let {blockName, title, label, modSlider} = toggleData;
 
@@ -23,6 +24,7 @@ mixin toggle(toggleData)
         
     p(class = pClass)= toggleData.title
     - idDefiner = blockName + "-toggleID";
-    input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
-    label(for = idDefiner class = sliderClass)
-    label(for = idDefiner class = labelClass)= toggleData.label
+    div(class = alignClass)
+        input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
+        label(for = idDefiner class = sliderClass)
+        label(for = idDefiner class = labelClass)= toggleData.label

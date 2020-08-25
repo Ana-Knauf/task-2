@@ -29,9 +29,9 @@ mixin radio-buttons(radioButtonsData)
 
     p(class = pClass)= title
     div(class = divClass)
-    - idDefinerMale = blockName + "-male";
-    - nameDefiner = blockName + "-gender";
-    - idDefinerFemale = blockName + "-female"
+        - idDefinerMale = blockName + "-male";
+        - nameDefiner = blockName + "-gender";
+        - idDefinerFemale = blockName + "-female";
         div(class = alignClass)
             input(type = "radio" class = radioClass id = idDefinerMale name = nameDefiner hidden)
             label(for = idDefinerMale class = radioImitClass)
