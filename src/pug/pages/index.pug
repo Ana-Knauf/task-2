@@ -8,6 +8,7 @@ include ../../common.elements/dropdown-guests/dropdown-guests.pug
 include ../../common.elements/date-dropdown/date-dropdown.pug
 include ../../common.elements/rich-checkbox-buttons/rich-checkbox-buttons.pug
 include ../../common.elements/like-button/like-button.pug
+include ../../common.elements/rate-button/rate-button.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
@@ -57,6 +58,9 @@ html(lang="en")
 
                     - const likeButtonData = { blockName: "this-block", title: "Like button" }
                     +like-button(likeButtonData)
+
+                    - const rateButtonData = { blockName: "this-block", title: "Rate button" }
+                    +rate-button(rateButtonData)
 
 
             //- .container3

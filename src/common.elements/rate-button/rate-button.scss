@@ -1,0 +1,32 @@
+.rate-button-label {
+    background-image: url('../../img/star_border.svg');
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.rate-button-align-block {
+    transform: rotateY(180deg);
+    width: 120px;
+}
+
+.rate-button-title {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $darkShade100;
+    margin-bottom: 17px;
+}
+
+.rate-button-checkbox:checked ~ .rate-button-label::after {
+    content: '';
+    position: absolute;
+    background-image: url('../../img/star.svg');
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    transition: .4s;
+}
