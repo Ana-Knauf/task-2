@@ -41,7 +41,8 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'assets/img'
+            outputPath: 'assets/img',
+            publicPath: '../img'
           }
       }, {
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -49,7 +50,7 @@ module.exports = {
           options: {
             name: '[name].[ext]',
             outputPath: 'assets/fonts',
-            publicPath: '/assets/fonts'
+            publicPath: '../fonts'
           }
         }, {
             test: /\.css$/,

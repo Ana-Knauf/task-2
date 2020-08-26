@@ -7,6 +7,7 @@ include ../../common.elements/toggle/toggle.pug
 include ../../common.elements/dropdown-guests/dropdown-guests.pug
 include ../../common.elements/date-dropdown/date-dropdown.pug
 include ../../common.elements/rich-checkbox-buttons/rich-checkbox-buttons.pug
+include ../../common.elements/like-button/like-button.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
@@ -53,6 +54,9 @@ html(lang="en")
                 .this-block
                     - const toggleData = { blockName: "this-block", title: "toggle", label: "Получать спецпредложения" }
                     +toggle(toggleData)
+
+                    - const likeButtonData = { blockName: "this-block", title: "Like button" }
+                    +like-button(likeButtonData)
 
 
             //- .container3
