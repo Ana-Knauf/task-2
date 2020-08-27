@@ -1,26 +1,15 @@
 mixin expand-checkbox(expandCheckboxData)
     -
-        let divClass = "expand-checkbox";
-        let hCheckboxClass = "expand-checkbox-hid-checkbox";
-        let titleClass = "expand-checkbox-title";
-        let expBlockClass = "expand-checkbox-expblock";
-        let alignClass = "expand-checkbox-align-block";
-        let checkboxClass = "expand-checkbox-checkbox";
-        let checkmarkClass = "expand-checkbox-checkmark";
-        let labelClass = "expand-checkbox-label";
-
         let {blockName, title, options, modCheckmark} = expandCheckboxData;
 
-        if (blockName) {
-            divClass += " " + blockName + "__expand-checkbox";
-            hCheckboxClass += " " + blockName + "__expand-checkbox-hid-checkbox";
-            titleClass += " " + blockName + "__expand-checkbox-title";
-            expBlockClass += " " + blockName + "__expand-checkbox-expblock";
-            alignClass += " " + blockName + "__expand-checkbox-align-block";
-            checkboxClass += " " + blockName + "__expand-checkbox-checkbox";
-            checkmarkClass += " " + blockName + "__expand-checkbox-checkmark";
-            labelClass += " " + blockName + "__expand-checkbox-label";
-        }
+        let divClass = `expand-checkbox ${ (blockName) ? blockName + '__expand-checkbox' : '' }`;
+        let hCheckboxClass = `expand-checkbox-hid-checkbox ${ (blockName) ? blockName + '__expand-checkbox-hid-checkbox' : '' }`;
+        let titleClass = `expand-checkbox-title ${ (blockName) ? blockName + '__expand-checkbox-title' : '' }`;
+        let expBlockClass = `expand-checkbox-expblock ${ (blockName) ? blockName + '__expand-checkbox-expblock' : '' }`;
+        let alignClass = `expand-checkbox-align-block ${ (blockName) ? blockName + '__expand-checkbox-align-block' : '' }`;
+        let checkboxClass = `expand-checkbox-checkbox ${ (blockName) ? blockName + '__expand-checkbox-checkbox' : '' }`;
+        let checkmarkClass = `expand-checkbox-checkmark ${ (blockName) ? blockName + '__expand-checkbox-checkmark' : '' }`;
+        let labelClass = `expand-checkbox-label ${ (blockName) ? blockName + '__expand-checkbox-label' : '' }`;
 
         if (modCheckmark) { //- модификация чекбоксов-имитаторов
             const modifCheckmark = modCheckmark.split(/[,\s]\s*/);

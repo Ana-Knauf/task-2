@@ -1,27 +1,15 @@
 mixin rich-checkbox-buttons(richCheckboxButtonsData)
     -
-        let divClass = "rich-checkbox-buttons";
-        let pClass = "rich-checkbox-buttons-title";
-        let alignClass = "rich-checkbox-buttons-align-block";
-        let checkboxClass = "rich-checkbox-buttons-checkbox";
-        let checkmarkClass = "rich-checkbox-buttons-checkmark";
-        let labelClass = "rich-checkbox-buttons-label";
-        let detailClass = "rich-checkbox-buttons-detail";
-
         let {blockName, title, modCheckmark} = richCheckboxButtonsData;
 
-        if (blockName) {
-            divClass += " " + blockName + "__rich-checkbox-buttons"
-            pClass += " " + blockName + "__rich-checkbox-buttons-title";
-            alignClass += " " + blockName + "__rich-checkbox-buttons-align-block"
-            checkboxClass += " " + blockName + "__rich-checkbox-buttons-checkbox";
-            checkmarkClass += " " + blockName + "__rich-checkbox-buttons-checkmark";
-            labelClass += " " + blockName + "__rich-checkbox-buttons-label";
-            detailClass += " " + blockName + "__rich-checkbox-buttons-detail";
-        }
-
-        //- для динамического создания пунктов списка разбиваем
-        //- строку с пунктами в массив
+        let divClass = `rich-checkbox-buttons ${ (blockName) ? blockName + '__rich-checkbox-buttons' : '' }`;
+        let pClass = `rich-checkbox-buttons-title ${ (blockName) ? blockName + '__rich-checkbox-buttons-title' : '' }`;
+        let alignClass = `rich-checkbox-buttons-align-block ${ (blockName) ? blockName + '__rich-checkbox-buttons-title' : '' }`;
+        let checkboxClass = `rich-checkbox-buttons-checkbox ${ (blockName) ? blockName + '__rich-checkbox-buttons-checkbox' : '' }`;
+        let checkmarkClass = `rich-checkbox-buttons-checkmark ${ (blockName) ? blockName + '__rich-checkbox-buttons-checkmark' : '' }`;
+        let labelClass = `rich-checkbox-buttons-label ${ (blockName) ? blockName + '__rich-checkbox-buttons-label' : '' }`;
+        let detailClass = `rich-checkbox-buttons-detail ${ (blockName) ? blockName + '__rich-checkbox-buttons-detail' : '' }`;
+       
         let idDefiner;
 
         if (modCheckmark) { //- модификация чекбоксов-имитаторов

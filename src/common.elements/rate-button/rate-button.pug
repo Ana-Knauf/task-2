@@ -2,17 +2,10 @@ mixin rate-button(rateButtonData)
     -
         let {blockName, title, modButton} = rateButtonData;
 
-        let pClass = "rate-button-title";
-        let divClass = "rate-button-block";
-        let radioClass = "rate-button-radio";
-        let labelClass = "rate-button-label";
-
-        if (blockName) {
-            pClass += " " + blockName + "__rate-button-title";
-            alignClass += " " + blockName + "__rate-button-block";
-            radioClass += " " + blockName + "__rate-button-radio";
-            labelClass += " " + blockName + "__rate-button-label";
-        }
+        let pClass = `rate-button-title ${ (blockName) ? blockName + '__rate-button-title' : '' }`;
+        let divClass = `rate-button-block ${ (blockName) ? blockName + '__rate-button-block' : '' }`;
+        let radioClass = `rate-button-radio ${ (blockName) ? blockName + '__rate-button-radio' : '' }`;
+        let labelClass = `rate-button-label ${ (blockName) ? blockName + '__rate-button-label' : '' }`;
 
         if (modButton) {
             const modifButton = modButton.split(/[,\s]\s*/);

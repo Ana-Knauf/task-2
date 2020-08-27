@@ -1,18 +1,11 @@
 mixin text-field(textFieldData)
     -
-        let pClass = "text-field-title";
-        let alignClass = "text-field-align-block";
-        let inputClass = "text-field-input-box";
-        let btnClass = "text-field-submit-button";
-
         let {blockName, title, iputType, inputPlaceholder, modInput} = textFieldData;
 
-        if (blockName) {
-            pClass += " " + blockName + "__text-field-title";
-            alignClass += " " + blockName + "__text-field-align-block";
-            inputClass += " " + blockName + "__text-field-input-box";
-            btnClass += " " + blockName + "__text-field-submit-button";
-        }
+        let pClass = `text-field-title ${ (blockName) ? blockName + '__text-field-title' : '' }`;
+        let alignClass = `text-field-align-block ${ (blockName) ? blockName + '__text-field-align-block' : '' }`;
+        let inputClass = `text-field-input-box ${ (blockName) ? blockName + '__text-field-input-box' : '' }`;
+        let btnClass = `text-field-submit-button ${ (blockName) ? blockName + '__text-field-submit-button' : '' }`;
 
         if (modInput) {
             const modifInput = modInput.split(/[,\s]\s*/);

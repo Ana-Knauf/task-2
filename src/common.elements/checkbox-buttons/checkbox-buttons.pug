@@ -1,22 +1,13 @@
 mixin checkbox-buttons(checkboxButtonsData)
     -
-        let divClass = "checkbox-buttons";
-        let pClass = "checkbox-buttons-title";
-        let alignClass = "checkbox-buttons-align-block";
-        let checkboxClass = "checkbox-buttons-checkbox";
-        let checkmarkClass = "checkbox-buttons-checkmark";
-        let labelClass = "checkbox-buttons-label";
-
         let {blockName, title, options, modCheckmark} = checkboxButtonsData;
 
-        if (blockName) {
-            divClass += " " + blockName + "__checkbox-buttons"
-            pClass += " " + blockName + "__checkbox-buttons-title";
-            alignClass += " " + blockName + "__checkbox-buttons-align-block"
-            checkboxClass += " " + blockName + "__checkbox-buttons-checkbox";
-            checkmarkClass += " " + blockName + "__checkbox-buttons-checkmark";
-            labelClass += " " + blockName + "__checkbox-buttons-label";
-        }
+        let divClass = `checkbox-buttons ${ (blockName) ? blockName + '__checkbox-buttons' : '' }`;
+        let pClass = `checkbox-buttons-title ${ (blockName) ? blockName + '__checkbox-buttons-title' : '' }`;
+        let alignClass = `checkbox-buttons-align-block ${ (blockName) ? blockName + '__checkbox-buttons-align-block' : '' }`;
+        let checkboxClass = `checkbox-buttons-checkbox ${ (blockName) ? blockName + '__checkbox-buttons-checkbox' : '' }`;
+        let checkmarkClass = `checkbox-buttons-checkmark ${ (blockName) ? blockName + '__checkbox-buttons-checkmark' : '' }`;
+        let labelClass = `checkbox-buttons-label ${ (blockName) ? blockName + '__checkbox-buttons-label' : '' }`;
 
         //- для динамического создания пунктов списка разбиваем
         //- строку с пунктами в массив

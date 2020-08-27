@@ -1,20 +1,12 @@
 mixin toggle(toggleData)
     -
-        let pClass = "toggle-title";
-        let checkboxClass = "toggle-checkbox";
-        let sliderClass = "toggle-slider";
-        let labelClass = "toggle-label";
-        let alignClass = "toggle-align-block"
-
         let {blockName, title, label, modSlider} = toggleData;
 
-        if (blockName) {
-            pClass += " " + blockName + "__toggle-title";
-            checkboxClass += " " + blockName + "__toggle-checkbox";
-            sliderClass += " " + blockName + "__toggle-slider";
-            labelClass += " " + blockName + "__toggle-label";
-            alignClass += " " + blockName + "__toggle-align-block";
-        }
+        let pClass = `toggle-title ${ (blockName) ? blockName + '__toggle-title' : '' }`;
+        let checkboxClass = `toggle-checkbox ${ (blockName) ? blockName + '__toggle-checkbox' : '' }`;
+        let sliderClass = `toggle-slider ${ (blockName) ? blockName + '__toggle-slider' : '' }`;
+        let labelClass = `toggle-label ${ (blockName) ? blockName + '__toggle-label' : '' }`;
+        let alignClass = `toggle-align-block ${ (blockName) ? blockName + '__toggle-align-block' : '' }`;
 
         if (modSlider) {
             const modifSlider = modSlider.split(/[,\s]\s*/);

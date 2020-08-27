@@ -1,18 +1,11 @@
 mixin bullet-list(bulletListData)
     -
-        let divClass = "bullet-list";
-        let pClass = "bullet-list-title";
-        let listClass = "bullet-list-list";
-        let pointClass = "bullet-list-point";
-        
         let {blockName, title, points, modPoints} = bulletListData;
 
-        if (blockName) {
-            divClass += " " + blockName + "__bullet-list";
-            pClass += " " + blockName + "__bullet-list-title";
-            listClass += " " + blockName + "__bullet-list-list";
-            pointClass += " " + blockName + "__bullet-list-point";
-        }
+        let divClass = `bullet-list ${ (blockName) ? blockName + '__bullet-list' : '' }`;
+        let pClass = `bullet-list-title ${ (blockName) ? blockName + '__bullet-list-title' : '' }`;
+        let listClass = `bullet-list-list ${ (blockName) ? blockName + '__bullet-list-list' : '' }`;
+        let pointClass = `bullet-list-point ${ (blockName) ? blockName + '__bullet-list-point' : '' }`;
 
         //- для динамического создания пунктов списка разбиваем
         //- строку с пунктами в массив

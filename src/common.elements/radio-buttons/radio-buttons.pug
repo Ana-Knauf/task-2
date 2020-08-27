@@ -1,22 +1,13 @@
 mixin radio-buttons(radioButtonsData)
     -
-        let pClass = "radio-buttons-title";
-        let divClass = "radio-buttons";
-        let alignClass = "radio-buttons-align-block";
-        let radioClass = "radio-buttons-radio";
-        let radioImitClass = "radio-buttons-radio-imit";
-        let labelClass = "radio-buttons-label";
-
         let {blockName, title, modRadioImit} = radioButtonsData;
 
-        if (blockName) {
-            pClass += " " + blockName + "__radio-buttons-title";
-            divClass += " " + blockName + "__radio-buttons";
-            alignClass += " " + blockName + "__radio-buttons-align-block";
-            radioClass += " " + blockName + "__radio-buttons-radio";
-            radioImitClass += " " + blockName + "__radio-buttons-radio-imit";
-            labelClass += " " + blockName + "__radio-buttons-label";
-        }
+        let pClass = `radio-buttons-title ${ (blockName) ? blockName + '__radio-buttons-title' : '' }`;
+        let divClass = `radio-buttons ${ (blockName) ? blockName + '__radio-buttons' : '' }`;
+        let alignClass = `radio-buttons-align-block ${ (blockName) ? blockName + '__radio-buttons-align-block' : '' }`;
+        let radioClass = `radio-buttons-radio ${ (blockName) ? blockName + '__radio-buttons-radio' : '' }`;
+        let radioImitClass = `radio-buttons-radio-imit ${ (blockName) ? blockName + '__radio-buttons-radio-imit' : '' }`;
+        let labelClass = `radio-buttons-label ${ (blockName) ? blockName + '__radio-buttons-label' : '' }`;
 
         if (modRadioImit) { //- модификация radio-button-имитаторов
             const modifRadioImit = modRadioImit.split(/[,\s]\s*/);
