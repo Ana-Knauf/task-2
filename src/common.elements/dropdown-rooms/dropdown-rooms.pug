@@ -1,16 +1,16 @@
-mixin dropdown-guests(dropdownGuestsData)
+mixin dropdown-rooms(dropdownRoomsData)
     -
-        let {blockName, title, modSize} = dropdownGuestsData;
+        let {blockName, title, modSize} = dropdownRoomsData;
         let divClass = "iqdropdown";
         let pClass = "iqdropdown-selection";
 
         if (blockName) {
-            divClass += " " + blockName + "__dropdown-guests"
+            divClass += " " + blockName + "__dropdown-rooms"
         }
 
         if (modSize) {
             divClass += " " + modSize;
-            pClass += " dropdown-guests-selection-position";
+            pClass += " dropdown-rooms-selection-position";
         }
 
     p(class = "title")= title
@@ -19,16 +19,13 @@ mixin dropdown-guests(dropdownGuestsData)
         div(class = "iqdropdown-menu")
             div(class = "iqdropdown-menu-option" data-id="item1")
                 div
-                    p(class="iqdropdown-item") Взрослые
+                    p(class="iqdropdown-item") Спальни
             div(class = "iqdropdown-menu-option" data-id="item1")
                 div
-                    p(class="iqdropdown-item") Дети
+                    p(class="iqdropdown-item") Кровати
             div(class = "iqdropdown-menu-option" data-id="item1")
                 div
-                    p(class="iqdropdown-item") Младенцы
-            div(class="buttons-block")
-                button(class="btn-clear") Очистить
-                button(class="btn-apply") Применить
+                    p(class="iqdropdown-item") Ванные комнаты
 //- исправить ошибки в файле js:
 //- disable "-" buttons when 0
 //- apply/clear buttons
@@ -36,4 +33,4 @@ mixin dropdown-guests(dropdownGuestsData)
 //- add endings
 //- sum up error
 
-//- modSize: "dropdown-guests_width_md"
+//- modSize: "dropdown-rooms_width_md"

@@ -3,14 +3,14 @@ mixin rate-button(rateButtonData)
         let {blockName, title, modButton} = rateButtonData;
 
         let pClass = "rate-button-title";
-        let alignClass = "rate-button-align-block";
-        let checkboxClass = "rate-button-checkbox";
+        let divClass = "rate-button-block";
+        let radioClass = "rate-button-radio";
         let labelClass = "rate-button-label";
 
         if (blockName) {
             pClass += " " + blockName + "__rate-button-title";
-            alignClass += " " + blockName + "__rate-button-align-block";
-            checkboxClass += " " + blockName + "__rate-button-checkbox";
+            alignClass += " " + blockName + "__rate-button-block";
+            radioClass += " " + blockName + "__rate-button-radio";
             labelClass += " " + blockName + "__rate-button-label";
         }
 
@@ -25,10 +25,10 @@ mixin rate-button(rateButtonData)
 
 
     p(class = pClass)= title
-    div(class = alignClass)
+    div(class = divClass)
         while n <=5
             - idDefiner = blockName + "-button" + counter;
             - counter--;
             - n++;
-            input(type="radio" class = checkboxClass id = idDefiner name = "rate-buttons" hidden)
+            input(type="radio" class = radioClass id = idDefiner name = "rate-buttons" hidden)
             label(for=idDefiner class = labelClass)

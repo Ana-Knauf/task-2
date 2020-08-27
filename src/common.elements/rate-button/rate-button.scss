@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.rate-button-align-block {
+.rate-button-block {
     transform: rotateY(180deg);
     width: 120px;
 }
@@ -21,7 +21,7 @@
     margin-bottom: 17px;
 }
 
-.rate-button-checkbox:checked ~ .rate-button-label::after {
+.rate-button-radio:checked ~ .rate-button-label::after {
     content: '';
     position: absolute;
     background-image: url('../../img/star.svg');

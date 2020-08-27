@@ -1,0 +1,283 @@
+.iqdropdown {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+.iqdropdown * {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+.iqdropdown *::after,
+.iqdropdown *::before {
+  box-sizing: inherit;
+}
+.iqdropdown *:not(input) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.iqdropdown *:focus {
+  outline: none;
+}
+.iqdropdown h1,
+.iqdropdown h2,
+.iqdropdown h3,
+.iqdropdown h4,
+.iqdropdown h5,
+.iqdropdown h6 {
+  margin: 0;
+}
+.iqdropdown p {
+  margin: 0;
+}
+.iqdropdown ul,
+.iqdropdown ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.iqdropdown a {
+  cursor: pointer;
+}
+.iqdropdown button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.iqdropdown select::-ms-expand {
+  display: none;
+}
+.iqdropdown input::-ms-clear {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.iqdropdown .icon-decrement {
+  display: inline-block;
+  height: 8px;
+  margin: auto;
+  position: relative;
+  width: 8px;
+}
+.iqdropdown .icon-decrement::after {
+  background: rgba(31, 32, 65, 0.5);
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 3px;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  width: 8px;
+}
+.iqdropdown .icon-decrement.icon-increment::before {
+  background: rgba(31, 32, 65, 0.5);
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 3px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  width: 8px;
+}
+.iqdropdown .iqdropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-top: none;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  cursor: default;
+  display: none;
+  left: 0;
+  margin: -2px -1px -1px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  transition: all 0.2s ease-in-out;
+  z-index: 99999;
+  height: 119px;
+}
+.iqdropdown .iqdropdown-menu-option {
+  align-items: center;
+  display: flex;
+  /* height: 75px; */
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.iqdropdown .iqdropdown-menu-option:last-child {
+  border: 0;
+}
+.iqdropdown .iqdropdown-menu-close {
+  color: #002674;
+  font-family: "OpenSans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 20px;
+  margin: 20px 0;
+  padding: 0 15px;
+  text-align: right;
+  width: 100%;
+}
+.iqdropdown.menu-open .iqdropdown-menu {
+  display: block;
+}
+@media only screen and (max-width: 640px) {
+  .iqdropdown .iqdropdown-menu.mobile-top-menu {
+    top: -285px;
+  }
+}
+.iqdropdown-content {
+  flex: 1;
+  padding-right: 10px;
+}
+.iqdropdown-item {
+  color: #1F2041;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+.iqdropdown p.iqdropdown-description {
+  color: #4a4a4a;
+  font-family: "OpenSans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.iqdropdown .iqdropdown-item-controls {
+  display: flex;
+  /* height: 45px; */
+  align-items: center;
+  margin-top: 7px;
+  width: 94px;
+  justify-content: space-between;
+}
+.iqdropdown .iqdropdown-item-controls .counter {
+  color: #1F2041;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+}
+.iqdropdown .iqdropdown-item-controls button {
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  /* padding: 0 20px; */
+  transition: all 0.2s ease-in-out;
+}
+.iqdropdown .iqdropdown-item-controls button:hover {
+  background-color: #eee;
+}
+.iqdropdown .iqdropdown-item-controls button.button-decrement {
+  border-radius: 22px;
+}
+.iqdropdown .iqdropdown-item-controls button.button-increment {
+  border-radius: 22px;
+}
+.iqdropdown {
+  align-items: center;
+  border: 1px solid rgba(31, 32, 65, 0.5);;
+  border-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+  display: flex;
+  height: 44px;
+  justify-content: space-between;
+  padding: 0 15px;
+  position: relative;
+  width: 320px;
+}
+.iqdropdown .iqdropdown-selection {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    /* Dark 75% */ 
+    color: rgba(31, 32, 65, 0.75);
+  flex: 1;
+  position: relative;
+}
+.iqdropdown .iqdropdown-selection::after {
+  /* background-image: url(./img/expand_more.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 7px;
+  width: 16px;
+  position: absolute;
+  right: 0;
+  top: 40%; */
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid rgba(31, 32, 65, 0.75);
+  border-bottom: 2px solid rgba(31, 32, 65, 0.75);
+  top: 50%;
+  left: 40%;
+  transform: translate(0, -25%) rotate(45deg);
+  margin-left: 225px;
+  display: inline-block;
+}
+
+.btn-apply {
+    float: right;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #BC9CFF;   
+}
+
+.btn-clear {
+  display: none;
+  float: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.buttons-block {
+    margin: 20px 7px 13px;
+}
+
+.title {
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  /* Dark 100% */
+  color: #1F2041;
+  margin-bottom: 5px;
+}
+
+.dropdown-rooms_width_md {
+  width: 266px;
+}
+
+.dropdown-rooms-selection-position.iqdropdown-selection::after {
+  margin-left: 170px;
+}
