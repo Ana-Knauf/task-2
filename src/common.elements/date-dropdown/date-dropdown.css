@@ -44,9 +44,6 @@
     color: rgba(31, 32, 65, 0.5);
     border-radius: 0;
   }
-  .datepicker--cell.-in-range-.-focus- {
-  
-  }
   .datepicker--cell.-disabled- {
     cursor: default;
     color: #aeaeae;
@@ -107,8 +104,6 @@
   }
   .datepicker--cell.-selected- {
     border: none;
-  }
-  .datepicker--cell.-selected-.-focus- {
   }
   .datepicker--cell:empty {
     cursor: default;
@@ -363,11 +358,6 @@
     color: #1F2041;
     margin-top: 20px;
   }
-  
-  .datepicker--buttons,
-  .datepicker--time {
-
-  }
   .datepicker--nav-title i {
     font-style: normal;
     color: #1F2041;
@@ -405,9 +395,6 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-  }
-  .datepicker--button:hover {
-
   }
   .datepicker--time {
     display: -webkit-flex;

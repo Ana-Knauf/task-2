@@ -35,6 +35,23 @@
     margin-bottom: 5px;
 }
 
+.text-field-submit-button {
+    display: none;
+    margin-left: -32px;
+    width: 19px;
+    height: 19px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: url('../../img/arrow_forward.svg');
+    background-size: contain;
+}
+
+.text-field-align-block {
+    display: flex;
+    align-items: center;
+}
+
 // модификаторы
 
 [class*="input-box_width_lg"] {
@@ -47,6 +64,10 @@
 
 [class*="input-box_width_sm"] {
     width: 150px;
+}
+
+.text-field-input-box[class*="subscribe-button"] + .text-field-submit-button {
+    display: inline-block;
 }
 
 
