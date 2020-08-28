@@ -1,0 +1,244 @@
+.title {
+  margin-bottom: -48px;
+}
+
+sup {
+  font-size: 80%;
+  vertical-align: top;
+  position: relative;
+}
+
+.wrapper {
+  /* display: table;
+  width: 100%;
+  height: 100%; */
+  margin-top: 60px;
+}
+
+/* .container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+} */
+
+.slider-wrapper {
+  width: 500px;
+  display: inline-block;
+  position: relative;
+}
+
+.ui-slider {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  height: 6px;
+  width: 266px;
+  position: relative;
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+.ui-slider-range {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  height: 6px;
+  position: absolute;
+  transform: translateY(-1px);
+  box-sizing: border-box;
+}
+.ui-slider-range:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  box-sizing: border-box;
+}
+
+.ui-slider-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: 10;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  /* fallback if grab cursor is unsupported */
+  cursor: pointer;
+  transition: width 0.1s;
+  border: 2px solid #FFFFFF;
+}
+
+.ui-slider-handle:focus {
+  outline: none;
+}
+
+.range-wrapper {
+  position: absolute;
+  top: -46px;
+  left: 44%;
+  transform: translateX(-50%);
+}
+
+.range {
+  background: #fff;
+  white-space: nowrap;
+  width: 150px;
+  z-index: 10;
+  position: relative;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  line-height: 15px;
+  font-family: Montserrat, sans-serif;
+}
+
+.range-value {
+  width: 65px;
+  padding: 8px 0;
+  text-align: center;
+  display: inline-block;
+  transition: background 0.1s;
+}
+
+.range-divider {
+  width: 1px;
+  display: inline-block;
+}
+.range-divider:after {
+  position: absolute;
+  top: 6px;
+  content: '-';
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.range-alert {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border: 1px solid #d2d2d2;
+  color: #0E0E0E;
+  line-height: 15px;
+  transition: right 0.2s;
+}
+.range-alert.active {
+  right: -15px;
+}
+
+.marker {
+  position: absolute;
+  top: 100%;
+  padding-top: 16px;
+  font-size: 13px;
+  color: #555;
+  letter-spacing: 0.05em;
+  transform: translateX(-50%);
+}
+.marker:after {
+  content: '';
+  width: 1px;
+  height: 8px;
+  background: #d2d2d2;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marker-0:after {
+  display: none;
+}
+
+.marker-25 {
+  left: 25%;
+}
+
+.marker-50 {
+  left: 50%;
+}
+
+.marker-75 {
+  left: 75%;
+}
+
+.marker-100 {
+  right: 0;
+  transform: translateX(50%);
+}
+.marker-100:after {
+  display: none;
+}
+
+.gear-wrapper {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  backface-visibility: hidden;
+  width: 150px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.gear-large {
+  width: 40px;
+  height: 40px;
+  background: #d2d2d2;
+  border-radius: 100px;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  transform-origin: 50% 50%;
+  transition: top 0.15s;
+}
+.gear-large:after {
+  position: absolute;
+  content: '';
+  width: 28px;
+  height: 28px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e8e8e8;
+  border-radius: 100px;
+}
+.gear-large:nth-child(2) {
+  background: #d2d2d2;
+  left: auto;
+  right: 18px;
+}
+.gear-large:nth-child(2) .gear-tooth {
+  background: #d2d2d2;
+}
+.gear-large.active {
+  top: 4px;
+}
+
+.gear-tooth {
+  width: 22%;
+  height: 114%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  background: #d2d2d2;
+  border-radius: 2px;
+}
+.gear-tooth:nth-child(2) {
+  transform: rotate(90deg) translate(-50%, -50%);
+}
+.gear-tooth:nth-child(3) {
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+.gear-tooth:nth-child(4) {
+  transform: rotate(-45deg) translate(-50%, -50%);
+}
