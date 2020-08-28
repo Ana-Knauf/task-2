@@ -1,9 +1,16 @@
-.title {
-  margin-bottom: -48px;
+.range-slider-title {
+  margin-bottom: -37px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  /* Dark 100% */
+  color: #1F2041;
 }
 
 sup {
-  font-size: 80%;
+  font-size: 100%;
   vertical-align: top;
   position: relative;
 }
@@ -108,7 +115,7 @@ sup {
 }
 .range-divider:after {
   position: absolute;
-  top: 6px;
+  top: 7px;
   content: '-';
   color: rgba(31, 32, 65, 0.5);
 }

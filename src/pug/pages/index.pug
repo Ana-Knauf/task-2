@@ -10,6 +10,7 @@ include ../../common.elements/rich-checkbox-buttons/rich-checkbox-buttons.pug
 include ../../common.elements/like-button/like-button.pug
 include ../../common.elements/rate-button/rate-button.pug
 include ../../common.elements/dropdown-rooms/dropdown-rooms.pug
+include ../../common.elements/range-slider/range-slider.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
@@ -68,7 +69,8 @@ html(lang="en")
                     - const rateButtonData = { blockName: "this-block", title: "Rate button" }
                     +rate-button(rateButtonData)
 
-                    //- include ../../common.elements/range-slider/range-slider.pug
+                    - const rangeSliderData = { blockName: "this-block", title: "Range slider" }
+                    +range-slider(rangeSliderData)
 
 
             //- .container3

@@ -1,21 +1,32 @@
-p(class = "title") Range Slider
-div(class = "wrapper")
-    div(class = "container")
-        div(class = "slider-wrapper")
-            div(id = "slider-range")
-            div(class = "range-wrapper")
-                div(class = "range")
-                div(class = "range-alert")
+mixin range-slider(rangeSliderData)
+    -
+        let {blockName, title} = rangeSliderData;
 
-                div(class = "gear-wrapper")
-                    div(class = "gear-large gear-one")
-                        div(class = "gear-tooth")
-                        div(class = "gear-tooth")
-                        div(class = "gear-tooth")
-                        div(class = "gear-tooth")
-                    div(class = "gear-large gear-two")
-                        div(class = "gear-tooth")
-                        div(class = "gear-tooth")
-                        div(class = "gear-tooth")
-                        div(class = "gear-tooth")
+        pClass = "range-slider-title";
+        divClass = "wrapper range-slider-wrapper";
+
+        if (blockName) {
+            divClass += " " + blockName + "__range-slider-wrapper";
+            pClass += " " + blockName + "__range-slider-title";
+        }
+
+    p(class = pClass)= title
+    div(class = divClass)
+        div(class = "container")
+            div(class = "slider-wrapper")
+                div(id = "slider-range")
+                div(class = "range-wrapper")
+                    div(class = "range")
+                    div(class = "range-alert")
+                    div(class = "gear-wrapper")
+                        div(class = "gear-large gear-one")
+                            div(class = "gear-tooth")
+                            div(class = "gear-tooth")
+                            div(class = "gear-tooth")
+                            div(class = "gear-tooth")
+                        div(class = "gear-large gear-two")
+                            div(class = "gear-tooth")
+                            div(class = "gear-tooth")
+                            div(class = "gear-tooth")
+                            div(class = "gear-tooth")
                         
