@@ -11,7 +11,7 @@ mixin text-field(textFieldData)
             const modifInput = modInput.split(/[,\s]\s*/);
             inputClass += " " + blockName + `__${modifInput.join(` ${blockName}__`)}`;
         }
-
+    
     p(class = pClass)= title
     div(class = alignClass)
         input(type = inputType class = inputClass placeholder = inputPlaceholder)

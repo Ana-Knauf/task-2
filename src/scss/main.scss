@@ -14,6 +14,7 @@
 @import "../common.elements/rate-button/rate-button.scss";
 @import "../common.elements/dropdown-rooms/dropdown-rooms.css";
 @import "../common.elements/range-slider/range-slider.css";
+@import "../common.elements/button/button.scss";
 
 
 * {
@@ -22,10 +23,17 @@
 	font-weight: 400;
 }
 
-p {
+.p-buttons {
 	font-size: 14px;
 	line-height: 18px;
 	color: $darkShade50;
+	margin-bottom: 16px;
+	font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $darkShade100;
 }
 
 .default {
@@ -39,4 +47,11 @@ p {
 
 .date-dropdown {
 	margin-top: 20px;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: 30% 30%;
+	grid-column-gap: 16px;
+	grid-row-gap: 30px;
 }

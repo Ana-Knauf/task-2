@@ -11,6 +11,7 @@ include ../../common.elements/like-button/like-button.pug
 include ../../common.elements/rate-button/rate-button.pug
 include ../../common.elements/dropdown-rooms/dropdown-rooms.pug
 include ../../common.elements/range-slider/range-slider.pug
+include ../../common.elements/button/button.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
@@ -47,6 +48,25 @@ html(lang="en")
 
                     - const subscribeData = { blockName: "rooms", title: "Subscription text field", iputType: "email", inputPlaceholder: "Email", modInput: "subscribe-button input-box_width_md" } 
                     +text-field(subscribeData)
+                    
+                    p(class = "p-buttons") Buttons
+                    .buttons
+                        - const buttonData = { blockName: "buttons", label: "Click me" }
+                        +button(buttonData)
+                        - const buttonData2 = { blockName: "buttons", label: "Click me", isDisabled: "true" }
+                        +button(buttonData2)
+                        - const buttonData3 = { blockName: "buttons", label: "Click me", modButton: "button-button_back_white" }
+                        +button(buttonData3)
+                        - const buttonData4 = { blockName: "buttons", label: "Click me", modButton: "button-button_back_white", isDisabled: "true" }
+                        +button(buttonData4)
+                        - const buttonData5 = { blockName: "buttons", label: "Click me", modButton: "button-button_frame_none" }
+                        +button(buttonData5)
+                        - const buttonData6 = { blockName: "buttons", label: "Click me", modButton: "button-button_frame_none", isDisabled: "true" }
+                        +button(buttonData6)
+
+                    - const buttonData7 = { blockName: "rooms", label: "Перейти к оплате", modButton: "button-button_size_lg" }
+                    +button(buttonData7)
+                        
 
             .container2
                 - const radioButtonsData = { blockName: "container2", title: "Radio buttons" }

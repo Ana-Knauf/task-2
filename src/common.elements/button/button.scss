@@ -1,0 +1,71 @@
+.button-button {
+    width: 99px;
+    height: 44px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: relative;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+
+    &::after {
+        content: '';
+        display: none;
+        position: absolute;
+        background-image: url("../../img/arrow_forward_white.svg");
+        background-size: contain;
+        width: 19px;
+        height: 19px;
+        right: 12px;
+        top: 12px;
+    }
+}
+
+.button-title {
+    margin-bottom: 16px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $darkShade100;
+}
+
+// модификаторы
+
+[class*="button-button_back_white"] {
+    box-sizing: border-box;
+    border: 2px solid $purple;
+    background: white;
+    color: $purple;
+}
+
+[class*="button-button_frame_none"] {
+    background: none;
+    color: $purple;
+}
+
+[class*="button-button_frame_none"].button-button:disabled {
+    color: $darkShade75;
+}
+
+[class*="button-button_size_lg"] {
+    width: 320px;
+
+    &::after {
+        display: inline-block;
+    }
+}

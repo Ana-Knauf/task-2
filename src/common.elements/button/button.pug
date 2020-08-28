@@ -1,0 +1,23 @@
+mixin button(buttonData)
+    -
+        let { blockName, title, label, isDisabled, modButton } = buttonData
+
+        let pClass = `button-title ${ (blockName) ? blockName + '__button-title' : '' }`;
+        let btnClass = `button-button ${ (blockName) ? blockName + '__button-button' : '' }`;
+
+        if (modButton) {
+            const modifButton = modButton.split(/[,\s]\s*/);
+            btnClass += " " + blockName + `__${modifButton.join(` ${blockName}__`)}`;
+        }
+
+    if (title)
+        p(class = pClass)= title
+    if (isDisabled === "true")
+        button(class = btnClass disabled)= label
+    else
+        button(class = btnClass)= label
+
+//- модификаторы
+//- button-button_back_white
+//- button-button_frame_none
+//- button-button_size_lg
