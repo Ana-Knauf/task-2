@@ -1,0 +1,26 @@
+mixin room-details(roomDetailsData)
+    -
+        let {blockName, label1, label2} = roomDetailsData;
+
+        let alignClass = `room-details-align-block ${ (blockName) ? blockName + '__room-details-align-block' : '' }`;
+        let img1Class = `room-details-picture1 ${ (blockName) ? blockName + '__room-details-picture1' : '' }`;
+        let img2Class = `room-details-picture2 ${ (blockName) ? blockName + '__room-details-picture2' : '' }`;
+        let img3Class = `room-details-picture3 ${ (blockName) ? blockName + '__room-details-picture3' : '' }`;
+        let divClass = `room-details-block ${ (blockName) ? blockName + '__room-details-block' : '' }`;
+        let label1Class = `room-details-label1 ${ (blockName) ? blockName + '__room-details-label1' : '' }`;
+        let label2Class = `room-details-label2 ${ (blockName) ? blockName + '__room-details-label2' : '' }`;
+        let lineClass = `room-details-bottom-line ${ (blockName) ? blockName + '__room-details-bottom-line' : '' }`;
+
+    div(class = alignClass)
+        if (label1 === "Комфорт")
+            div(class = img1Class)
+        else if (label1 === "Удобство")
+            div(class = img2Class)
+        else if (label1 === "Уют")
+            div(class = img3Class)
+        div(class = divClass)
+            label(class = label1Class)= label1
+            br
+            label(class = label2Class)= label2
+    div(class = lineClass)
+        

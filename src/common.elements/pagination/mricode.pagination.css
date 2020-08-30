@@ -1,0 +1,138 @@
+/* update 2015-4-14 */
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.m-pagination {
+    margin: 10px 0;
+    height: 38px;
+}
+
+.m-pagination-page,
+.m-pagination-info,
+.m-pagination-size,
+.m-pagination-jump {
+    margin-top: 2px;
+    padding-right: 10px;
+}
+
+    /* font */
+    .m-pagination-page > li > a,
+    .m-pagination-size > select,
+    .m-pagination-group > input,
+    .m-pagination-group > button,
+    .m-pagination-info {
+        font-size: 12px;
+        line-height: 15px;
+        font-family: Montserrat;
+        color: rgba(31, 32, 65, 0.5);        ;
+    }
+
+    /* border */
+    .m-pagination-page > li > a,
+    .m-pagination-size > select,
+    .m-pagination-group > input,
+    .m-pagination-group > button {
+        outline: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+    }
+
+    /* button */
+    .m-pagination-page > li > a,
+    .m-pagination-group > button {
+        cursor: pointer;
+        background-color: #fff;
+        /*background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+                background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+                background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+                background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+                filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+                background-repeat: repeat-x;*/
+    }
+
+
+
+
+
+    /*************  pagination-page  *************/
+
+    .m-pagination-page > li {
+        list-style: none;
+        float: left;
+    }
+
+        .m-pagination-page > li > a {
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            padding: 0 18px;
+            text-decoration: none;
+            box-sizing: content-box;
+        }
+
+        .m-pagination-page > li.active > a {
+            color: #fff;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 22px;
+        }
+
+        .m-pagination-page > li:first-child > a {
+            margin-left: 0;
+        }
+
+
+
+
+    /*************  pagination-perpage  *************/
+
+    .m-pagination-size > select {
+        cursor: pointer;
+        height: 36px;
+        padding: 0px 8px;
+        border-radius: 4px;
+    }
+
+
+/*************  pagination-go   *************/
+
+    .m-pagination-group > input,
+    .m-pagination-group > button {
+          float: left;
+    }
+
+    .m-pagination-group > input {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 50px;
+        height: 34px;
+        padding: 0px;
+        text-align: center;
+        box-sizing: content-box;
+    }
+
+    .m-pagination-group > button {
+        border-left: none;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 36px;
+        padding: 0px 12px;
+    }
+
+
+/************  pagination-info   *************/
+
+.m-pagination-info {
+    height: 36px;
+    color: rgba(31, 32, 65, 0.75);
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 9px;
+}

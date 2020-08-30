@@ -12,6 +12,7 @@ include ../../common.elements/rate-button/rate-button.pug
 include ../../common.elements/dropdown-rooms/dropdown-rooms.pug
 include ../../common.elements/range-slider/range-slider.pug
 include ../../common.elements/button/button.pug
+include ../../common.elements/room-details/room-details.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
@@ -20,7 +21,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title UI kit
     body
         .container
             .container1
@@ -91,6 +92,20 @@ html(lang="en")
 
                     - const rangeSliderData = { blockName: "this-block", title: "Range slider" }
                     +range-slider(rangeSliderData)
+
+                    p(class = "p-buttons") Pagination
+                    include ../../common.elements/pagination/pagination.pug
+
+                    - const roomDetailsData = { blockName: "this-block", label1: "Комфорт", label2: "Шумопоглощающие стены" }
+                    +room-details(roomDetailsData)
+
+                    - const roomDetailsData2 = { blockName: "this-block", label1: "Удобство", label2: "Окно в каждой из спален" }
+                    +room-details(roomDetailsData2)
+
+                    - const roomDetailsData3 = { blockName: "this-block", label1: "Уют", label2: "Номер оснащён камином" }
+                    +room-details(roomDetailsData3)
+
+                    
 
 
             //- .container3
