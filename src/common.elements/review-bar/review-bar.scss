@@ -1,0 +1,60 @@
+.review-bar {
+    margin-bottom: 22px;
+}
+
+.review-bar-div1 {
+    display: flex;
+    margin-top: 10px;
+}
+
+.review-bar-div2 {
+    display: flex;
+    margin-top: 10px;
+    
+}
+
+.review-bar-review {
+    width: 654px;
+}
+
+.review-bar-img {
+    background-image: url("../../img/image.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+.review-bar-block1 > p {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    color: $darkShade75;
+}
+
+.review-bar-block1 {
+    margin-left: 8px;
+    margin-top: 1px;
+}
+
+.review-bar-block2 {
+    margin-left: 4px;
+}
+
+.review-bar-review {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+    margin: 0;
+    margin-left: 14.31px;
+    margin-top: -1px;
+}
+
+.review-bar-name {
+    font-weight: 700;
+}
+
+.review-like {
+    margin-top: 1px;
+}

@@ -1,4 +1,4 @@
-.like-button-button-label {
+.like-button-label {
     position: relative;
     display: flex;
     border: 1px solid $darkShade25;
@@ -28,16 +28,16 @@
     }
 }
 
-.like-button-checkbox:checked + .like-button-button-label {
+.like-button-checkbox:checked + .like-button-label {
     border-color: $purple;
 }
 
-.like-button-checkbox:checked + .like-button-button-label::before {
+.like-button-checkbox:checked + .like-button-label::before {
     background-image: url('../../img/favorite.svg');
     background-size: contain;
 }
 
-.like-button-checkbox:checked + .like-button-button-label::after {
+.like-button-checkbox:checked + .like-button-label::after {
     color: $purple;
 }
 
@@ -48,4 +48,8 @@
     text-transform: uppercase;
     color: $darkShade100;
     margin-bottom: 16px;
+}
+
+.like-button-checkbox {
+    visibility: hidden;
 }

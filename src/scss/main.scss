@@ -17,6 +17,7 @@
 @import "../common.elements/button/button.scss";
 @import "../common.elements/pagination/mricode.pagination.css";
 @import "../common.elements/room-details/room-details.scss";
+@import "../common.elements/review-bar/review-bar.scss";
 
 
 * {
@@ -44,7 +45,6 @@
 
 .container {
 	display: flex;
-	justify-content: space-around;
 }
 
 .date-dropdown {
@@ -60,4 +60,8 @@
 
 .room-details-bottom-line:last-child {
     display: none;
+}
+
+.container1 {
+	// display: none;
 }

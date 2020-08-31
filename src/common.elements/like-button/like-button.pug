@@ -4,7 +4,7 @@ mixin like-button(likeButtonData)
 
         let pClass = `like-button-title ${ (blockName) ? blockName + '__like-button-title' : '' }`;
         let checkboxClass = `like-button-checkbox ${ (blockName) ? blockName + '__like-button-checkbox' : '' }`;
-        let btnClass = `like-button-button-label ${ (blockName) ? blockName + '__like-button-button-label' : '' }`;
+        let btnClass = `like-button-label ${ (blockName) ? blockName + '__like-button-label' : '' }`;
 
         if (modButton) {
             const modifButton = modButton.split(/[,\s]\s*/);
@@ -13,6 +13,7 @@ mixin like-button(likeButtonData)
 
         let idDefiner = blockName + "-checkbox-id";
 
-    p(class = pClass)= title
+    if (title)
+        p(class = pClass)= title
     input(type="checkbox" class = checkboxClass id = idDefiner hidden)
     label(for=idDefiner class = btnClass)

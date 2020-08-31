@@ -47,4 +47,8 @@
     background-color: $darkShade10;
     margin: 0;
     padding: 0;
+
+    &:last-child {
+        display: none;
+    }
 }

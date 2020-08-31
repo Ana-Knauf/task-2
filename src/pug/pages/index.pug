@@ -13,6 +13,7 @@ include ../../common.elements/dropdown-rooms/dropdown-rooms.pug
 include ../../common.elements/range-slider/range-slider.pug
 include ../../common.elements/button/button.pug
 include ../../common.elements/room-details/room-details.pug
+include ../../common.elements/review-bar/review-bar.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
@@ -107,6 +108,11 @@ html(lang="en")
 
                     
 
+                    
+
 
             //- .container3
             //-     include ../../common.elements/dropdown-guests/dropdown-guests.pug
+
+    - const reviewBarData = { blockName: "free", reviewer: "Мурад Сарафанов", date: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей." }
+    +review-bar(reviewBarData)
