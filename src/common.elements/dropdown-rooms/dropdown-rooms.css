@@ -107,7 +107,7 @@
   top: 45px;
   transition: all 0.2s ease-in-out;
   z-index: 99999;
-  height: 119px;
+  height: 159px;
 }
 .iqdropdown .iqdropdown-menu-option {
   align-items: center;
@@ -280,4 +280,29 @@
 
 .dropdown-rooms-selection-position.iqdropdown-selection::after {
   margin-left: 170px;
+}
+
+.btn-apply1 {
+  float: right;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #BC9CFF;   
+}
+
+.btn-clear1 {
+display: none;
+float: left;
+font-family: Montserrat;
+font-weight: 700;
+font-size: 12px;
+line-height: 15px;
+text-transform: uppercase;
+color: rgba(31, 32, 65, 0.5);
+}
+
+.buttons-block1 {
+  margin: 20px 7px 13px;
 }

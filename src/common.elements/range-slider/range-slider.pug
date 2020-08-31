@@ -2,31 +2,34 @@ mixin range-slider(rangeSliderData)
     -
         let {blockName, title} = rangeSliderData;
 
-        pClass = "range-slider-title";
-        divClass = "wrapper range-slider-wrapper";
+        let blockClass = "range-slider-block";
+        let pClass = "range-slider-title";
+        let divClass = "wrapper range-slider-wrapper";
 
         if (blockName) {
+            blockClass += " " + blockName + "__range-slider-block";
             divClass += " " + blockName + "__range-slider-wrapper";
             pClass += " " + blockName + "__range-slider-title";
         }
     //- plugin by Mariusz Dabrowski
-    p(class = pClass)= title
-    div(class = divClass)
-        div(class = "container")
-            div(class = "slider-wrapper")
-                div(id = "slider-range")
-                div(class = "range-wrapper")
-                    div(class = "range")
-                    div(class = "range-alert")
-                    div(class = "gear-wrapper")
-                        div(class = "gear-large gear-one")
-                            div(class = "gear-tooth")
-                            div(class = "gear-tooth")
-                            div(class = "gear-tooth")
-                            div(class = "gear-tooth")
-                        div(class = "gear-large gear-two")
-                            div(class = "gear-tooth")
-                            div(class = "gear-tooth")
-                            div(class = "gear-tooth")
-                            div(class = "gear-tooth")
+    div(class = blockClass)
+        p(class = pClass) Диапазон цены
+        div(class = divClass)
+            div(class = "container")
+                div(class = "slider-wrapper")
+                    div(id = "slider-range")
+                    div(class = "range-wrapper")
+                        div(class = "range")
+                        div(class = "range-alert")
+                        div(class = "gear-wrapper")
+                            div(class = "gear-large gear-one")
+                                div(class = "gear-tooth")
+                                div(class = "gear-tooth")
+                                div(class = "gear-tooth")
+                                div(class = "gear-tooth")
+                            div(class = "gear-large gear-two")
+                                div(class = "gear-tooth")
+                                div(class = "gear-tooth")
+                                div(class = "gear-tooth")
+                                div(class = "gear-tooth")
                         

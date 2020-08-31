@@ -71,8 +71,8 @@
         var n = {
           maxItems: 1 / 0,
           minItems: 0,
-          selectionText: "гость",
-          textPlural: "гостя", // добавить еще с окончанием -тей
+          selectionText: "комната",
+          textPlural: "комнат", // добавить еще с окончанием -тей
           // override selectionText
           // setSelectionText: (itemCount, totalItems) => { /* return string */ },
           controls: {

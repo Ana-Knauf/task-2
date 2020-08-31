@@ -1,11 +1,13 @@
 mixin dropdown-guests(dropdownGuestsData)
     -
-        let {blockName, title, modSize} = dropdownGuestsData;
+        let {blockName, title, modSize, modBlock} = dropdownGuestsData;
         let divClass = "iqdropdown";
         let pClass = "iqdropdown-selection";
+        let blockClass = "dropdown-guests-block";
 
         if (blockName) {
-            divClass += " " + blockName + "__dropdown-guests"
+            divClass += " " + blockName + "__dropdown-guests";
+            blockClass += " " + blockName + "__dropdown-guests-block";
         }
 
         if (modSize) {
@@ -13,22 +15,28 @@ mixin dropdown-guests(dropdownGuestsData)
             pClass += " dropdown-guests-selection-position";
         }
 
-    p(class = "title-dropdown-guests")= title
-    div(class = divClass)
-        p(class = pClass)
-        div(class = "iqdropdown-menu")
-            div(class = "iqdropdown-menu-option" data-id="item1")
-                div
-                    p(class="iqdropdown-item") Взрослые
-            div(class = "iqdropdown-menu-option" data-id="item1")
-                div
-                    p(class="iqdropdown-item") Дети
-            div(class = "iqdropdown-menu-option" data-id="item1")
-                div
-                    p(class="iqdropdown-item") Младенцы
-            div(class="buttons-block")
-                button(class="btn-clear") Очистить
-                button(class="btn-apply") Применить
+        if (modBlock) {
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            blockClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
+
+    div(class = blockClass)
+        p(class = "title-dropdown-guests") Гости
+        div(class = divClass)
+            p(class = pClass)
+            div(class = "iqdropdown-menu")
+                div(class = "iqdropdown-menu-option" data-id="item1")
+                    div
+                        p(class="iqdropdown-item") Взрослые
+                div(class = "iqdropdown-menu-option" data-id="item1")
+                    div
+                        p(class="iqdropdown-item") Дети
+                div(class = "iqdropdown-menu-option" data-id="item1")
+                    div
+                        p(class="iqdropdown-item") Младенцы
+                div(class="buttons-block")
+                    button(class="btn-clear") Очистить
+                    button(class="btn-apply") Применить
 //- исправить ошибки в файле js:
 //- disable "-" buttons when 0
 //- apply/clear buttons

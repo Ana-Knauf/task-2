@@ -1,0 +1,25 @@
+include ../../common.elements/date-dropdown/date-dropdown.pug
+include ../../common.elements/dropdown-guests/dropdown-guests.pug
+include ../../common.elements/button/button.pug
+
+mixin hotel-search(hotelSearchData)
+    -
+        let {blockName} = hotelSearchData
+
+        let divClass = `hotel-search-block ${ (blockName) ? blockName + '__hotel-search-block' : '' }`;
+        let pClass = `hotel-search-title ${ (blockName) ? blockName + '__hotel-search-title' : '' }`;
+
+        let datesClass = blockName + "__hotel-search";
+        let guestsClass = blockName + "__hotel-search";
+        let buttonClass = blockName + "__hotel-search";
+
+
+    div(class = divClass)
+        p(class = pClass) Найдём номера под ваши пожелания
+        - const dateDropdownData = { blockName: datesClass, modBlock: "dates_position" }
+        +date-dropdown(dateDropdownData)
+        - const dropdownGuestsData = { blockName: guestsClass, modBlock: "guests_position" }
+        +dropdown-guests(dropdownGuestsData)
+        - const buttonData = { blockName: buttonClass, label: "Подобрать номер", modButton: "button-button_size_lg button_position" }
+        +button(buttonData)
+

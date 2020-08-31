@@ -18,7 +18,8 @@ mixin radio-buttons(radioButtonsData)
         let idDefinerFemale;
         let nameDefiner;
 
-    p(class = pClass)= title
+    if (title)
+        p(class = pClass)= title
     div(class = divClass)
         - idDefinerMale = blockName + "-male";
         - nameDefiner = blockName + "-gender";

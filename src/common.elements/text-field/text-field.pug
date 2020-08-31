@@ -2,6 +2,7 @@ mixin text-field(textFieldData)
     -
         let {blockName, title, iputType, inputPlaceholder, modInput} = textFieldData;
 
+        let divClass = `text-field-block ${ (blockName) ? blockName + '__text-field-block' : '' }`;
         let pClass = `text-field-title ${ (blockName) ? blockName + '__text-field-title' : '' }`;
         let alignClass = `text-field-align-block ${ (blockName) ? blockName + '__text-field-align-block' : '' }`;
         let inputClass = `text-field-input-box ${ (blockName) ? blockName + '__text-field-input-box' : '' }`;
@@ -12,10 +13,11 @@ mixin text-field(textFieldData)
             inputClass += " " + blockName + `__${modifInput.join(` ${blockName}__`)}`;
         }
     
-    p(class = pClass)= title
-    div(class = alignClass)
-        input(type = inputType class = inputClass placeholder = inputPlaceholder)
-        button(class = btnClass)
+    div(class = divClass)
+        p(class = pClass)= title
+        div(class = alignClass)
+            input(type = inputType class = inputClass placeholder = inputPlaceholder)
+            button(class = btnClass)
 
 //- модификатор subscribe-button, чтобы отобразить кнопку "подписаться"
 //- модификатор input-box_width_md

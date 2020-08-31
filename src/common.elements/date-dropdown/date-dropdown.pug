@@ -1,19 +1,27 @@
 mixin date-dropdown(dateDropdownData)
     -
         let inputClass = "datepicker-here text-field-input-box";
-        let {blockName, modSize} = dateDropdownData;
+        let divClass = "date-dropdown-block";
+        let {blockName, modSize, modBlock} = dateDropdownData;
 
         if (blockName) {
-            inputClass += " " + blockName + "__text-field-input-box"
+            inputClass += " " + blockName + "__text-field-input-box";
+            divClass += " " + blockName + "__date-dropdown-block";
         }
 
         if (modSize) {
             inputClass += " " + modSize;
         }
 
-    p(class = "date-dropdown-title") Даты пребывания в отеле
-    input(type="text" data-range="true" data-multiple-dates-separator=" - " data-language="en" class=inputClass placeholder="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ")
-    span(class = "input-box-expand-mark")
+        if (modBlock) {
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
+
+    div(class = divClass)
+        p(class = "date-dropdown-title") Даты пребывания в отеле
+        input(type="text" data-range="true" data-multiple-dates-separator=" - " data-language="en" class=inputClass placeholder="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ")
+        span(class = "input-box-expand-mark")
 //- add apply button
 //- separate inputs
 //- add filter mask and new font

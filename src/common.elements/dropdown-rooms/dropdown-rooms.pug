@@ -3,29 +3,35 @@ mixin dropdown-rooms(dropdownRoomsData)
         let {blockName, title, modSize} = dropdownRoomsData;
         let divClass = "iqdropdown";
         let pClass = "iqdropdown-selection";
+        let blockClass = "dropdown-rooms-block";
 
         if (blockName) {
-            divClass += " " + blockName + "__dropdown-rooms"
+            divClass += " " + blockName + "__dropdown-rooms";
+            blockClass += " " + blockName + "__dropdown-rooms-block";
         }
 
         if (modSize) {
             divClass += " " + modSize;
             pClass += " dropdown-rooms-selection-position";
         }
-
-    p(class = "title-dropdown-rooms")= title
-    div(class = divClass)
-        p(class = pClass)
-        div(class = "iqdropdown-menu")
-            div(class = "iqdropdown-menu-option" data-id="item1")
-                div
-                    p(class="iqdropdown-item") Спальни
-            div(class = "iqdropdown-menu-option" data-id="item1")
-                div
-                    p(class="iqdropdown-item") Кровати
-            div(class = "iqdropdown-menu-option" data-id="item1")
-                div
-                    p(class="iqdropdown-item") Ванные комнаты
+    
+    div(class = blockClass)
+        p(class = "title-dropdown-rooms")= title
+        div(class = divClass)
+            p(class = pClass)
+            div(class = "iqdropdown-menu")
+                div(class = "iqdropdown-menu-option" data-id="item1")
+                    div
+                        p(class="iqdropdown-item") Спальни
+                div(class = "iqdropdown-menu-option" data-id="item1")
+                    div
+                        p(class="iqdropdown-item") Кровати
+                div(class = "iqdropdown-menu-option" data-id="item1")
+                    div
+                        p(class="iqdropdown-item") Ванные комнаты
+                div(class="buttons-block1")
+                    button(class="btn-clear1") Очистить
+                    button(class="btn-apply1") Применить
 //- исправить ошибки в файле js:
 //- disable "-" buttons when 0
 //- apply/clear buttons

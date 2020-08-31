@@ -14,8 +14,9 @@ mixin toggle(toggleData)
         }
 
         let idDefiner;
-        
-    p(class = pClass)= toggleData.title
+    
+    if (title)    
+        p(class = pClass)= title
     - idDefiner = blockName + "-toggleID";
     div(class = alignClass)
         input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
