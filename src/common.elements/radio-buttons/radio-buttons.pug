@@ -1,6 +1,6 @@
 mixin radio-buttons(radioButtonsData)
     -
-        let {blockName, title, modRadioImit} = radioButtonsData;
+        let {blockName, title, modRadioImit, modBlock} = radioButtonsData;
 
         let pClass = `radio-buttons-title ${ (blockName) ? blockName + '__radio-buttons-title' : '' }`;
         let divClass = `radio-buttons ${ (blockName) ? blockName + '__radio-buttons' : '' }`;
@@ -12,6 +12,11 @@ mixin radio-buttons(radioButtonsData)
         if (modRadioImit) { //- модификация radio-button-имитаторов
             const modifRadioImit = modRadioImit.split(/[,\s]\s*/);
             radioImitClass += " " + blockName + `__${modifRadioImit.join(` ${blockName}__`)}`;
+        }
+
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
         }
 
         let idDefinerMale;

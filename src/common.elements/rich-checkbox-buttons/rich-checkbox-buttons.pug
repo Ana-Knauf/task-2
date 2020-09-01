@@ -1,6 +1,6 @@
 mixin rich-checkbox-buttons(richCheckboxButtonsData)
     -
-        let {blockName, title, modCheckmark} = richCheckboxButtonsData;
+        let {blockName, title, modCheckmark, modBlock} = richCheckboxButtonsData;
 
         let divClass = `rich-checkbox-buttons ${ (blockName) ? blockName + '__rich-checkbox-buttons' : '' }`;
         let pClass = `rich-checkbox-buttons-title ${ (blockName) ? blockName + '__rich-checkbox-buttons-title' : '' }`;
@@ -17,8 +17,14 @@ mixin rich-checkbox-buttons(richCheckboxButtonsData)
             checkmarkClass += " " + blockName + `__${modifCheckmark.join(` ${blockName}__`)}`;
         }
 
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
+
     div(class = divClass)
-        p(class = pClass)= title
+        if (title)
+            p(class = pClass)= title
         div(class = alignClass)
             - idDefiner = blockName + "-option1";
             input(type = "checkbox" class = checkboxClass id = idDefiner hidden)

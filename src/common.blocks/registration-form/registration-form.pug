@@ -1,0 +1,38 @@
+include ../../common.elements/button/button.pug
+include ../../common.elements/radio-buttons/radio-buttons.pug
+include ../../common.elements/text-field/text-field.pug
+include ../../common.elements/toggle/toggle.pug
+
+mixin registration-form(registrationFormData)
+    -
+        let {blockName} = registrationFormData
+
+        let divClass = `registration ${ (blockName) ? blockName + '__registration' : '' }`;
+        let titleClass = `registration-title ${ (blockName) ? blockName + '__registration-title' : '' }`;
+        let bottomClass = `registration-bottom ${ (blockName) ? blockName + '__registration-bottom' : '' }`;
+        let pClass = `registration-bottom-label ${ (blockName) ? blockName + '__registration-bottom-label' : '' }`;
+
+        let includesClass = `${ (blockName) ? blockName + '__registration' : 'registration' }`;
+
+    div(class = divClass)
+        p(class = titleClass) Регистрация аккаунта
+        - const inputName = { blockName: includesClass, iputType: "text", inputPlaceholder: "Имя", modBlock: "registration-input_position" }
+        +text-field(inputName)
+        - const inputSName = { blockName: includesClass, iputType: "text", inputPlaceholder: "Фамилия" }
+        +text-field(inputSName)
+        - const radioButtonsData = { blockName: includesClass }
+        +radio-buttons(radioButtonsData)
+        - const inputBDay = { blockName: includesClass, title: "Дата рождения", iputType: "text", inputPlaceholder: "ДД.ММ.ГГГГ", modBlock: "registration-input_position" }
+        +text-field(inputBDay)
+        - const inputLogIn = { blockName: includesClass, title: "Данные для входа в сервис", iputType: "email", inputPlaceholder: "Email", modBlock: "registration-input_position" }
+        +text-field(inputLogIn)
+        - const inputPassword = { blockName: includesClass, iputType: "text", inputPlaceholder: "Пароль" }
+        +text-field(inputPassword)
+        - const toggleData = { blockName: includesClass, label: "Получать спецпредложения", modBlock: "registration-toggle_position" }
+        +toggle(toggleData)
+        - const buttonData = { blockName: includesClass, label: "Перейти к оплате", modButton: "button-button_size_lg registration-button_position" }
+        +button(buttonData)
+        div(class = bottomClass)
+            p(class = pClass) Уже есть аккаунт на Toxin
+            - const button2Data = { blockName: includesClass, label: "Войти", modButton: "button-button_back_white" }
+            +button(button2Data)

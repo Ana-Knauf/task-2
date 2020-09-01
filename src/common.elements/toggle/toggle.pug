@@ -1,6 +1,6 @@
 mixin toggle(toggleData)
     -
-        let {blockName, title, label, modSlider} = toggleData;
+        let {blockName, title, label, modSlider, modBlock} = toggleData;
 
         let pClass = `toggle-title ${ (blockName) ? blockName + '__toggle-title' : '' }`;
         let checkboxClass = `toggle-checkbox ${ (blockName) ? blockName + '__toggle-checkbox' : '' }`;
@@ -11,6 +11,11 @@ mixin toggle(toggleData)
         if (modSlider) {
             const modifSlider = modSlider.split(/[,\s]\s*/);
             sliderClass += " " + blockName + `__${modifSlider.join(` ${blockName}__`)}`;
+        }
+
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            alignClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
         }
 
         let idDefiner;

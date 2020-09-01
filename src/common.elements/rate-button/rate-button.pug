@@ -1,6 +1,6 @@
 mixin rate-button(rateButtonData)
     -
-        let {blockName, title, modButton} = rateButtonData;
+        let {blockName, title, modButton, modBlock} = rateButtonData;
 
         let blockClass = `rate-button-div ${ (blockName) ? blockName + '__rate-button-div' : '' }`;
         let pClass = `rate-button-title ${ (blockName) ? blockName + '__rate-button-title' : '' }`;
@@ -13,12 +13,18 @@ mixin rate-button(rateButtonData)
             btnClass += " " + blockName + `__${modifButton.join(` ${blockName}__`)}`;
         }
 
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            blockClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
+
         let idDefiner;
         let n = 1;
         let counter = 5;
 
     div(class = blockClass)
-        p(class = pClass)= title
+        if (title)
+            p(class = pClass)= title
         div(class = divClass)
             while n <=5
                 - idDefiner = blockName + "-button" + counter;

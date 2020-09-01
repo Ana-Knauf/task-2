@@ -20,6 +20,7 @@
 
 // Blocks page
 @import "../common.blocks/hotel-search/hotel-search.scss";
+@import "../common.blocks/registration-form/registration-form.scss";
 
 
 * {
@@ -27,6 +28,8 @@
 	font-style: normal;
 	font-weight: 400;
 }
+
+//- index.html
 
 .p-buttons {
 	font-size: 14px;
@@ -49,10 +52,6 @@
 	display: flex;
 }
 
-.date-dropdown {
-	margin-top: 20px;
-}
-
 .buttons {
 	display: grid;
 	grid-template-columns: 30% 30%;
@@ -60,6 +59,8 @@
 	grid-row-gap: 30px;
 }
 
-.room-details-bottom-line:last-child {
-    display: none;
+//- blocks.html
+
+.containerBlocks {
+	display: flex;
 }

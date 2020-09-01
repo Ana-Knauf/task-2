@@ -15,7 +15,7 @@ mixin dropdown-guests(dropdownGuestsData)
             pClass += " dropdown-guests-selection-position";
         }
 
-        if (modBlock) {
+        if (modBlock) { //- moving the block of the element inside a parent block
             const modifBlock = modBlock.split(/[,\s]\s*/);
             blockClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
         }

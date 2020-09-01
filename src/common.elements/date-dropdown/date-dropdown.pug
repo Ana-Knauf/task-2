@@ -13,7 +13,7 @@ mixin date-dropdown(dateDropdownData)
             inputClass += " " + modSize;
         }
 
-        if (modBlock) {
+        if (modBlock) { //- moving the block of the element inside a parent block
             const modifBlock = modBlock.split(/[,\s]\s*/);
             divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
         }

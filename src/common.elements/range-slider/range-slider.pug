@@ -1,6 +1,6 @@
 mixin range-slider(rangeSliderData)
     -
-        let {blockName, title} = rangeSliderData;
+        let {blockName, title, modBlock} = rangeSliderData;
 
         let blockClass = "range-slider-block";
         let pClass = "range-slider-title";
@@ -11,6 +11,12 @@ mixin range-slider(rangeSliderData)
             divClass += " " + blockName + "__range-slider-wrapper";
             pClass += " " + blockName + "__range-slider-title";
         }
+
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            blockClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
+
     //- plugin by Mariusz Dabrowski
     div(class = blockClass)
         p(class = pClass) Диапазон цены

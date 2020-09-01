@@ -1,6 +1,6 @@
 mixin dropdown-rooms(dropdownRoomsData)
     -
-        let {blockName, title, modSize} = dropdownRoomsData;
+        let {blockName, title, modSize, modBlock} = dropdownRoomsData;
         let divClass = "iqdropdown";
         let pClass = "iqdropdown-selection";
         let blockClass = "dropdown-rooms-block";
@@ -14,9 +14,14 @@ mixin dropdown-rooms(dropdownRoomsData)
             divClass += " " + modSize;
             pClass += " dropdown-rooms-selection-position";
         }
+
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            blockClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
     
     div(class = blockClass)
-        p(class = "title-dropdown-rooms")= title
+        p(class = "title-dropdown-rooms") Удобства номера
         div(class = divClass)
             p(class = pClass)
             div(class = "iqdropdown-menu")

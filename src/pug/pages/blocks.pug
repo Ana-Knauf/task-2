@@ -1,4 +1,5 @@
 include ../../common.blocks/hotel-search/hotel-search.pug
+include ../../common.blocks/registration-form/registration-form.pug
 
 doctype html
 html(lang="en")
@@ -8,6 +9,9 @@ html(lang="en")
         title Blocks
     body
         a(href = "index.html") UI kit
-        br
-        - const hotelSearchData = { blockName: "start" }
-        +hotel-search(hotelSearchData)
+        .containerBlocks
+            br
+            - const hotelSearchData = { blockName: "containerBlocks" }
+            +hotel-search(hotelSearchData)
+            - const registrationFormData = {}
+            +registration-form(registrationFormData)

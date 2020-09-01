@@ -2,7 +2,7 @@ include ../../common.elements/like-button/like-button.pug
 
 mixin review-bar(reviewBarData)
     -
-        let {blockName, reviewer, date, review} = reviewBarData;
+        let {blockName, reviewer, date, review, modBlock} = reviewBarData;
 
         let divClass = `review-bar ${ (blockName) ? blockName + '__review-bar' : '' }`;
         let div1Class = `review-bar-div1 ${ (blockName) ? blockName + '__review-bar-div1' : '' }`;
@@ -15,6 +15,11 @@ mixin review-bar(reviewBarData)
         let reviewClass = `review-bar-review ${ (blockName) ? blockName + '__review-bar-review' : '' }`;
 
         let likeClass = "review-like " + blockName + "__review-bar";
+
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
 
     div(class = divClass)
         div(class = div1Class)

@@ -1,6 +1,6 @@
 mixin checkbox-buttons(checkboxButtonsData)
     -
-        let {blockName, title, options, modCheckmark} = checkboxButtonsData;
+        let {blockName, title, options, modCheckmark, modBlock} = checkboxButtonsData;
 
         let divClass = `checkbox-buttons ${ (blockName) ? blockName + '__checkbox-buttons' : '' }`;
         let pClass = `checkbox-buttons-title ${ (blockName) ? blockName + '__checkbox-buttons-title' : '' }`;
@@ -20,8 +20,14 @@ mixin checkbox-buttons(checkboxButtonsData)
             checkmarkClass += " " + blockName + `__${modifCheckmark.join(` ${blockName}__`)}`;
         }
 
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
+
     div(class = divClass)
-        p(class = pClass)= title
+        if (title)
+            p(class = pClass)= title
         each option in listOptions
             - idCounter = blockName + "-option" + counter;
             - counter++;

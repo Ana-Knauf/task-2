@@ -1,6 +1,6 @@
 mixin text-field(textFieldData)
     -
-        let {blockName, title, iputType, inputPlaceholder, modInput} = textFieldData;
+        let {blockName, title, iputType, inputPlaceholder, modInput, modBlock} = textFieldData;
 
         let divClass = `text-field-block ${ (blockName) ? blockName + '__text-field-block' : '' }`;
         let pClass = `text-field-title ${ (blockName) ? blockName + '__text-field-title' : '' }`;
@@ -12,9 +12,15 @@ mixin text-field(textFieldData)
             const modifInput = modInput.split(/[,\s]\s*/);
             inputClass += " " + blockName + `__${modifInput.join(` ${blockName}__`)}`;
         }
+
+        if (modBlock) { //- moving the block of the element inside a parent block
+            const modifBlock = modBlock.split(/[,\s]\s*/);
+            divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
+        }
     
     div(class = divClass)
-        p(class = pClass)= title
+        if (title)
+            p(class = pClass)= title
         div(class = alignClass)
             input(type = inputType class = inputClass placeholder = inputPlaceholder)
             button(class = btnClass)
