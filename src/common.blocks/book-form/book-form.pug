@@ -1,0 +1,80 @@
+include ../../common.elements/date-dropdown/date-dropdown.pug
+include ../../common.elements/dropdown-guests/dropdown-guests.pug
+include ../../common.elements/button/button.pug
+
+mixin book-form(bookFormData)
+    -
+        let {blockName, room, price, days, servicePrice, addServicePrice} = bookFormData
+
+        let divClass = `booking ${ (blockName) ? blockName + '__booking' : '' }`;
+        let topClass = `booking-top-block ${ (blockName) ? blockName + '__booking-top-block' : '' }`;
+        let topRoomClass = `booking-top-room ${ (blockName) ? blockName + '__booking-top-room' : '' }`;
+        let topPriceClass = `booking-top-price ${ (blockName) ? blockName + '__booking-top-price' : '' }`;
+        let numClass = `booking-num-span ${ (blockName) ? blockName + '__booking-num-span' : '' }`;
+        let roomClass = `booking-room-span ${ (blockName) ? blockName + '__booking-room-span' : '' }`;
+        let luxClass = `booking-lux-span ${ (blockName) ? blockName + '__booking-lux-span' : '' }`;
+        let priceClass = `booking-price-span ${ (blockName) ? blockName + '__booking-price-span' : '' }`;
+        let dailyClass = `booking-daily-span ${ (blockName) ? blockName + '__booking-daily-span' : '' }`;
+        let alignClass = `booking-align-block ${ (blockName) ? blockName + '__booking-align-block' : '' }`;
+        let pricingDescriptionClass = `booking-pricing-description ${ (blockName) ? blockName + '__booking-pricing-description' : '' }`;
+        let pPricingDescriptionClass = `booking-pricing-description-p ${ (blockName) ? blockName + '__booking-pricing-description-p' : '' }`;
+        let pricingClass = `booking-pricing ${ (blockName) ? blockName + '__booking-pricing' : '' }`;
+        let pPricingClass = `booking-pricing-p ${ (blockName) ? blockName + '__booking-pricing-p' : '' }`;
+        let totalClass = `booking-total ${ (blockName) ? blockName + '__booking-total' : '' }`;
+        let totalPriceClass = `booking-total-p ${ (blockName) ? blockName + '__booking-total-p' : '' }`;
+
+        let includesClass = `${ (blockName) ? blockName + '__booking' : 'booking' }`;
+
+        //- this is what's happening on the backend I guess
+        let roomNumber = " " + room + " ";
+        let roomPrice = price + "₽ ";
+        
+        let service = "Сбор за услуги: " + servicePrice + "₽";
+        let daysPrice = price + "₽ x " + days + " суток";
+
+        let daysPriceTotal = price * days;
+        let daysPriceTotalShow = daysPriceTotal + "₽";
+        let discount;
+        let total = 0;
+        let additional;
+        if (servicePrice.includes("скидка")) {
+            discount = servicePrice.slice(7, servicePrice.length + 1);
+            discount = 0 - discount;
+            total = daysPriceTotal + discount + (+addServicePrice);
+            total = total + "₽";
+            discount = discount + "₽";
+        } else {
+            total = daysPriceTotal + (+servicePrice) + (+addServicePrice);
+            total = total + "₽";
+        }
+
+        additional = addServicePrice + "₽";
+
+    div(class = divClass)
+        div(class = topClass)
+            div(class = topRoomClass)
+                span(class = numClass) №
+                span(class = roomClass)= roomNumber
+                span(class = luxClass) люкс
+            div(class = topPriceClass)
+                span(class = priceClass)= roomPrice
+                span(class = dailyClass) в сутки
+        - const dateDropdownData = { blockName: includesClass, modBlock: "booking-dates_position" }
+        +date-dropdown(dateDropdownData)
+        - const dropdownGuestsData = { blockName: includesClass, modBlock: "booking-guests_position" }
+        +dropdown-guests(dropdownGuestsData)
+        div(class = alignClass)
+            div(class = pricingDescriptionClass)
+                p(class = pPricingDescriptionClass)= daysPrice
+                p(class = pPricingDescriptionClass)= service
+                p(class = pPricingDescriptionClass) Сбор за дополнительные brrrr услуги
+            div(class = pricingClass)
+                p(class = pPricingClass)= daysPriceTotalShow
+                p(class = pPricingClass)= discount
+                p(class = pPricingClass)= additional
+        div(class = totalClass)
+            p(class = totalPriceClass) Итого
+            p(class = totalPriceClass)= total
+        - const buttonData = { blockName: includesClass, label: "Забронировать", modButton: "button-button_size_lg booking-button_position" }
+        +button(buttonData)
+        

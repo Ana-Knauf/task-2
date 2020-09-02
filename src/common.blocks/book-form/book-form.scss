@@ -1,0 +1,134 @@
+.booking {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 380px;
+    height: 511px;
+    padding: 46px 29px 30px;
+    margin-left: 10px;
+}
+
+.booking-align-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-top-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-pricing {
+    text-align: right;
+}
+
+.booking-align-block {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 19px;
+    color: $darkShade75;
+}
+
+.booking-num-span {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade100;
+}
+
+.booking-room-span {
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 17px;
+    color: $darkShade100;
+    margin-left: -2px;
+}
+
+.booking-lux-span {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: $purple;
+    text-transform: uppercase;
+}
+
+.booking-price-span {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $darkShade50;
+}
+
+.booking-daily-span {
+    font-family: Montserrat;
+    font-size: 12px;
+    line-height: 18px;
+    color: $darkShade50;
+}
+
+.booking-top-price {
+    margin-top: 2px;
+}
+
+.booking-align-block {
+    margin-left: 1px;
+    margin-top: 6px;
+}
+
+.booking-pricing-description-p,
+.booking-pricing-p {
+    margin: 0;
+    margin-top: 15px;
+}
+
+.booking-pricing-p {
+    margin-right: 3px;
+}
+
+.booking-pricing-description-p {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+    }
+
+    &:first-child::after {
+        display: none;
+    }
+}
+
+.booking-total {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1px;
+}
+
+.booking-total-p {
+    margin: 0;
+    margin-top: 29px;
+
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: $darkShade100;
+}
+
+
+[class*="booking-dates_position"] {
+    margin-top: 21px;
+}
+
+[class*="booking-guests_position"] {
+    margin-top: 20px;
+}
+
+[class*="booking-button_position"] {
+    margin-top: 20px;
+}
