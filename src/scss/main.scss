@@ -22,6 +22,7 @@
 @import "../common.blocks/hotel-search/hotel-search.scss";
 @import "../common.blocks/registration-form/registration-form.scss";
 @import "../common.blocks/book-form/book-form.scss";
+@import "../common.blocks/log-in/log-in.scss";
 
 
 * {
@@ -64,4 +65,9 @@
 
 .containerBlocks {
 	display: flex;
+}
+
+.containerBlocks2 {
+	display: flex;
+	margin-top: 10px;
 }

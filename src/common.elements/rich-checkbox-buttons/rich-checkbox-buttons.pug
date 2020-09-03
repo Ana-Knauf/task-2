@@ -9,6 +9,7 @@ mixin rich-checkbox-buttons(richCheckboxButtonsData)
         let checkmarkClass = `rich-checkbox-buttons-checkmark ${ (blockName) ? blockName + '__rich-checkbox-buttons-checkmark' : '' }`;
         let labelClass = `rich-checkbox-buttons-label ${ (blockName) ? blockName + '__rich-checkbox-buttons-label' : '' }`;
         let detailClass = `rich-checkbox-buttons-detail ${ (blockName) ? blockName + '__rich-checkbox-buttons-detail' : '' }`;
+        let divDetailClass = `rich-checkbox-buttons-detail-div ${ (blockName) ? blockName + '__rich-checkbox-buttons-detail-div' : '' }`;
        
         let idDefiner;
 
@@ -30,12 +31,18 @@ mixin rich-checkbox-buttons(richCheckboxButtonsData)
             input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
             label(for = idDefiner class = checkmarkClass)
             label(for = idDefiner class = labelClass) Широкий коридор
-        label(for = idDefiner class = detailClass)
+        div(class = divDetailClass)
+            label(for = idDefiner class = detailClass)
                                                     | Ширина коридоров в номере
+                                                    br
                                                     | не менее 91 см.
         div(class = alignClass)
             - idDefiner = blockName + "-option2";
             input(type = "checkbox" class = checkboxClass id = idDefiner hidden)
             label(for = idDefiner class = checkmarkClass)
             label(for = idDefiner class = labelClass) Помощник для инвалидов
-        label(for = idDefiner class = detailClass) На 1 этаже вас встретит специалист и проводит до номера.
+        div(class = divDetailClass)
+            label(for = idDefiner class = detailClass)
+                                                    | На 1 этаже вас встретит специалист
+                                                    br
+                                                    | и проводит до номера.

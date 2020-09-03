@@ -1,6 +1,7 @@
 include ../../common.blocks/hotel-search/hotel-search.pug
 include ../../common.blocks/registration-form/registration-form.pug
 include ../../common.blocks/book-form/book-form.pug
+include ../../common.blocks/log-in/log-in.pug
 
 doctype html
 html(lang="en")
@@ -18,3 +19,6 @@ html(lang="en")
             +registration-form(registrationFormData)
             - const bookFormData = { room: "888", price: "9990", days: "4", servicePrice: "скидка 2179", addServicePrice: "300" }
             +book-form(bookFormData)
+        .containerBlocks2
+        - const logInData = {}
+        +log-in(logInData)

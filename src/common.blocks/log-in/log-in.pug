@@ -1,0 +1,26 @@
+include ../../common.elements/text-field/text-field.pug
+include ../../common.elements/button/button.pug
+
+mixin log-in(logInData)
+    -
+        let {blockName} = logInData
+
+        let divClass = `log-in ${ (blockName) ? blockName + '__log-in' : '' }`;
+        let titleClass = `log-in-title ${ (blockName) ? blockName + '__log-in-title' : '' }`;
+        let bottomClass = `log-in-bottom-block ${ (blockName) ? blockName + '__log-in-bottom-block' : '' }`;
+        let pClass = `log-in-bottom-p ${ (blockName) ? blockName + '__log-in-bottom-p' : '' }`;
+
+        let includesClass = `${ (blockName) ? blockName + '__log-in' : 'log-in' }`;
+
+    div(class = divClass)
+        p(class = titleClass) Войти
+        - const inputLogIn = { blockName: includesClass, iputType: "email", inputPlaceholder: "Email", modBlock: "log-in-input_position" }
+        +text-field(inputLogIn)
+        - const inputPassword = { blockName: includesClass, iputType: "text", inputPlaceholder: "Пароль" }
+        +text-field(inputPassword)
+        - const buttonData = { blockName: includesClass, label: "Войти", modButton: "button-button_size_lg log-in-button_position" }
+        +button(buttonData)
+        div(class = bottomClass)
+            p(class = pClass) Нет аккаунта на Toxin?
+            - const button2Data = { blockName: includesClass, label: "Создать", modButton: "button-button_back_white" }
+            +button(button2Data)
