@@ -21,6 +21,7 @@ mixin rate-button(rateButtonData)
         let idDefiner;
         let n = 1;
         let counter = 5;
+        let radioName = blockName + "rate-buttons";
 
     div(class = blockClass)
         if (title)
@@ -30,5 +31,5 @@ mixin rate-button(rateButtonData)
                 - idDefiner = blockName + "-button" + counter;
                 - counter--;
                 - n++;
-                input(type="radio" class = radioClass id = idDefiner name = "rate-buttons" hidden)
+                input(type="radio" class = radioClass id = idDefiner name = radioName hidden)
                 label(for=idDefiner class = labelClass)

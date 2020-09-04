@@ -23,5 +23,7 @@ html(lang="en")
         .containerBlocks2
             - const logInData = {}
             +log-in(logInData)
-            - const roomCardData = { room: "888", price: "9990", reviews: "145", img: "assets/img/room1.png"}
+            - const roomCardData = { room: "888", price: "9990", reviews: "145", img: "room1.png"}
             +room-card(roomCardData)
+            - const roomCardData1 = { blockName: "hello", room: "840", price: "9900", reviews: "65", img: "room2.png"}
+            +room-card(roomCardData1)

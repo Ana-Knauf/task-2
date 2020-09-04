@@ -5,7 +5,6 @@ mixin room-card(roomCardData)
         let {blockName, room, price, reviews, img} = roomCardData
 
         let divClass = `room-card ${ (blockName) ? blockName + '__room-card' : '' }`;
-        let imgBlockClass = `room-card-img-block ${ (blockName) ? blockName + '__room-card-img-block' : '' }`;
         let bottomClass = `room-card-bottom-block ${ (blockName) ? blockName + '__room-card-bottom-block' : '' }`;
         let alignClass = `room-card-align-block ${ (blockName) ? blockName + '__room-card-align-block' : '' }`;
         let roomClass = `room-card-room-block ${ (blockName) ? blockName + '__room-card-room-block' : '' }`;
@@ -21,6 +20,15 @@ mixin room-card(roomCardData)
         let lineClass = `room-card-line ${ (blockName) ? blockName + '__room-card-line' : '' }`;
         let imgClass = `room-card-img ${ (blockName) ? blockName + '__room-card-img' : '' }`;
 
+        let imgBackClass = `room-card-back-img ${ (blockName) ? blockName + '__room-card-back-img' : '' }`;
+        let imgForthClass = `room-card-forth-img ${ (blockName) ? blockName + '__room-card-forth-img' : '' }`;
+        let btnBackClass = `room-card-back-button ${ (blockName) ? blockName + '__room-card-back-button' : '' }`;
+        let btnForthClass = `room-card-forth-button ${ (blockName) ? blockName + '__room-card-forth-button' : '' }`;
+
+        let swipeClass = `room-card-swipe-block ${ (blockName) ? blockName + '__room-card-swipe-block' : '' }`;
+        let radioClass = `room-card-swipe-radio ${ (blockName) ? blockName + '__room-card-swipe-radio' : '' }`;
+        let checkmarkClass = `room-card-swipe-checkmark ${ (blockName) ? blockName + '__room-card-swipe-checkmark' : '' }`;
+
         let includesClass = `${ (blockName) ? blockName + '__room-card' : 'room-card' }`;
 
         let roomNumber = room.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
@@ -30,12 +38,24 @@ mixin room-card(roomCardData)
         let roomReviews = reviews.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
         roomReviews = roomReviews + " ";
 
-        let imgPath = "../../img/";
+        let imgPath = "assets/img/";
         imgPath = imgPath + img;
+        let n = 1;
+        let idDefiner;
+        let radioName = blockName + "swipe-buttons";
 
     div(class = divClass)
-        img(class = imgClass src = img alt = "")
-        //- div(class = imgBlockClass)
+        img(class = imgClass src = imgPath alt = "Фотография номера")
+        div(class = imgBackClass)
+        button(class = btnBackClass)
+        div(class = imgForthClass)
+        button(class = btnForthClass)
+        div(class = swipeClass)
+            while n <= 4
+                - idDefiner = blockName + "swipe" + n;
+                input(class = radioClass type = "radio" id = idDefiner name = radioName hidden)
+                label(for = idDefiner class = checkmarkClass)
+                - n++;
         div(class = bottomClass)
             div(class = alignClass)
                 div(class = roomClass)
