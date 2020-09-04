@@ -46,6 +46,7 @@ module.exports = {
           }
       }, {
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          exclude: [path.resolve(__dirname, '../src/img')],
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
