@@ -2,7 +2,7 @@ include ../../common.elements/rate-button/rate-button.pug
 
 mixin room-card(roomCardData)
     -
-        let {blockName, room, price, reviews, img} = roomCardData
+        let {blockName, room, lux, price, reviews, img} = roomCardData
 
         let divClass = `room-card ${ (blockName) ? blockName + '__room-card' : '' }`;
         let bottomClass = `room-card-bottom-block ${ (blockName) ? blockName + '__room-card-bottom-block' : '' }`;
@@ -61,7 +61,8 @@ mixin room-card(roomCardData)
                 div(class = roomClass)
                     span(class = numClass) №
                     span(class = nRoomClass)= roomNumber
-                    span(class = luxClass) люкс
+                    if (lux)
+                        span(class = luxClass) люкс
                 div(class = priceClass)
                     span(class = nPriceClass)= roomPrice
                     span(class = dailyClass) в сутки

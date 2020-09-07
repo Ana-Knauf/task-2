@@ -3,6 +3,7 @@ include ../../common.blocks/registration-form/registration-form.pug
 include ../../common.blocks/book-form/book-form.pug
 include ../../common.blocks/log-in/log-in.pug
 include ../../common.blocks/room-card/room-card.pug
+include ../../common.blocks/header/header.pug
 
 doctype html
 html(lang="en")
@@ -11,19 +12,24 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Blocks
     body
+        - const headerData = {  }
+        +header(headerData)
         a(href = "index.html") UI kit
         .containerBlocks
             br
             - const hotelSearchData = { blockName: "containerBlocks" }
             +hotel-search(hotelSearchData)
-            - const registrationFormData = {}
-            +registration-form(registrationFormData)
-            - const bookFormData = { room: "888", price: "9990", days: "4", servicePrice: "скидка 2179", addServicePrice: "300" }
-            +book-form(bookFormData)
+            //- - const registrationFormData = {}
+            //- +registration-form(registrationFormData)
+            
         .containerBlocks2
             - const logInData = {}
             +log-in(logInData)
-            - const roomCardData = { room: "888", price: "9990", reviews: "145", img: "room1.png"}
+            - const roomCardData = { room: "888", lux: true, price: "9990", reviews: "145", img: "room1.png"}
             +room-card(roomCardData)
-            - const roomCardData1 = { blockName: "hello", room: "840", price: "9900", reviews: "65", img: "room2.png"}
-            +room-card(roomCardData1)
+            
+        
+        - const bookFormData = { room: "888", lux: true, price: "9990", days: "4", servicePrice: "скидка 2179", addServicePrice: "300" }
+        +book-form(bookFormData)
+        - const roomCardData1 = { blockName: "hello", room: "840", price: "9900", reviews: "65", img: "room2.png"}
+        +room-card(roomCardData1)

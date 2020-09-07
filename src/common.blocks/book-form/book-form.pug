@@ -4,7 +4,7 @@ include ../../common.elements/button/button.pug
 
 mixin book-form(bookFormData)
     -
-        let {blockName, room, price, days, servicePrice, addServicePrice} = bookFormData
+        let {blockName, room, lux, price, days, servicePrice, addServicePrice} = bookFormData
 
         let divClass = `booking ${ (blockName) ? blockName + '__booking' : '' }`;
         let topClass = `booking-top-block ${ (blockName) ? blockName + '__booking-top-block' : '' }`;
@@ -71,7 +71,8 @@ mixin book-form(bookFormData)
             div(class = topRoomClass)
                 span(class = numClass) №
                 span(class = roomClass)= roomNumber
-                span(class = luxClass) люкс
+                if (lux)
+                    span(class = luxClass) люкс
             div(class = topPriceClass)
                 span(class = priceClass)= roomPrice
                 span(class = dailyClass) в сутки

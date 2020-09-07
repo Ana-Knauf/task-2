@@ -19,6 +19,7 @@
 @import "../common.elements/review-bar/review-bar.scss";
 
 // Blocks page
+@import "../common.blocks/header/header.scss";
 @import "../common.blocks/hotel-search/hotel-search.scss";
 @import "../common.blocks/registration-form/registration-form.scss";
 @import "../common.blocks/book-form/book-form.scss";
@@ -30,6 +31,10 @@
     font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 400;
+}
+
+body {
+	margin: 0;
 }
 
 //- index.html

@@ -1,0 +1,62 @@
+include ../../common.elements/button/button.pug
+
+mixin header(headerData)
+    -
+        let {user} = headerData
+
+        let headerClass = "page-header";
+        let contentClass = "page-header__content-block";
+        let logoClass = "page-header__logo";
+        let navClass = "page-header__navigation";
+        let linkClass = "page-header__link";
+        let linkAboutClass = "page-header__link-about";
+        let expLinkClass = "page-header__expand_link";
+        let servicesClass = "page-header__services-block";
+        let checkbox1Class = "page-header__services-checkbox";
+        let label1Class = "page-header__services-label";
+        let expand1Class = "page-header__expand-serives";
+        let agreementsClass = "page-header__agreements-block";
+        let checkbox2Class = "page-header__agreements-checkbox";
+        let label2Class = "page-header__agreements-label";
+        let expand2Class = "page-header__expand-agreements";
+
+        let expCheckboxClass = "page-header__expand-checkbox";
+        let expLabelClass = "page-header__expand-label";
+        let btnsClass = "page-header__buttons-block";
+        let lineClass = "page-header__line";
+        let userClass = "page-header__link-user";
+
+
+
+    div(class = headerClass)
+        div(class = contentClass)
+            img(class = logoClass alt = "Logo" src = "assets/img/logo.svg")
+            input(type = "checkbox" class = expCheckboxClass id = "header-expand" hidden)
+            label(for = "header-expand" class = expLabelClass)
+            div(class = navClass)
+                a(class = linkAboutClass href = "#") О нас
+                div(class = servicesClass)
+                    input(class = checkbox1Class type = "checkbox" id = "header-services" hidden) 
+                    label(class = label1Class for = "header-services") Услуги
+                    div(class = expand1Class)
+                        a(class = expLinkClass href = "#") Отели
+                        br
+                        a(class = expLinkClass href = "#") Отели
+                a(class = linkClass href = "#") Вакансии
+                a(class = linkClass href = "#") Новости
+                div(class = agreementsClass)
+                    input(class = checkbox2Class type = "checkbox" id = "header-agreements" hidden) 
+                    label(class = label2Class for = "header-agreements") Соглашения
+                    div(class = expand2Class)
+                        a(class = expLinkClass href = "#") Соглашение
+                        br
+                        a(class = expLinkClass href = "#") Соглашение
+                if (user)
+                    div(class = lineClass)
+                    a(class = userClass href = "#")= user
+                else
+                    div(class = btnsClass)
+                        - const button1Data = { blockName: "page-header", label: "Войти", modButton: "button-button_back_white header-button_position button-button_size_sm" }
+                        +button(button1Data)
+                        - const button2Data = { blockName: "page-header", label: "Зарегистрироваться", modButton: "button-button_size_lg header-button_position button-button_no_arrow" }
+                        +button(button2Data)

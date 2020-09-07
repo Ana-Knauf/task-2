@@ -69,3 +69,16 @@
         display: inline-block;
     }
 }
+
+[class*="button-button_no_arrow"] {
+    width: 196px;
+    height: 34px;
+    &::after {
+        display: none;
+    }
+}
+
+[class*="button-button_size_sm"] {
+    width: 87px;
+    height: 34px;
+}

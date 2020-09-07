@@ -1,0 +1,284 @@
+.page-header {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background: white;
+    z-index: 1;
+}
+
+.page-header__content-block {
+    max-width: 1160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.page-header__navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page-header__link {
+    margin-left: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade50;
+}
+
+.page-header__link-about {
+    margin-left: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    color: $darkShade75;
+}
+
+.page-header__expand_link {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade50;
+}
+
+.page-header__navigation a {
+    text-decoration: none;
+}
+
+.page-header__services-block {
+    position: relative;
+    margin-left: 21px;
+    margin-right: 25px;
+}
+
+.page-header__services-label {
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade50;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url("../../img/expand_more_light.svg");
+        width: 12px;
+        height: 8px;
+        top: 5px;
+        margin-left: 7px;
+    }
+}
+
+.page-header__services-checkbox:hover ~ .page-header__expand-serives {
+    visibility: visible;
+}
+
+.page-header__expand-serives:hover {
+    visibility: visible;
+}
+
+.page-header__expand-serives {
+    position: absolute;
+    visibility: hidden;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    width: 100px;
+    margin-left: -40px;
+    padding: 20px 20px 20px;
+    border: 1px solid $darkShade25;
+    z-index: 1;
+    top: 18px;
+}
+
+.page-header__agreements-block {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
+.page-header__agreements-checkbox:hover ~ .page-header__expand-agreements {
+    visibility: visible;
+}
+
+.page-header__expand-agreements:hover {
+    visibility: visible;
+}
+
+.page-header__agreements-label {
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade50;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url("../../img/expand_more_light.svg");
+        width: 12px;
+        height: 8px;
+        top: 7px;
+        margin-left: 7px;
+    }
+}
+
+.page-header__expand-agreements {
+    position: absolute;
+    visibility: hidden;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    width: 100px;
+    margin-left: -20px;
+    padding: 20px 20px 20px;
+    border: 1px solid $darkShade25;
+    z-index: 1;
+    top: 18px;
+}
+
+.page-header__expand-label {
+    display: none;
+    background-image: url("../../img/burger.jpg");
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+
+.page-header__line {
+    height: 30px;
+    width: 1px;
+    background-color: $darkShade10;
+    margin-left: 20px;
+}
+
+.page-header__link-user {
+    margin-left: 20px;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade50;
+}
+
+[class*="header-button_position"] {
+    margin-left: 20px;
+}
+
+
+@media screen and (max-width: 1170px) {
+    .page-header__navigation {
+        margin-right: 20px;
+    }
+    .page-header__logo {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .page-header__navigation {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+    .page-header {
+        height: 100px;
+    }
+    .page-header__logo {
+        margin-left: 20px;
+    }
+    .page-header__buttons-block {
+        margin-top: 10px;
+    }
+    .page-header__expand-serives {
+        margin-left: -40px;
+    }
+    .page-header__expand-agreements {
+        margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 754px) {
+    .page-header__line {
+        visibility: hidden;
+    }
+    .page-header__link-user {
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .page-header {
+        position: relative;
+        height: 70px;
+    }
+    .page-header__expand-label {
+        display: block;
+    }
+    .page-header__navigation {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0px;
+        background: white;
+        padding: 20px 30px 30px 10px;
+        box-shadow: 0px 20px 20px rgba(31, 32, 65, 0.05);
+        border-radius: 4px;
+        visibility: hidden;
+        z-index: 1;
+        margin-right: 0;
+    }
+    .page-header__expand-checkbox:checked ~ .page-header__navigation {
+        visibility: visible;
+    }
+    .page-header__expand-checkbox:checked ~ .page-header__expand-label {
+        transform: rotate(90deg);
+    }
+    .page-header__expand-checkbox:not(checked) ~ .page-header__expand-agreements {
+        visibility: hidden;
+    }
+    .page-header__buttons-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+    [class*="header-button_position"] {
+        margin-top: 10px;
+    }
+    .page-header__link {
+        margin-top: 10px;
+    }
+    .page-header__services-block {
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    .page-header__agreements-block {
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 22px;
+    }
+    .page-header__expand-agreements {
+        margin-left: -25px;
+    }
+    .page-header__expand-serives {
+        margin-left: -40px;
+    }
+    .page-header__link-user {
+        margin: 0;
+        margin-left: 25px;
+    }
+}
+
+
