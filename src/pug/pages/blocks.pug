@@ -14,6 +14,7 @@ html(lang="en")
     body
         - const headerData = {  }
         +header(headerData)
+        .pseudo
         a(href = "index.html") UI kit
         .containerBlocks
             br
@@ -29,7 +30,9 @@ html(lang="en")
             +room-card(roomCardData)
             
         
-        - const bookFormData = { room: "888", lux: true, price: "9990", days: "4", servicePrice: "скидка 2179", addServicePrice: "300" }
-        +book-form(bookFormData)
-        - const roomCardData1 = { blockName: "hello", room: "840", price: "9900", reviews: "65", img: "room2.png"}
-        +room-card(roomCardData1)
+            //- - const bookFormData = { room: "888", lux: true, price: "9990", days: "4", servicePrice: "скидка 2179", addServicePrice: "300" }
+            //- +book-form(bookFormData)
+        //- - const roomCardData1 = { blockName: "hello", room: "840", price: "9900", reviews: "65", img: "room2.png"}
+        //- +room-card(roomCardData1)
+
+        include ../../common.blocks/footer/footer.pug

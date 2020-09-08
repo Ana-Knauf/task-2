@@ -1,0 +1,83 @@
+include ../../common.elements/text-field/text-field.pug
+
+-
+    let footerClass = "page-footer";
+    let contentClass = "page-footer__content-block";
+    let logoClass = "page-footer__logo-block";
+    let imgClass = "page-footer__logo-img";
+    let pClass = "page-footer__description";
+    let navClass = "page-footer__navigation";
+    let linksClass = "page-footer__links";
+    let headerClass = "page-footer__header-p";
+    let linkClass = "page-footer__link";
+    let bottomClass = "page-footer__bottom-block";
+    let bottomContentClass = "page-footer__bottom-content";
+    let pBottomClass = "page-footer__bottom-p";
+    let socialClass = "page-footer__bottom-social";
+    let socialLinkClass = "page-footer__bottom-link";
+    let socialPicClass = "page-footer__bottom-img";
+
+    let expNavClass = "page-footer__expand-nav";
+    let checkboxNavClass = "page-footer__checkbox-nav";
+
+    let expAboutClass = "page-footer__expand-about";
+    let checkboxAboutClass = "page-footer__checkbox-about";
+
+    let expCustomClass = "page-footer__expand-custom";
+    let checkboxCustomClass = "page-footer__checkbox-custom";
+
+    let expSubClass = "page-footer__expand-sub";
+    let checkboxSubClass = "page-footer__checkbox-sub";
+
+
+div(class = footerClass)
+    div(class = contentClass)
+        div(class = logoClass)
+            img(class = imgClass alt = "Logo" src = "assets/img/logo.svg")
+            p(class = pClass)
+                            | Бронирование номеров в лучшем
+                            | отеле 2019 года по версии
+                            | ассоциации «Отельные взгляды»
+        div(class = navClass)
+            input(class = checkboxNavClass type = "checkbox" id = "checkbox-nav" hidden)
+            label(class = headerClass for = "checkbox-nav") Навигация
+            div(class = expNavClass)
+                a(class = linkClass href = "#") О нас
+                a(class = linkClass href = "#") Новости
+                a(class = linkClass href = "#") Служба поддержки
+                a(class = linkClass href = "#") Услуги
+        div(class = linksClass)
+            input(class = checkboxAboutClass type = "checkbox" id = "checkbox-about" hidden)
+            label(class = headerClass for = "checkbox-about") О нас
+            div(class = expAboutClass)
+                a(class = linkClass href = "#") О сервисе
+                a(class = linkClass href = "#") Наша команда
+                a(class = linkClass href = "#") Вакансии
+                a(class = linkClass href = "#") Инвесторы
+        div(class = linksClass)
+            input(class = checkboxCustomClass type = "checkbox" id = "checkbox-custom" hidden)
+            label(class = headerClass for = "checkbox-custom") Служба поддержки
+            div(class = expCustomClass)
+                a(class = linkClass href = "#") Соглашения
+                a(class = linkClass href = "#") Сообщества
+                a(class = linkClass href = "#") Связь с нами
+        div(class = linksClass)
+            input(class = checkboxSubClass type = "checkbox" id = "checkbox-sub" hidden)
+            label(class = headerClass for = "checkbox-sub") Подписка
+            div(class = expSubClass)
+                p(class = pClass)
+                                | Получайте специальные
+                                br
+                                | предложения и новости сервиса
+                - const subscribeData = { blockName: "page-footer", iputType: "email", inputPlaceholder: "Email", modInput: "subscribe-button input-box_width_footer" } 
+                +text-field(subscribeData)
+div(class = bottomClass)
+    div(class = bottomContentClass)
+        p(class = pBottomClass) Copyright © 2018 Toxin отель. Все права защищены.
+        div(class = socialClass)
+            a(class = socialLinkClass href = "#")
+                img(class = socialPicClass src = "assets/img/twitter.svg" alt = "Twitter")
+            a(class = socialLinkClass href = "#")
+                img(class = socialPicClass src = "assets/img/facebook.svg" alt = "Facebook")
+            a(class = socialLinkClass href = "#")
+                img(class = socialPicClass src = "assets/img/instagram.svg" alt = "Instagram")

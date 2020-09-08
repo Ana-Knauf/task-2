@@ -25,6 +25,7 @@
 @import "../common.blocks/book-form/book-form.scss";
 @import "../common.blocks/log-in/log-in.scss";
 @import "../common.blocks/room-card/room-card.scss";
+@import "../common.blocks/footer/footer.scss";
 
 
 * {
@@ -69,6 +70,10 @@ body {
 
 //- blocks.html
 
+.pseudo {
+	height: 70px;
+}
+
 .containerBlocks {
 	display: flex;
 }
@@ -76,4 +81,5 @@ body {
 .containerBlocks2 {
 	display: flex;
 	margin-top: 10px;
+	margin-bottom: 20px;
 }
