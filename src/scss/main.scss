@@ -1,3 +1,4 @@
+// Common elements
 @import "./includes/fonts.scss";
 @import "../scss/includes/colors";
 @import "../../src/common.elements/text-field/text-field.scss";
@@ -18,14 +19,17 @@
 @import "../common.elements/room-details/room-details.scss";
 @import "../common.elements/review-bar/review-bar.scss";
 
-// Blocks page
+// Common blocks
 @import "../common.blocks/header/header.scss";
+@import "../common.blocks/footer/footer.scss";
 @import "../common.blocks/hotel-search/hotel-search.scss";
 @import "../common.blocks/registration-form/registration-form.scss";
 @import "../common.blocks/book-form/book-form.scss";
 @import "../common.blocks/log-in/log-in.scss";
 @import "../common.blocks/room-card/room-card.scss";
-@import "../common.blocks/footer/footer.scss";
+
+// Pages
+@import "../pug/pages/index.scss"; // Landing page
 
 
 * {
@@ -38,7 +42,7 @@ body {
 	margin: 0;
 }
 
-//- index.html
+//- UI-kit.html
 
 .p-buttons {
 	font-size: 14px;

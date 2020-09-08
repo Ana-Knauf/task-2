@@ -1,121 +1,22 @@
-include ../../common.elements/text-field/text-field.pug
-include ../../common.elements/expandable-checkbox/expandable-checkbox.pug
-include ../../common.elements/checkbox-buttons/checkbox-buttons.pug
-include ../../common.elements/radio-buttons/radio-buttons.pug
-include ../../common.elements/bullet-list/bullet-list.pug
-include ../../common.elements/toggle/toggle.pug
-include ../../common.elements/dropdown-guests/dropdown-guests.pug
-include ../../common.elements/date-dropdown/date-dropdown.pug
-include ../../common.elements/rich-checkbox-buttons/rich-checkbox-buttons.pug
-include ../../common.elements/like-button/like-button.pug
-include ../../common.elements/rate-button/rate-button.pug
-include ../../common.elements/dropdown-rooms/dropdown-rooms.pug
-include ../../common.elements/range-slider/range-slider.pug
-include ../../common.elements/button/button.pug
-include ../../common.elements/room-details/room-details.pug
-include ../../common.elements/review-bar/review-bar.pug
 include ../../common.blocks/header/header.pug
-
-//- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
-//- с разными именами (или создавать для каждого отдельный блок)
+include ../../common.blocks/hotel-search/hotel-search.pug
 
 doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title UI kit
+        title Landing page
     body
-        a(href = "blocks.html") Blocks
-        .container
-            .container1
-                - const textFieldData = { blockName: "container1", title: "Text field", iputType: "email", inputPlaceholder: "This is pretty awesome" }
-                +text-field(textFieldData)
-
-                .expand
-                    - const expandCheckboxData = { blockName: "expand", title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
-                    +expand-checkbox(expandCheckboxData)
-
-                .dropdown
-                    - const dropdownGuestsData = { blockName: "dropdown", title: "Dropdown" }
-                    +dropdown-guests(dropdownGuestsData)
-
-                .date-dropdown
-                    - const dateDropdownData = { blockName: "date-dropdown", modSize: "input-box_width_md" }
-                    +date-dropdown(dateDropdownData)
-
-                    - const richCheckboxButtonsData = { blockName: "date-dropdown", title: "Rich checkbox buttons" }
-                    +rich-checkbox-buttons(richCheckboxButtonsData)
-
-                .rooms
-                    - const dropdownRoomsData = { blockName: "rooms", title: "Dropdown", modSize: "dropdown-rooms_width_md" }
-                    +dropdown-rooms(dropdownRoomsData)
-
-                    - const subscribeData = { blockName: "rooms", title: "Subscription text field", iputType: "email", inputPlaceholder: "Email", modInput: "subscribe-button input-box_width_md" } 
-                    +text-field(subscribeData)
-                    
-                    p(class = "p-buttons") Buttons
-                    .buttons
-                        - const buttonData = { blockName: "buttons", label: "Click me" }
-                        +button(buttonData)
-                        - const buttonData2 = { blockName: "buttons", label: "Click me", isDisabled: "true" }
-                        +button(buttonData2)
-                        - const buttonData3 = { blockName: "buttons", label: "Click me", modButton: "button-button_back_white" }
-                        +button(buttonData3)
-                        - const buttonData4 = { blockName: "buttons", label: "Click me", modButton: "button-button_back_white", isDisabled: "true" }
-                        +button(buttonData4)
-                        - const buttonData5 = { blockName: "buttons", label: "Click me", modButton: "button-button_frame_none" }
-                        +button(buttonData5)
-                        - const buttonData6 = { blockName: "buttons", label: "Click me", modButton: "button-button_frame_none", isDisabled: "true" }
-                        +button(buttonData6)
-
-                    - const buttonData7 = { blockName: "rooms", label: "Перейти к оплате", modButton: "button-button_size_lg" }
-                    +button(buttonData7)
-                        
-
-            .container2
-                - const radioButtonsData = { blockName: "container2", title: "Radio buttons" }
-                +radio-buttons(radioButtonsData)
-
-                .that-block
-                    - const bulletListData = { blockName: "that-block", title: "Bullet list", points: "Нельзя с питомцами Без вечеринок и мероприятий Время прибытия — после 13:00, br а выезд до 12:00" }
-                    +bullet-list(bulletListData)
-
-                    - const checkboxButtonsData = { blockName: "that-block", title: "Checkbox buttons", options: "Можно курить Можно с питомцами Можно пригласить гостей \n br (до 10 человек)" }
-                    +checkbox-buttons(checkboxButtonsData)
-
-                .this-block
-                    - const toggleData = { blockName: "this-block", title: "toggle", label: "Получать спецпредложения" }
-                    +toggle(toggleData)
-
-                    - const likeButtonData = { blockName: "this-block", title: "Like button" }
-                    +like-button(likeButtonData)
-
-                    - const rateButtonData = { blockName: "this-block", title: "Rate button" }
-                    +rate-button(rateButtonData)
-
-                    - const rangeSliderData = { blockName: "this-block", title: "Range slider" }
-                    +range-slider(rangeSliderData)
-
-                    p(class = "p-buttons") Pagination
-                    include ../../common.elements/pagination/pagination.pug
-
-                    - const roomDetailsData = { blockName: "this-block", label1: "Комфорт", label2: "Шумопоглощающие стены" }
-                    +room-details(roomDetailsData)
-
-                    - const roomDetailsData2 = { blockName: "this-block", label1: "Удобство", label2: "Окно в каждой из спален" }
-                    +room-details(roomDetailsData2)
-
-                    - const roomDetailsData3 = { blockName: "this-block", label1: "Уют", label2: "Номер оснащён камином" }
-                    +room-details(roomDetailsData3)
-
-                    
-
-                    
-
-
-            //- .container3
-            //-     include ../../common.elements/dropdown-guests/dropdown-guests.pug
-
-    - const reviewBarData = { blockName: "free", reviewer: "Мурад Сарафанов", date: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей." }
-    +review-bar(reviewBarData)
+        - const headerData = {  }
+        +header(headerData)
+        .landing-pseudo
+        .landing-wrapper
+            .landing-content
+                - const hotelSearchData = { blockName: "landing-content" }
+                +hotel-search(hotelSearchData)
+                p.landing-content__label
+                                        | Лучшие номера для вашей работы,
+                                        br
+                                        | отдыха и просто вдохновения
+        include ../../common.blocks/footer/footer.pug

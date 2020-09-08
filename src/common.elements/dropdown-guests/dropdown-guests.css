@@ -281,3 +281,9 @@
 .dropdown-guests-selection-position.iqdropdown-selection::after {
   margin-left: 154px;
 }
+
+@media screen and (max-width: 400px) {
+  .iqdropdown {
+    width: 280px;
+  }
+}

@@ -93,6 +93,12 @@ module.exports = {
           filename: "./blocks.html",
           minify: false
         }),
+        new HtmlWebpackPlugin({
+          hash: false,
+          template: `${PATHS.src}/pug/pages/UI-kit.pug`,
+          filename: "./UI-kit.html",
+          minify: false
+        }),
         new CopyWebpackPlugin({
           patterns: [
             { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },

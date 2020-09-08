@@ -283,3 +283,9 @@ color: rgba(31, 32, 65, 0.5);
 .buttons-block1 {
   margin: 20px 7px 13px;
 }
+
+@media screen and (max-width: 400px) {
+  .iqdropdown {
+    width: 280px;
+  }
+}

@@ -281,4 +281,9 @@
     }
 }
 
+@media screen and (max-width: 359px) {
+    .page-header__navigation {
+        padding: 5px 10px 10px 0;
+    }
+}
 

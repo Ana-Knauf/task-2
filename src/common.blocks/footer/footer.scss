@@ -49,15 +49,16 @@
 
 .page-footer__navigation {
     margin-top: 1px;
+    margin-left: -6px;
 }
 
 .page-footer__links {
     margin-top: 1px;
-    margin-left: 10px;
+    margin-left: 9px;
 }
 
-.page-footer__links > .page-footer__description {
-    margin-top: 18px;
+.page-footer__links .page-footer__description {
+    margin-top: 17px;
     margin-bottom: 22px;
 }
 
@@ -102,6 +103,9 @@
     .page-footer__content-block {
         justify-content: space-around;
         gap: 20px;
+    }
+    .page-footer__content-block {
+        padding-bottom: 50px;
     }
 }
 

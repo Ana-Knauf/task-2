@@ -82,3 +82,9 @@
     width: 87px;
     height: 34px;
 }
+
+@media screen and (max-width: 400px) {
+    .button-button {
+      width: 280px;
+    }
+  }

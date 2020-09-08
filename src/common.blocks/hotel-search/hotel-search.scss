@@ -6,6 +6,7 @@
     max-width: 380px;
     max-height: 374px;
     padding: 40px 30px 30px;
+    background-color: white;
 }
 
 .hotel-search-title {
@@ -15,6 +16,13 @@
     line-height: 30px;
     color: $darkShade100;
     margin: 0;
+}
+
+@media screen and (max-width: 400px) {
+    .hotel-search {
+        max-width: 320px;
+        padding: 20px 20px 20px;
+    }
 }
 
 // modifiers

@@ -59,6 +59,12 @@
     margin-bottom: 10px;
 }
 
+@media screen and (max-width: 400px) {
+    .text-field-input-box {
+        width: 280px;
+    }
+}
+
 // модификаторы
 
 [class*="input-box_width_lg"] {
