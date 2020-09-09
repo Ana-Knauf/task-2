@@ -1,6 +1,6 @@
 mixin button(buttonData)
     -
-        let { blockName, title, label, isDisabled, modButton } = buttonData
+        let { blockName, title, label, isDisabled, modButton, link } = buttonData
 
         let pClass = `button-title ${ (blockName) ? blockName + '__button-title' : '' }`;
         let btnClass = `button-button ${ (blockName) ? blockName + '__button-button' : '' }`;
@@ -10,12 +10,14 @@ mixin button(buttonData)
             btnClass += " " + blockName + `__${modifButton.join(` ${blockName}__`)}`;
         }
 
+        let clickLink = "window.location.href='" + link + "'";
+
     if (title)
         p(class = pClass)= title
     if (isDisabled === "true")
-        button(class = btnClass disabled)= label
+        button(class = btnClass onclick = clickLink disabled)= label
     else
-        button(class = btnClass)= label
+        button(class = btnClass onclick = clickLink)= label
 
 //- модификаторы
 //- button-button_back_white

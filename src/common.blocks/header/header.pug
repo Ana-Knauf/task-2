@@ -30,7 +30,8 @@ mixin header(headerData)
 
     div(class = headerClass)
         div(class = contentClass)
-            img(class = logoClass alt = "Logo" src = "assets/img/logo.svg")
+            a(class = mainLinkClass href="index.html")
+                img(class = logoClass alt = "Logo" src = "assets/img/logo.svg")
             input(type = "checkbox" class = expCheckboxClass id = "header-expand" hidden)
             label(for = "header-expand" class = expLabelClass)
             div(class = navClass)
@@ -39,9 +40,9 @@ mixin header(headerData)
                     input(class = checkbox1Class type = "checkbox" id = "header-services" hidden) 
                     label(class = label1Class for = "header-services") Услуги
                     div(class = expand1Class)
-                        a(class = expLinkClass href = "#") Отели
+                        a(class = expLinkClass href = "#") Номера
                         br
-                        a(class = expLinkClass href = "#") Отели
+                        a(class = expLinkClass href = "#") Ресторан
                 a(class = linkClass href = "#") Вакансии
                 a(class = linkClass href = "#") Новости
                 div(class = agreementsClass)
@@ -56,7 +57,7 @@ mixin header(headerData)
                     a(class = userClass href = "#")= user
                 else
                     div(class = btnsClass)
-                        - const button1Data = { blockName: "page-header", label: "Войти", modButton: "button-button_back_white header-button_position button-button_size_sm" }
+                        - const button1Data = { blockName: "page-header", label: "Войти", modButton: "button-button_back_white header-button_position button-button_size_sm", link: "login-page.html" }
                         +button(button1Data)
-                        - const button2Data = { blockName: "page-header", label: "Зарегистрироваться", modButton: "button-button_size_lg header-button_position button-button_no_arrow" }
+                        - const button2Data = { blockName: "page-header", label: "Зарегистрироваться", modButton: "button-button_size_lg header-button_position button-button_no_arrow", link: "register-page.html" }
                         +button(button2Data)

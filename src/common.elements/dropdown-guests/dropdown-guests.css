@@ -286,4 +286,7 @@
   .iqdropdown {
     width: 280px;
   }
+  .iqdropdown .iqdropdown-selection::after {
+    margin-left: 168px;
+  }
 }

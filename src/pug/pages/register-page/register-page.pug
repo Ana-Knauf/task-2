@@ -1,0 +1,18 @@
+include ../../../common.blocks/header/header.pug
+include ../../../common.blocks/registration-form/registration-form.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Регистрация
+    body
+        - const headerData = {  }
+        +header(headerData)
+        .register-pseudo
+        .register-wrapper
+            .register-content
+                - const registrationFormData = { blockName: "register-content" }
+                +registration-form(registrationFormData)
+    include ../../../common.blocks/footer/footer.pug

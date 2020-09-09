@@ -1,0 +1,47 @@
+.login-pseudo {
+    height: 70px;
+}
+
+.login-wrapper {
+    background: url("../../../img/register-background.png") 50%/cover no-repeat;
+    height: 684px;
+    width: 100%;
+}
+
+.login-content {
+    position: relative;
+    max-width: 1160px;
+    margin: 0 auto;
+    height: 684px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-content__log-in {
+    position: absolute;
+    top: 161px;
+    margin-left: 9px;
+}
+
+
+@media screen and (max-width: 957px) {
+    .login-pseudo {
+        height: 100px;
+    }
+}
+
+@media screen and (max-height: 812px) {
+    .login-wrapper,
+    .login-content {
+        height: 600px;
+    }
+    .login-content__log-in {
+        top: 80px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .login-pseudo {
+        height: 0;
+    }
+}

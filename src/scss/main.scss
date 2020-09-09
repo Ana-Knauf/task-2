@@ -29,7 +29,9 @@
 @import "../common.blocks/room-card/room-card.scss";
 
 // Pages
-@import "../pug/pages/index.scss"; // Landing page
+@import "../pug/pages/index/index.scss"; // Landing page
+@import "../pug/pages/register-page/register-page.scss"; // Registration page
+@import "../pug/pages/login-page/login-page.scss"; // Log in page
 
 
 * {

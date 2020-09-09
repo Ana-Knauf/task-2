@@ -4,7 +4,6 @@
 
 .review-bar-div1 {
     display: flex;
-    margin-top: 10px;
 }
 
 .review-bar-div2 {
@@ -16,6 +15,12 @@
 .review-bar-review {
     width: 654px;
 }
+
+// @media screen and (max-width: 400px) {
+//     .review-bar-review {
+//         width: 280px;
+//     }
+// }
 
 .review-bar-img {
     background-image: url("../../img/image.png");

@@ -15,13 +15,13 @@ html(lang="en")
         - const headerData = {  }
         +header(headerData)
         .pseudo
-        a(href = "index.html") UI kit
+        a(href = "UI-kit.html") UI kit
         .containerBlocks
             br
             - const hotelSearchData = { blockName: "containerBlocks" }
             +hotel-search(hotelSearchData)
-            //- - const registrationFormData = {}
-            //- +registration-form(registrationFormData)
+            - const registrationFormData = {}
+            +registration-form(registrationFormData)
             
         .containerBlocks2
             - const logInData = {}

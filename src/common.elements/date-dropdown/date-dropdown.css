@@ -659,17 +659,20 @@
     border: none;
   }
 
+.date-dropdown-block {
+  position: relative;
+}
+
 .input-box-expand-mark {
-  content: "";
   display: inline-block;
   width: 6px;
   height: 6px;
   border-right: 2px solid rgba(31, 32, 65, 0.5);
   border-bottom: 2px solid rgba(31, 32, 65, 0.5);
-  top: 50%;
-  left: 40%;
+  top: 36px;
+  right: 16px;
   transform: translate(0, 0) rotate(45deg);
-  margin-left: -26px;
+  position: absolute;
 }
 
 .date-dropdown-title {

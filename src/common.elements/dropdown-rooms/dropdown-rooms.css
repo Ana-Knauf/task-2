@@ -288,4 +288,7 @@ color: rgba(31, 32, 65, 0.5);
   .iqdropdown {
     width: 280px;
   }
+  .iqdropdown .iqdropdown-selection::after {
+    margin-left: 168px;
+  }
 }

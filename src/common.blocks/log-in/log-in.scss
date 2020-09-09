@@ -31,6 +31,13 @@
     margin-top: 28px;
 }
 
+@media screen and (max-width: 400px) {
+    .log-in {
+        max-width: 320px;
+        padding: 20px 20px 20px;
+    }
+}
+
 [class*="log-in-input_position"] {
     margin-top: 20px;
 }

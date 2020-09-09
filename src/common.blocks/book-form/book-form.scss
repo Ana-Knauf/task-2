@@ -100,6 +100,7 @@
     height: 20px;
     background-image: url("../../img/icon-info.svg");
     background-size: contain;
+    background-repeat: no-repeat;
     margin-top: 14px;
 
     &:first-child {
@@ -139,6 +140,13 @@
     border-bottom: 1px dashed $darkShade25;
     top: 5px;
     margin-bottom: 5px;
+}
+
+@media screen and (max-width: 400px) {
+    .booking {
+        max-width: 320px;
+        padding: 20px 20px 20px;
+    }
 }
 
 

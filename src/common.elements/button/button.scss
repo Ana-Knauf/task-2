@@ -27,6 +27,7 @@
         position: absolute;
         background-image: url("../../img/arrow_forward_white.svg");
         background-size: contain;
+        background-repeat: no-repeat;
         width: 19px;
         height: 19px;
         right: 12px;
@@ -84,7 +85,13 @@
 }
 
 @media screen and (max-width: 400px) {
-    .button-button {
+    [class*="button-button_size_lg"] {
       width: 280px;
+    }
+    [class*="button-button_no_arrow"] {
+        width: 196px;
+    }
+    .page-header__button-button_size_sm {
+        width: 196px;
     }
   }

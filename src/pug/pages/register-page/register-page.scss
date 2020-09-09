@@ -1,0 +1,37 @@
+.register-pseudo {
+    height: 70px;
+}
+
+.register-wrapper {
+    background: url("../../../img/register-background.png") 50%/cover no-repeat;
+    height: 684px;
+    width: 100%;
+}
+
+.register-content {
+    position: relative;
+    max-width: 1160px;
+    margin: 0 auto;
+    height: 684px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-content__registration {
+    position: absolute;
+    top: 17px;
+    margin-left: 9px;
+}
+
+
+@media screen and (max-width: 957px) {
+    .register-pseudo {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .register-pseudo {
+        height: 0;
+    }
+}

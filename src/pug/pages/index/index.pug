@@ -1,0 +1,22 @@
+include ../../../common.blocks/header/header.pug
+include ../../../common.blocks/hotel-search/hotel-search.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+        title Отель Toxin
+    body
+        - const headerData = {  }
+        +header(headerData)
+        .landing-pseudo
+        .landing-wrapper
+            .landing-content
+                - const hotelSearchData = { blockName: "landing-content" }
+                +hotel-search(hotelSearchData)
+                p.landing-content__label
+                                        | Лучшие номера для вашей работы,
+                                        br
+                                        | отдыха и просто вдохновения
+        include ../../../common.blocks/footer/footer.pug

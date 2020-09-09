@@ -12,6 +12,7 @@
         position: absolute;
         background-image: url('../../img/favorite_border.svg');
         background-size: contain;
+        background-repeat: no-repeat;
         width: 10px;
         height: 8px;
         top: 5px;
@@ -35,6 +36,7 @@
 .like-button-checkbox:checked + .like-button-label::before {
     background-image: url('../../img/favorite.svg');
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .like-button-checkbox:checked + .like-button-label::after {

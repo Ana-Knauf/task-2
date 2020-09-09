@@ -83,8 +83,20 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
           hash: false,
-          template: `${PATHS.src}/pug/pages/index.pug`,
+          template: `${PATHS.src}/pug/pages/index/index.pug`,
           filename: "./index.html",
+          minify: false
+        }),
+        new HtmlWebpackPlugin({
+          hash: false,
+          template: `${PATHS.src}/pug/pages/register-page/register-page.pug`,
+          filename: "./register-page.html",
+          minify: false
+        }),
+        new HtmlWebpackPlugin({
+          hash: false,
+          template: `${PATHS.src}/pug/pages/login-page/login-page.pug`,
+          filename: "./login-page.html",
           minify: false
         }),
         new HtmlWebpackPlugin({

@@ -149,6 +149,7 @@
     display: none;
     background-image: url("../../img/burger.jpg");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 20px;
     height: 20px;
     margin-right: 20px;
@@ -170,8 +171,12 @@
     color: $darkShade50;
 }
 
+.page-header__buttons-block {
+    margin-left: 5px;
+}
+
 [class*="header-button_position"] {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 
@@ -228,7 +233,7 @@
     .page-header__navigation {
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 55px;
         right: 0px;
         background: white;
         padding: 20px 30px 30px 10px;
@@ -237,6 +242,8 @@
         visibility: hidden;
         z-index: 1;
         margin-right: 0;
+        border: 1px solid $darkShade10;
+        box-sizing: border-box;
     }
     .page-header__expand-checkbox:checked ~ .page-header__navigation {
         visibility: visible;
@@ -286,4 +293,3 @@
         padding: 5px 10px 10px 0;
     }
 }
-
