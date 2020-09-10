@@ -689,3 +689,7 @@
     width: 280px;
   }
 }
+
+[class*="input-box_width_md"] ~ .datepicker {
+ width: 266px;
+}

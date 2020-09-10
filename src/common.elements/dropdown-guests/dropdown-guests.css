@@ -234,7 +234,7 @@
   top: 50%;
   left: 40%;
   transform: translate(0, -25%) rotate(45deg);
-  margin-left: 208px;
+  margin-left: 200px;
   display: inline-block;
 }
 
@@ -279,7 +279,7 @@
 }
 
 .dropdown-guests-selection-position.iqdropdown-selection::after {
-  margin-left: 154px;
+  margin-left: 148px;
 }
 
 @media screen and (max-width: 400px) {
@@ -287,6 +287,6 @@
     width: 280px;
   }
   .iqdropdown .iqdropdown-selection::after {
-    margin-left: 168px;
+    margin-left: 160px;
   }
 }

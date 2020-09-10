@@ -5,9 +5,9 @@
     border-radius: 4px;
     width: 270px;
     height: 257px;
-    margin-left: 10px;
     position: relative;
     background-color: white;
+    margin-right: 10px;
 }
 
 .room-card-img {
@@ -17,6 +17,7 @@
     border-top-right-radius: 4px;
     margin-left: -1px;
     margin-top: -1px;
+    cursor: pointer;
 }
 
 .room-card-back-button {

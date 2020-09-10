@@ -19,6 +19,7 @@ mixin room-card(roomCardData)
         let reviewsClass = `room-card-reviews-span ${ (blockName) ? blockName + '__room-card-reviews-span' : '' }`;
         let lineClass = `room-card-line ${ (blockName) ? blockName + '__room-card-line' : '' }`;
         let imgClass = `room-card-img ${ (blockName) ? blockName + '__room-card-img' : '' }`;
+        let roomPageClass = `room-card-page-link ${ (blockName) ? blockName + '__room-card-page-link' : '' }`;
 
         let imgBackClass = `room-card-back-img ${ (blockName) ? blockName + '__room-card-back-img' : '' }`;
         let imgForthClass = `room-card-forth-img ${ (blockName) ? blockName + '__room-card-forth-img' : '' }`;
@@ -45,7 +46,8 @@ mixin room-card(roomCardData)
         let radioName = blockName + "swipe-buttons";
 
     div(class = divClass)
-        img(class = imgClass src = imgPath alt = "Фотография номера")
+        a(class = roomPageClass href="book-page.html")
+            img(class = imgClass src = imgPath alt = "Фотография номера")
         div(class = imgBackClass)
         button(class = btnBackClass)
         div(class = imgForthClass)

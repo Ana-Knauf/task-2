@@ -101,6 +101,18 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
           hash: false,
+          template: `${PATHS.src}/pug/pages/search-page/search-page.pug`,
+          filename: "./search-page.html",
+          minify: false
+        }),
+        new HtmlWebpackPlugin({
+          hash: false,
+          template: `${PATHS.src}/pug/pages/book-page/book-page.pug`,
+          filename: "./book-page.html",
+          minify: false
+        }),
+        new HtmlWebpackPlugin({
+          hash: false,
           template: `${PATHS.src}/pug/pages/blocks.pug`,
           filename: "./blocks.html",
           minify: false

@@ -234,7 +234,7 @@
   top: 50%;
   left: 40%;
   transform: translate(0, -25%) rotate(45deg);
-  margin-left: 208px;
+  margin-left: 200px;
   display: inline-block;
 }
 
@@ -255,8 +255,18 @@
   width: 266px;
 }
 
+.dropdown-guests_width_md {
+  width: 266px;
+}
+
+
+
 .dropdown-rooms-selection-position.iqdropdown-selection::after {
-  margin-left: 154px;
+  margin-left: 148px;
+}
+
+.dropdown-guests-selection-position.iqdropdown-selection::after {
+  margin-left: 148px;
 }
 
 .btn-apply1 {
@@ -289,6 +299,18 @@ color: rgba(31, 32, 65, 0.5);
     width: 280px;
   }
   .iqdropdown .iqdropdown-selection::after {
-    margin-left: 168px;
+    margin-left: 160px;
+  }
+  .iqdropdown.dropdown-rooms_width_md {
+    width: 266px;
+  }
+  .iqdropdown.dropdown-rooms_width_md .iqdropdown-selection::after {
+    margin-left: 148px;
+  }
+  .iqdropdown.dropdown-guests_width_md {
+    width: 266px;
+  }
+  .iqdropdown.dropdown-guests_width_md .iqdropdown-selection::after {
+    margin-left: 148px;
   }
 }

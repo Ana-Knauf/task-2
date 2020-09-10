@@ -19,6 +19,9 @@ include ../../common.blocks/header/header.pug
 //- необходимо, чтобы компоненты, содержащие элементы radio/checkbox всегда находились в блоках
 //- с разными именами (или создавать для каждого отдельный блок)
 
+//- для dropdown rooms и guests устанавливать мод размера, только если это md или sm
+//- lg идет по умолчанию, его не надо указывать
+
 doctype html
 html(lang="en")
     head
@@ -37,7 +40,7 @@ html(lang="en")
                     +expand-checkbox(expandCheckboxData)
 
                 .dropdown
-                    - const dropdownGuestsData = { blockName: "dropdown", title: "Dropdown" }
+                    - const dropdownGuestsData = { blockName: "dropdown" }
                     +dropdown-guests(dropdownGuestsData)
 
                 .date-dropdown
@@ -48,7 +51,7 @@ html(lang="en")
                     +rich-checkbox-buttons(richCheckboxButtonsData)
 
                 .rooms
-                    - const dropdownRoomsData = { blockName: "rooms", title: "Dropdown", modSize: "dropdown-rooms_width_md" }
+                    - const dropdownRoomsData = { blockName: "rooms", modSize: "dropdown-rooms_width_md" }
                     +dropdown-rooms(dropdownRoomsData)
 
                     - const subscribeData = { blockName: "rooms", title: "Subscription text field", iputType: "email", inputPlaceholder: "Email", modInput: "subscribe-button input-box_width_md" } 
@@ -94,7 +97,7 @@ html(lang="en")
                     - const rateButtonData = { blockName: "this-block", title: "Rate button" }
                     +rate-button(rateButtonData)
 
-                    - const rangeSliderData = { blockName: "this-block", title: "Range slider" }
+                    - const rangeSliderData = { blockName: "this-block" }
                     +range-slider(rangeSliderData)
 
                     p(class = "p-buttons") Pagination

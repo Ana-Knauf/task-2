@@ -1,0 +1,36 @@
+.search-pseudo {
+    height: 70px;
+}
+
+.search-wrapper {
+    border-bottom: 1px solid $darkShade25;
+}
+
+.search-content {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-content__overnight-label {
+    font-family: Montserrat;
+    font-size: 12px;
+    line-height: 14px;
+    color: $darkShade50;
+}
+
+.search-content__results-title {
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: $darkShade100;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.search-align {
+    display: flex;
+    margin-bottom: 10px;
+}

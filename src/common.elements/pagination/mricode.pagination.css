@@ -6,9 +6,11 @@ ul {
 }
 
 .m-pagination {
-    margin: 10px 0;
     height: 38px;
     margin-top: 41px;
+    margin: 0 auto;
+    width: 290px;
+    margin-bottom: 10px;
 }
 
 .m-pagination-page,

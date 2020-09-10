@@ -1,0 +1,85 @@
+include ../../../common.blocks/header/header.pug
+include ../../../common.blocks/room-card/room-card.pug
+include ../../../common.elements/date-dropdown/date-dropdown.pug
+include ../../../common.elements/dropdown-guests/dropdown-guests.pug
+include ../../../common.elements/range-slider/range-slider.pug
+include ../../../common.elements/checkbox-buttons/checkbox-buttons.pug
+include ../../../common.elements/rich-checkbox-buttons/rich-checkbox-buttons.pug
+include ../../../common.elements/dropdown-rooms/dropdown-rooms.pug
+include ../../../common.elements/expandable-checkbox/expandable-checkbox.pug
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Поиск
+    body
+        - const headerData = {  }
+        +header(headerData)
+        .search-pseudo
+        .search-wrapper
+            .search-content
+                .search-filter
+                    - const dateDropdownData = { blockName: "search-content", modSize: "input-box_width_md" }
+                    +date-dropdown(dateDropdownData)
+                    - const dropdownGuestsData = { blockName: "search-content", modSize: "dropdown-guests_width_md" }
+                    +dropdown-guests(dropdownGuestsData)
+                    - const rangeSliderData = { blockName: "search-content" }
+                    +range-slider(rangeSliderData)
+                    p(class = "search-content__overnight-label") Стоимость за сутки пребывания в номере
+                    .search-content__conditions
+                        - const checkboxButtonsData = { blockName: "search-content__conditions", title: "Условия", options: "Можно курить Можно с питомцами Можно пригласить гостей" }
+                        +checkbox-buttons(checkboxButtonsData)
+                    .search-content__accessibility
+                        - const richCheckboxButtonsData = { blockName: "search-content__accessibility", title: "Доступность" }
+                        +rich-checkbox-buttons(richCheckboxButtonsData)
+                    - const dropdownRoomsData = { blockName: "search-content", modSize: "dropdown-rooms_width_md" }
+                    +dropdown-rooms(dropdownRoomsData)
+                    .search-content__appliances
+                        - const expandCheckboxData = { blockName: "search-content__appliances", title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
+                        +expand-checkbox(expandCheckboxData)
+                .search-results
+                    p(class = "search-content__results-title") Номера, которые мы для вас подобрали
+                    .search-align
+                        .search-content__room888
+                            - const roomCardData888 = { blockName: "search-content__room888", room: "888", lux: true, price: "9990", reviews: "145", img: "room888.png"}
+                            +room-card(roomCardData888)
+                        .search-content__room840
+                            - const roomCardData840 = { blockName: "search-content__room840", room: "840", price: "9900", reviews: "65", img: "room840.png"}
+                            +room-card(roomCardData840)
+                        .search-content__room980
+                            - const roomCardData980 = { blockName: "search-content__room980", lux: true, room: "980", price: "8500", reviews: "35", img: "room980.png"}
+                            +room-card(roomCardData980)
+                    .search-align
+                        .search-content__room856
+                            - const roomCardData856 = { blockName: "search-content__room856", room: "856", price: "7300", reviews: "19", img: "room856.png"}
+                            +room-card(roomCardData856)
+                        .search-content__room740
+                            - const roomCardData740 = { blockName: "search-content__room740", room: "740", price: "6000", reviews: "44", img: "room740.png"}
+                            +room-card(roomCardData740)
+                        .search-content__room982
+                            - const roomCardData982 = { blockName: "search-content__room982", room: "982", price: "5800", reviews: "56", img: "room982.png"}
+                            +room-card(roomCardData982)
+                    .search-align
+                        .search-content__room678
+                            - const roomCardData678 = { blockName: "search-content__room678", room: "678", price: "5500", reviews: "45", img: "room678.png"}
+                            +room-card(roomCardData678)
+                        .search-content__room450
+                            - const roomCardData450 = { blockName: "search-content__room450", room: "450", price: "5300", reviews: "39", img: "room450.png"}
+                            +room-card(roomCardData450)
+                        .search-content__room350
+                            - const roomCardData350 = { blockName: "search-content__room350", room: "350", price: "5000", reviews: "77", img: "room350.png"}
+                            +room-card(roomCardData350)
+                    .search-align
+                        .search-content__room666
+                            - const roomCardData666 = { blockName: "search-content__room666", room: "666", price: "5000", reviews: "25", img: "room666.png"}
+                            +room-card(roomCardData666)
+                        .search-content__room444
+                            - const roomCardData444 = { blockName: "search-content__room444", room: "444", price: "5000", reviews: "15", img: "room444.png"}
+                            +room-card(roomCardData444)
+                        .search-content__room352
+                            - const roomCardData352 = { blockName: "search-content__room352", room: "352", price: "5000", reviews: "55", img: "room352.png"}
+                            +room-card(roomCardData352)
+                    include ../../../common.elements/pagination/pagination.pug
+        include ../../../common.blocks/footer/footer.pug
