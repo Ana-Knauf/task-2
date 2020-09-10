@@ -8,11 +8,11 @@
     position: relative;
     background-color: white;
     margin-right: 12px;
+    margin-bottom: 20px;
 }
 
 .room-card-img {
     width: 270px;
-    height: 151px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     margin-left: -1px;
@@ -173,6 +173,20 @@
     font-size: 14px;
     line-height: 18px;
     color: $darkShade50;
+}
+
+@media screen and (max-width: 1260px) {
+    .room-card {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .room-card {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
 }
 
 

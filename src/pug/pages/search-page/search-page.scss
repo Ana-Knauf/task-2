@@ -35,10 +35,19 @@
     margin-right: 60px;
 }
 
+.search-results {
+    margin-right: -12px;
+}
+
 .search-align {
     display: flex;
     margin-bottom: 20px;
     flex-wrap: wrap;
+}
+
+.search-content__label-filter {
+    display: none;
+
 }
 
 [class*="search-content-dropdown-guests_position"] {
@@ -69,22 +78,109 @@
     margin-top: 26px;
 }
 
-.search-results {
-    margin-right: -12px;
+@media screen and (max-width: 1260px) {
+    .search-filter {
+        margin-left: 20px;
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 1128px) {
+    .search-filter {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1098px) {
+    .search-filter {
+        display: none;
+        margin: 0;
+    }
+    .search-content {
+        position: relative;
+    }
+    .search-content__checkbox-filter:checked ~ .search-filter {
+        display: block;
+        position: absolute;
+        top: 20px;
+        z-index: 1;
+        background-color: white;
+        padding: 10px 20px 20px 20px;
+        border: 1px solid $darkShade25;
+        border-radius: 4px;
+    }
+    .search-content__label-filter {
+        display: inline;
+        position: absolute;
+        // left: 135px;
+        // top: -2px;
+        left: 20px;
+        top: -5px;
+        font-family: Montserrat;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $darkShade75;
+        cursor: pointer;
+    }
+    .search-results {
+        margin: 0 auto;
+        max-width: 825px;
+        border-top: 1px solid rgba(31, 32, 65, 0.25);
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 957px) {
     .search-pseudo {
         height: 100px;
     }
+    .search-content__label-filter {
+        // left: 135px;
+    }
 }
 
-@media screen and (max-height: 812px) {
-    
+@media screen and (max-width: 824px) {
+    .search-results {
+        max-width: 550px;
+    }
 }
 
 @media screen and (max-width: 650px) {
     .search-pseudo {
         height: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .search-content {
+        display: flex;
+        justify-content: center;
+    }
+    .search-content__label-filter {
+        // left: 115px;
+    }
+    .search-align .room-card {
+        width: 320px;
+        height: 285px;
+    }
+    .search-align .room-card-img {
+        width: 320px;
+    }
+    .search-align .room-card-forth-img,
+    .search-align .room-card-back-img {
+        display: none;
+    }
+    .search-align .room-card-back-button,
+    .search-align .room-card-forth-button {
+        top: 84px;
+    }
+    .search-align .room-card-swipe-block {
+        top: 155px;
+    }
+    .search-results {
+        max-width: 320px;
     }
 }

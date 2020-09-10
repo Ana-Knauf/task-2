@@ -91,7 +91,6 @@ sup {
 .range {
   background: #fff;
   white-space: nowrap;
-  width: 150px;
   z-index: 10;
   position: relative;
   color: rgba(31, 32, 65, 0.5);
@@ -119,20 +118,6 @@ sup {
   color: rgba(31, 32, 65, 0.5);
 }
 
-.range-alert {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background: #fff;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  color: #0E0E0E;
-  line-height: 15px;
-  transition: right 0.2s;
-}
 .range-alert.active {
   right: -15px;
 }

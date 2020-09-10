@@ -20,6 +20,8 @@ html(lang="en")
         .search-pseudo
         .search-wrapper
             .search-content
+                input(class = "search-content__checkbox-filter" type = "checkbox" id = "checkbox-filter" hidden)
+                label(class = "search-content__label-filter" for = "checkbox-filter") Раскрыть фильтр
                 .search-filter
                     - const dateDropdownData = { blockName: "search-content", modSize: "input-box_width_md" }
                     +date-dropdown(dateDropdownData)
@@ -52,10 +54,6 @@ html(lang="en")
                             - const roomCardData980 = { blockName: "search-content__room980", lux: true, room: "980", price: "8500", reviews: "35", img: "room980.png"}
                             +room-card(roomCardData980)
                         .search-content__room856
-                            - const roomCardData8561 = { blockName: "search-content__room856", room: "856", price: "7300", reviews: "19", img: "room856.png"}
-                            +room-card(roomCardData8561)
-                    .search-align
-                        .search-content__room856
                             - const roomCardData856 = { blockName: "search-content__room856", room: "856", price: "7300", reviews: "19", img: "room856.png"}
                             +room-card(roomCardData856)
                         .search-content__room740
@@ -64,7 +62,6 @@ html(lang="en")
                         .search-content__room982
                             - const roomCardData982 = { blockName: "search-content__room982", room: "982", price: "5800", reviews: "56", img: "room982.png"}
                             +room-card(roomCardData982)
-                    .search-align
                         .search-content__room678
                             - const roomCardData678 = { blockName: "search-content__room678", room: "678", price: "5500", reviews: "45", img: "room678.png"}
                             +room-card(roomCardData678)
@@ -74,7 +71,6 @@ html(lang="en")
                         .search-content__room350
                             - const roomCardData350 = { blockName: "search-content__room350", room: "350", price: "5000", reviews: "77", img: "room350.png"}
                             +room-card(roomCardData350)
-                    .search-align
                         .search-content__room666
                             - const roomCardData666 = { blockName: "search-content__room666", room: "666", price: "5000", reviews: "25", img: "room666.png"}
                             +room-card(roomCardData666)
