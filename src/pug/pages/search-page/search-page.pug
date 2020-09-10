@@ -23,9 +23,9 @@ html(lang="en")
                 .search-filter
                     - const dateDropdownData = { blockName: "search-content", modSize: "input-box_width_md" }
                     +date-dropdown(dateDropdownData)
-                    - const dropdownGuestsData = { blockName: "search-content", modSize: "dropdown-guests_width_md" }
+                    - const dropdownGuestsData = { blockName: "search-content", modSize: "dropdown-guests_width_md", modBlock: "search-content-dropdown-guests_position" }
                     +dropdown-guests(dropdownGuestsData)
-                    - const rangeSliderData = { blockName: "search-content" }
+                    - const rangeSliderData = { blockName: "search-content", modBlock: "search-content-range-slider_position" }
                     +range-slider(rangeSliderData)
                     p(class = "search-content__overnight-label") Стоимость за сутки пребывания в номере
                     .search-content__conditions
@@ -34,7 +34,7 @@ html(lang="en")
                     .search-content__accessibility
                         - const richCheckboxButtonsData = { blockName: "search-content__accessibility", title: "Доступность" }
                         +rich-checkbox-buttons(richCheckboxButtonsData)
-                    - const dropdownRoomsData = { blockName: "search-content", modSize: "dropdown-rooms_width_md" }
+                    - const dropdownRoomsData = { blockName: "search-content", modSize: "dropdown-rooms_width_md", modBlock: "search-content-dropdown-rooms_position" }
                     +dropdown-rooms(dropdownRoomsData)
                     .search-content__appliances
                         - const expandCheckboxData = { blockName: "search-content__appliances", title: "Дополнительные удобства", options: "Завтрак Письменный стол Стул для кормления Кроватка Телевизор Шампунь" }
@@ -51,6 +51,9 @@ html(lang="en")
                         .search-content__room980
                             - const roomCardData980 = { blockName: "search-content__room980", lux: true, room: "980", price: "8500", reviews: "35", img: "room980.png"}
                             +room-card(roomCardData980)
+                        .search-content__room856
+                            - const roomCardData8561 = { blockName: "search-content__room856", room: "856", price: "7300", reviews: "19", img: "room856.png"}
+                            +room-card(roomCardData8561)
                     .search-align
                         .search-content__room856
                             - const roomCardData856 = { blockName: "search-content__room856", room: "856", price: "7300", reviews: "19", img: "room856.png"}
