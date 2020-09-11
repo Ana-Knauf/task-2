@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск</title>
+  <link href="assets/css/app.css" rel="stylesheet"></head>
+  <body>
+    <div class="page-header">
+      <div class="page-header__content-block"><a href="index.html"><img class="page-header__logo" alt="Logo" src="assets/img/logo.svg"></a>
+        <input class="page-header__expand-checkbox" type="checkbox" id="header-expand" hidden>
+        <label class="page-header__expand-label" for="header-expand"></label>
+        <div class="page-header__navigation"><a class="page-header__link-about" href="#">О нас</a>
+          <div class="page-header__services-block">
+            <input class="page-header__services-checkbox" type="checkbox" id="header-services" hidden>
+            <label class="page-header__services-label" for="header-services">Услуги</label>
+            <div class="page-header__expand-serives"><a class="page-header__expand_link" href="#">Номера</a><br><a class="page-header__expand_link" href="#">Ресторан</a></div>
+          </div><a class="page-header__link" href="#">Вакансии</a><a class="page-header__link" href="#">Новости</a>
+          <div class="page-header__agreements-block">
+            <input class="page-header__agreements-checkbox" type="checkbox" id="header-agreements" hidden>
+            <label class="page-header__agreements-label" for="header-agreements">Соглашения</label>
+            <div class="page-header__expand-agreements"><a class="page-header__expand_link" href="#">Соглашение</a><br><a class="page-header__expand_link" href="#">Соглашение</a></div>
+          </div>
+          <div class="page-header__buttons-block">
+            <button class="button-button page-header__button-button page-header__button-button_back_white page-header__header-button_position page-header__button-button_size_sm" onclick="window.location.href='login-page.html'">Войти</button>
+            <button class="button-button page-header__button-button page-header__button-button_size_lg page-header__header-button_position page-header__button-button_no_arrow" onclick="window.location.href='register-page.html'">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-pseudo"></div>
+    <div class="search-wrapper">
+      <div class="search-content">
+        <input class="search-content__checkbox-filter" type="checkbox" id="checkbox-filter" hidden>
+        <label class="search-content__label-filter" for="checkbox-filter">Раскрыть фильтр</label>
+        <div class="search-filter">
+          <div class="date-dropdown-block search-content__date-dropdown-block">
+            <p class="date-dropdown-title">Даты пребывания в отеле</p>
+            <input class="datepicker-here text-field-input-box search-content__text-field-input-box input-box_width_md" type="text" data-range="true" data-multiple-dates-separator=" - " data-language="en" placeholder="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ" readonly><span class="input-box-expand-mark"></span>
+          </div>
+          <div class="dropdown-guests-block search-content__dropdown-guests-block search-content__search-content-dropdown-guests_position">
+            <p class="title-dropdown-guests">Гости</p>
+            <div class="iqdropdown search-content__dropdown-guests dropdown-guests_width_md">
+              <p class="iqdropdown-selection dropdown-guests-selection-position"></p>
+              <div class="iqdropdown-menu">
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Взрослые</p>
+                  </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Дети</p>
+                  </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Младенцы</p>
+                  </div>
+                </div>
+                <div class="buttons-block">
+                  <button class="btn-clear">Очистить</button>
+                  <button class="btn-apply">Применить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="range-slider-block search-content__range-slider-block search-content__search-content-range-slider_position">
+            <p class="range-slider-title search-content__range-slider-title">Диапазон цены</p>
+            <div class="wrapper range-slider-wrapper search-content__range-slider-wrapper">
+              <div class="container">
+                <div class="slider-wrapper">
+                  <div id="slider-range"></div>
+                  <div class="range-wrapper">
+                    <div class="range"></div>
+                    <div class="range-alert"></div>
+                    <div class="gear-wrapper">
+                      <div class="gear-large gear-one">
+                        <div class="gear-tooth"></div>
+                        <div class="gear-tooth"></div>
+                        <div class="gear-tooth"></div>
+                        <div class="gear-tooth"></div>
+                      </div>
+                      <div class="gear-large gear-two">
+                        <div class="gear-tooth"></div>
+                        <div class="gear-tooth"></div>
+                        <div class="gear-tooth"></div>
+                        <div class="gear-tooth"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="search-content__overnight-label">Стоимость за сутки пребывания в номере</p>
+          <div class="search-content__conditions">
+            <div class="checkbox-buttons search-content__conditions__checkbox-buttons">
+              <p class="checkbox-buttons-title search-content__conditions__checkbox-buttons-title">Условия</p>
+              <div class="checkbox-buttons-align-block search-content__conditions__checkbox-buttons-align-block">
+                <input class="checkbox-buttons-checkbox search-content__conditions__checkbox-buttons-checkbox" type="checkbox" id="search-content__conditions-option1" hidden>
+                <label class="checkbox-buttons-checkmark search-content__conditions__checkbox-buttons-checkmark" for="search-content__conditions-option1"></label>
+                <label class="checkbox-buttons-label search-content__conditions__checkbox-buttons-label" for="search-content__conditions-option1">Можно курить </label>
+              </div>
+              <div class="checkbox-buttons-align-block search-content__conditions__checkbox-buttons-align-block">
+                <input class="checkbox-buttons-checkbox search-content__conditions__checkbox-buttons-checkbox" type="checkbox" id="search-content__conditions-option2" hidden>
+                <label class="checkbox-buttons-checkmark search-content__conditions__checkbox-buttons-checkmark" for="search-content__conditions-option2"></label>
+                <label class="checkbox-buttons-label search-content__conditions__checkbox-buttons-label" for="search-content__conditions-option2">Можно с питомцами </label>
+              </div>
+              <div class="checkbox-buttons-align-block search-content__conditions__checkbox-buttons-align-block">
+                <input class="checkbox-buttons-checkbox search-content__conditions__checkbox-buttons-checkbox" type="checkbox" id="search-content__conditions-option3" hidden>
+                <label class="checkbox-buttons-checkmark search-content__conditions__checkbox-buttons-checkmark" for="search-content__conditions-option3"></label>
+                <label class="checkbox-buttons-label search-content__conditions__checkbox-buttons-label" for="search-content__conditions-option3">Можно пригласить гостей</label>
+              </div>
+            </div>
+          </div>
+          <div class="search-content__accessibility">
+            <div class="rich-checkbox-buttons search-content__accessibility__rich-checkbox-buttons">
+              <p class="rich-checkbox-buttons-title search-content__accessibility__rich-checkbox-buttons-title">Доступность</p>
+              <div class="rich-checkbox-buttons-align-block search-content__accessibility__rich-checkbox-buttons-title">
+                <input class="rich-checkbox-buttons-checkbox search-content__accessibility__rich-checkbox-buttons-checkbox" type="checkbox" id="search-content__accessibility-option1" hidden>
+                <label class="rich-checkbox-buttons-checkmark search-content__accessibility__rich-checkbox-buttons-checkmark" for="search-content__accessibility-option1"></label>
+                <label class="rich-checkbox-buttons-label search-content__accessibility__rich-checkbox-buttons-label" for="search-content__accessibility-option1">Широкий коридор</label>
+              </div>
+              <div class="rich-checkbox-buttons-detail-div search-content__accessibility__rich-checkbox-buttons-detail-div">
+                <label class="rich-checkbox-buttons-detail search-content__accessibility__rich-checkbox-buttons-detail" for="search-content__accessibility-option1">Ширина коридоров в номере<br>не менее 91 см.</label>
+              </div>
+              <div class="rich-checkbox-buttons-align-block search-content__accessibility__rich-checkbox-buttons-title">
+                <input class="rich-checkbox-buttons-checkbox search-content__accessibility__rich-checkbox-buttons-checkbox" type="checkbox" id="search-content__accessibility-option2" hidden>
+                <label class="rich-checkbox-buttons-checkmark search-content__accessibility__rich-checkbox-buttons-checkmark" for="search-content__accessibility-option2"></label>
+                <label class="rich-checkbox-buttons-label search-content__accessibility__rich-checkbox-buttons-label" for="search-content__accessibility-option2">Помощник для инвалидов</label>
+              </div>
+              <div class="rich-checkbox-buttons-detail-div search-content__accessibility__rich-checkbox-buttons-detail-div">
+                <label class="rich-checkbox-buttons-detail search-content__accessibility__rich-checkbox-buttons-detail" for="search-content__accessibility-option2">На 1 этаже вас встретит специалист<br>и проводит до номера.</label>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-rooms-block search-content__dropdown-rooms-block search-content__search-content-dropdown-rooms_position">
+            <p class="title-dropdown-rooms">Удобства номера</p>
+            <div class="iqdropdown search-content__dropdown-rooms dropdown-rooms_width_md">
+              <p class="iqdropdown-selection dropdown-rooms-selection-position"></p>
+              <div class="iqdropdown-menu">
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Спальни</p>
+                  </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Кровати</p>
+                  </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Ванные комнаты</p>
+                  </div>
+                </div>
+                <div class="buttons-block1">
+                  <button class="btn-clear1">Очистить</button>
+                  <button class="btn-apply1">Применить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-content__appliances">
+            <div class="expand-checkbox search-content__appliances__expand-checkbox">
+              <input class="expand-checkbox-hid-checkbox search-content__appliances__expand-checkbox-hid-checkbox" type="checkbox" id="search-content__appliances-exp-checkbox-btn" hidden>
+              <label class="expand-checkbox-title search-content__appliances__expand-checkbox-title" for="search-content__appliances-exp-checkbox-btn">Дополнительные удобства</label>
+              <div class="expand-checkbox-expblock search-content__appliances__expand-checkbox-expblock">
+                <div class="expand-checkbox-align-block search-content__appliances__expand-checkbox-align-block">
+                  <input class="expand-checkbox-checkbox search-content__appliances__expand-checkbox-checkbox" type="checkbox" id="search-content__appliances-appliance1" hidden>
+                  <label class="expand-checkbox-checkmark search-content__appliances__expand-checkbox-checkmark" for="search-content__appliances-appliance1"></label>
+                  <label class="expand-checkbox-label search-content__appliances__expand-checkbox-label" for="search-content__appliances-appliance1">Завтрак </label>
+                </div>
+                <div class="expand-checkbox-align-block search-content__appliances__expand-checkbox-align-block">
+                  <input class="expand-checkbox-checkbox search-content__appliances__expand-checkbox-checkbox" type="checkbox" id="search-content__appliances-appliance2" hidden>
+                  <label class="expand-checkbox-checkmark search-content__appliances__expand-checkbox-checkmark" for="search-content__appliances-appliance2"></label>
+                  <label class="expand-checkbox-label search-content__appliances__expand-checkbox-label" for="search-content__appliances-appliance2">Письменный стол </label>
+                </div>
+                <div class="expand-checkbox-align-block search-content__appliances__expand-checkbox-align-block">
+                  <input class="expand-checkbox-checkbox search-content__appliances__expand-checkbox-checkbox" type="checkbox" id="search-content__appliances-appliance3" hidden>
+                  <label class="expand-checkbox-checkmark search-content__appliances__expand-checkbox-checkmark" for="search-content__appliances-appliance3"></label>
+                  <label class="expand-checkbox-label search-content__appliances__expand-checkbox-label" for="search-content__appliances-appliance3">Стул для кормления </label>
+                </div>
+                <div class="expand-checkbox-align-block search-content__appliances__expand-checkbox-align-block">
+                  <input class="expand-checkbox-checkbox search-content__appliances__expand-checkbox-checkbox" type="checkbox" id="search-content__appliances-appliance4" hidden>
+                  <label class="expand-checkbox-checkmark search-content__appliances__expand-checkbox-checkmark" for="search-content__appliances-appliance4"></label>
+                  <label class="expand-checkbox-label search-content__appliances__expand-checkbox-label" for="search-content__appliances-appliance4">Кроватка </label>
+                </div>
+                <div class="expand-checkbox-align-block search-content__appliances__expand-checkbox-align-block">
+                  <input class="expand-checkbox-checkbox search-content__appliances__expand-checkbox-checkbox" type="checkbox" id="search-content__appliances-appliance5" hidden>
+                  <label class="expand-checkbox-checkmark search-content__appliances__expand-checkbox-checkmark" for="search-content__appliances-appliance5"></label>
+                  <label class="expand-checkbox-label search-content__appliances__expand-checkbox-label" for="search-content__appliances-appliance5">Телевизор </label>
+                </div>
+                <div class="expand-checkbox-align-block search-content__appliances__expand-checkbox-align-block">
+                  <input class="expand-checkbox-checkbox search-content__appliances__expand-checkbox-checkbox" type="checkbox" id="search-content__appliances-appliance6" hidden>
+                  <label class="expand-checkbox-checkmark search-content__appliances__expand-checkbox-checkmark" for="search-content__appliances-appliance6"></label>
+                  <label class="expand-checkbox-label search-content__appliances__expand-checkbox-label" for="search-content__appliances-appliance6">Шампунь</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-results">
+          <p class="search-content__results-title">Номера, которые мы для вас подобрали</p>
+          <div class="search-align">
+            <div class="search-content__room888">
+              <div class="room-card search-content__room888__room-card"><a class="room-card-page-link search-content__room888__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room888__room-card-img" src="assets/img/room888.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room888__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room888__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room888__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room888__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room888__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room888__room-card-swipe-radio" type="radio" id="search-content__room888swipe1" name="search-content__room888swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room888__room-card-swipe-checkmark" for="search-content__room888swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room888__room-card-swipe-radio" type="radio" id="search-content__room888swipe2" name="search-content__room888swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room888__room-card-swipe-checkmark" for="search-content__room888swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room888__room-card-swipe-radio" type="radio" id="search-content__room888swipe3" name="search-content__room888swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room888__room-card-swipe-checkmark" for="search-content__room888swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room888__room-card-swipe-radio" type="radio" id="search-content__room888swipe4" name="search-content__room888swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room888__room-card-swipe-checkmark" for="search-content__room888swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room888__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room888__room-card-align-block">
+                    <div class="room-card-room-block search-content__room888__room-card-room-block"><span class="room-card-num-span search-content__room888__room-card-num-span">№</span><span class="room-card-room-span search-content__room888__room-card-room-span"> 888 </span><span class="room-card-lux-span search-content__room888__room-card-lux-span">люкс</span>
+                    </div>
+                    <div class="room-card-price-block search-content__room888__room-card-price-block"><span class="room-card-price-span search-content__room888__room-card-price-span">9 990₽ </span><span class="room-card-daily-span search-content__room888__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room888__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room888__room-card-align-block">
+                    <div class="rate-button-div search-content__room888__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room888__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room888__room-card__rate-button-radio" type="radio" id="search-content__room888__room-card-button5" name="search-content__room888__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room888__room-card__rate-button-label" for="search-content__room888__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room888__room-card__rate-button-radio" type="radio" id="search-content__room888__room-card-button4" name="search-content__room888__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room888__room-card__rate-button-label" for="search-content__room888__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room888__room-card__rate-button-radio" type="radio" id="search-content__room888__room-card-button3" name="search-content__room888__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room888__room-card__rate-button-label" for="search-content__room888__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room888__room-card__rate-button-radio" type="radio" id="search-content__room888__room-card-button2" name="search-content__room888__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room888__room-card__rate-button-label" for="search-content__room888__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room888__room-card__rate-button-radio" type="radio" id="search-content__room888__room-card-button1" name="search-content__room888__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room888__room-card__rate-button-label" for="search-content__room888__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room888__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room888__room-card-n-reviews-span">145 </span><span class="room-card-reviews-span search-content__room888__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room840">
+              <div class="room-card search-content__room840__room-card"><a class="room-card-page-link search-content__room840__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room840__room-card-img" src="assets/img/room840.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room840__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room840__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room840__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room840__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room840__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room840__room-card-swipe-radio" type="radio" id="search-content__room840swipe1" name="search-content__room840swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room840__room-card-swipe-checkmark" for="search-content__room840swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room840__room-card-swipe-radio" type="radio" id="search-content__room840swipe2" name="search-content__room840swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room840__room-card-swipe-checkmark" for="search-content__room840swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room840__room-card-swipe-radio" type="radio" id="search-content__room840swipe3" name="search-content__room840swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room840__room-card-swipe-checkmark" for="search-content__room840swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room840__room-card-swipe-radio" type="radio" id="search-content__room840swipe4" name="search-content__room840swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room840__room-card-swipe-checkmark" for="search-content__room840swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room840__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room840__room-card-align-block">
+                    <div class="room-card-room-block search-content__room840__room-card-room-block"><span class="room-card-num-span search-content__room840__room-card-num-span">№</span><span class="room-card-room-span search-content__room840__room-card-room-span"> 840 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room840__room-card-price-block"><span class="room-card-price-span search-content__room840__room-card-price-span">9 900₽ </span><span class="room-card-daily-span search-content__room840__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room840__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room840__room-card-align-block">
+                    <div class="rate-button-div search-content__room840__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room840__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room840__room-card__rate-button-radio" type="radio" id="search-content__room840__room-card-button5" name="search-content__room840__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room840__room-card__rate-button-label" for="search-content__room840__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room840__room-card__rate-button-radio" type="radio" id="search-content__room840__room-card-button4" name="search-content__room840__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room840__room-card__rate-button-label" for="search-content__room840__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room840__room-card__rate-button-radio" type="radio" id="search-content__room840__room-card-button3" name="search-content__room840__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room840__room-card__rate-button-label" for="search-content__room840__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room840__room-card__rate-button-radio" type="radio" id="search-content__room840__room-card-button2" name="search-content__room840__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room840__room-card__rate-button-label" for="search-content__room840__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room840__room-card__rate-button-radio" type="radio" id="search-content__room840__room-card-button1" name="search-content__room840__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room840__room-card__rate-button-label" for="search-content__room840__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room840__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room840__room-card-n-reviews-span">65 </span><span class="room-card-reviews-span search-content__room840__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room980">
+              <div class="room-card search-content__room980__room-card"><a class="room-card-page-link search-content__room980__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room980__room-card-img" src="assets/img/room980.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room980__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room980__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room980__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room980__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room980__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room980__room-card-swipe-radio" type="radio" id="search-content__room980swipe1" name="search-content__room980swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room980__room-card-swipe-checkmark" for="search-content__room980swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room980__room-card-swipe-radio" type="radio" id="search-content__room980swipe2" name="search-content__room980swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room980__room-card-swipe-checkmark" for="search-content__room980swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room980__room-card-swipe-radio" type="radio" id="search-content__room980swipe3" name="search-content__room980swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room980__room-card-swipe-checkmark" for="search-content__room980swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room980__room-card-swipe-radio" type="radio" id="search-content__room980swipe4" name="search-content__room980swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room980__room-card-swipe-checkmark" for="search-content__room980swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room980__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room980__room-card-align-block">
+                    <div class="room-card-room-block search-content__room980__room-card-room-block"><span class="room-card-num-span search-content__room980__room-card-num-span">№</span><span class="room-card-room-span search-content__room980__room-card-room-span"> 980 </span><span class="room-card-lux-span search-content__room980__room-card-lux-span">люкс</span>
+                    </div>
+                    <div class="room-card-price-block search-content__room980__room-card-price-block"><span class="room-card-price-span search-content__room980__room-card-price-span">8 500₽ </span><span class="room-card-daily-span search-content__room980__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room980__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room980__room-card-align-block">
+                    <div class="rate-button-div search-content__room980__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room980__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room980__room-card__rate-button-radio" type="radio" id="search-content__room980__room-card-button5" name="search-content__room980__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room980__room-card__rate-button-label" for="search-content__room980__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room980__room-card__rate-button-radio" type="radio" id="search-content__room980__room-card-button4" name="search-content__room980__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room980__room-card__rate-button-label" for="search-content__room980__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room980__room-card__rate-button-radio" type="radio" id="search-content__room980__room-card-button3" name="search-content__room980__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room980__room-card__rate-button-label" for="search-content__room980__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room980__room-card__rate-button-radio" type="radio" id="search-content__room980__room-card-button2" name="search-content__room980__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room980__room-card__rate-button-label" for="search-content__room980__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room980__room-card__rate-button-radio" type="radio" id="search-content__room980__room-card-button1" name="search-content__room980__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room980__room-card__rate-button-label" for="search-content__room980__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room980__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room980__room-card-n-reviews-span">35 </span><span class="room-card-reviews-span search-content__room980__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room856">
+              <div class="room-card search-content__room856__room-card"><a class="room-card-page-link search-content__room856__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room856__room-card-img" src="assets/img/room856.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room856__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room856__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room856__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room856__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room856__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room856__room-card-swipe-radio" type="radio" id="search-content__room856swipe1" name="search-content__room856swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room856__room-card-swipe-checkmark" for="search-content__room856swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room856__room-card-swipe-radio" type="radio" id="search-content__room856swipe2" name="search-content__room856swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room856__room-card-swipe-checkmark" for="search-content__room856swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room856__room-card-swipe-radio" type="radio" id="search-content__room856swipe3" name="search-content__room856swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room856__room-card-swipe-checkmark" for="search-content__room856swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room856__room-card-swipe-radio" type="radio" id="search-content__room856swipe4" name="search-content__room856swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room856__room-card-swipe-checkmark" for="search-content__room856swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room856__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room856__room-card-align-block">
+                    <div class="room-card-room-block search-content__room856__room-card-room-block"><span class="room-card-num-span search-content__room856__room-card-num-span">№</span><span class="room-card-room-span search-content__room856__room-card-room-span"> 856 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room856__room-card-price-block"><span class="room-card-price-span search-content__room856__room-card-price-span">7 300₽ </span><span class="room-card-daily-span search-content__room856__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room856__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room856__room-card-align-block">
+                    <div class="rate-button-div search-content__room856__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room856__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room856__room-card__rate-button-radio" type="radio" id="search-content__room856__room-card-button5" name="search-content__room856__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room856__room-card__rate-button-label" for="search-content__room856__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room856__room-card__rate-button-radio" type="radio" id="search-content__room856__room-card-button4" name="search-content__room856__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room856__room-card__rate-button-label" for="search-content__room856__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room856__room-card__rate-button-radio" type="radio" id="search-content__room856__room-card-button3" name="search-content__room856__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room856__room-card__rate-button-label" for="search-content__room856__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room856__room-card__rate-button-radio" type="radio" id="search-content__room856__room-card-button2" name="search-content__room856__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room856__room-card__rate-button-label" for="search-content__room856__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room856__room-card__rate-button-radio" type="radio" id="search-content__room856__room-card-button1" name="search-content__room856__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room856__room-card__rate-button-label" for="search-content__room856__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room856__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room856__room-card-n-reviews-span">19 </span><span class="room-card-reviews-span search-content__room856__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room740">
+              <div class="room-card search-content__room740__room-card"><a class="room-card-page-link search-content__room740__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room740__room-card-img" src="assets/img/room740.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room740__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room740__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room740__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room740__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room740__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room740__room-card-swipe-radio" type="radio" id="search-content__room740swipe1" name="search-content__room740swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room740__room-card-swipe-checkmark" for="search-content__room740swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room740__room-card-swipe-radio" type="radio" id="search-content__room740swipe2" name="search-content__room740swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room740__room-card-swipe-checkmark" for="search-content__room740swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room740__room-card-swipe-radio" type="radio" id="search-content__room740swipe3" name="search-content__room740swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room740__room-card-swipe-checkmark" for="search-content__room740swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room740__room-card-swipe-radio" type="radio" id="search-content__room740swipe4" name="search-content__room740swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room740__room-card-swipe-checkmark" for="search-content__room740swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room740__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room740__room-card-align-block">
+                    <div class="room-card-room-block search-content__room740__room-card-room-block"><span class="room-card-num-span search-content__room740__room-card-num-span">№</span><span class="room-card-room-span search-content__room740__room-card-room-span"> 740 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room740__room-card-price-block"><span class="room-card-price-span search-content__room740__room-card-price-span">6 000₽ </span><span class="room-card-daily-span search-content__room740__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room740__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room740__room-card-align-block">
+                    <div class="rate-button-div search-content__room740__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room740__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room740__room-card__rate-button-radio" type="radio" id="search-content__room740__room-card-button5" name="search-content__room740__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room740__room-card__rate-button-label" for="search-content__room740__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room740__room-card__rate-button-radio" type="radio" id="search-content__room740__room-card-button4" name="search-content__room740__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room740__room-card__rate-button-label" for="search-content__room740__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room740__room-card__rate-button-radio" type="radio" id="search-content__room740__room-card-button3" name="search-content__room740__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room740__room-card__rate-button-label" for="search-content__room740__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room740__room-card__rate-button-radio" type="radio" id="search-content__room740__room-card-button2" name="search-content__room740__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room740__room-card__rate-button-label" for="search-content__room740__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room740__room-card__rate-button-radio" type="radio" id="search-content__room740__room-card-button1" name="search-content__room740__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room740__room-card__rate-button-label" for="search-content__room740__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room740__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room740__room-card-n-reviews-span">44 </span><span class="room-card-reviews-span search-content__room740__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room982">
+              <div class="room-card search-content__room982__room-card"><a class="room-card-page-link search-content__room982__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room982__room-card-img" src="assets/img/room982.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room982__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room982__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room982__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room982__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room982__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room982__room-card-swipe-radio" type="radio" id="search-content__room982swipe1" name="search-content__room982swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room982__room-card-swipe-checkmark" for="search-content__room982swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room982__room-card-swipe-radio" type="radio" id="search-content__room982swipe2" name="search-content__room982swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room982__room-card-swipe-checkmark" for="search-content__room982swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room982__room-card-swipe-radio" type="radio" id="search-content__room982swipe3" name="search-content__room982swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room982__room-card-swipe-checkmark" for="search-content__room982swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room982__room-card-swipe-radio" type="radio" id="search-content__room982swipe4" name="search-content__room982swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room982__room-card-swipe-checkmark" for="search-content__room982swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room982__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room982__room-card-align-block">
+                    <div class="room-card-room-block search-content__room982__room-card-room-block"><span class="room-card-num-span search-content__room982__room-card-num-span">№</span><span class="room-card-room-span search-content__room982__room-card-room-span"> 982 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room982__room-card-price-block"><span class="room-card-price-span search-content__room982__room-card-price-span">5 800₽ </span><span class="room-card-daily-span search-content__room982__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room982__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room982__room-card-align-block">
+                    <div class="rate-button-div search-content__room982__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room982__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room982__room-card__rate-button-radio" type="radio" id="search-content__room982__room-card-button5" name="search-content__room982__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room982__room-card__rate-button-label" for="search-content__room982__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room982__room-card__rate-button-radio" type="radio" id="search-content__room982__room-card-button4" name="search-content__room982__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room982__room-card__rate-button-label" for="search-content__room982__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room982__room-card__rate-button-radio" type="radio" id="search-content__room982__room-card-button3" name="search-content__room982__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room982__room-card__rate-button-label" for="search-content__room982__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room982__room-card__rate-button-radio" type="radio" id="search-content__room982__room-card-button2" name="search-content__room982__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room982__room-card__rate-button-label" for="search-content__room982__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room982__room-card__rate-button-radio" type="radio" id="search-content__room982__room-card-button1" name="search-content__room982__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room982__room-card__rate-button-label" for="search-content__room982__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room982__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room982__room-card-n-reviews-span">56 </span><span class="room-card-reviews-span search-content__room982__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room678">
+              <div class="room-card search-content__room678__room-card"><a class="room-card-page-link search-content__room678__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room678__room-card-img" src="assets/img/room678.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room678__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room678__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room678__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room678__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room678__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room678__room-card-swipe-radio" type="radio" id="search-content__room678swipe1" name="search-content__room678swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room678__room-card-swipe-checkmark" for="search-content__room678swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room678__room-card-swipe-radio" type="radio" id="search-content__room678swipe2" name="search-content__room678swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room678__room-card-swipe-checkmark" for="search-content__room678swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room678__room-card-swipe-radio" type="radio" id="search-content__room678swipe3" name="search-content__room678swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room678__room-card-swipe-checkmark" for="search-content__room678swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room678__room-card-swipe-radio" type="radio" id="search-content__room678swipe4" name="search-content__room678swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room678__room-card-swipe-checkmark" for="search-content__room678swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room678__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room678__room-card-align-block">
+                    <div class="room-card-room-block search-content__room678__room-card-room-block"><span class="room-card-num-span search-content__room678__room-card-num-span">№</span><span class="room-card-room-span search-content__room678__room-card-room-span"> 678 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room678__room-card-price-block"><span class="room-card-price-span search-content__room678__room-card-price-span">5 500₽ </span><span class="room-card-daily-span search-content__room678__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room678__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room678__room-card-align-block">
+                    <div class="rate-button-div search-content__room678__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room678__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room678__room-card__rate-button-radio" type="radio" id="search-content__room678__room-card-button5" name="search-content__room678__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room678__room-card__rate-button-label" for="search-content__room678__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room678__room-card__rate-button-radio" type="radio" id="search-content__room678__room-card-button4" name="search-content__room678__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room678__room-card__rate-button-label" for="search-content__room678__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room678__room-card__rate-button-radio" type="radio" id="search-content__room678__room-card-button3" name="search-content__room678__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room678__room-card__rate-button-label" for="search-content__room678__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room678__room-card__rate-button-radio" type="radio" id="search-content__room678__room-card-button2" name="search-content__room678__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room678__room-card__rate-button-label" for="search-content__room678__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room678__room-card__rate-button-radio" type="radio" id="search-content__room678__room-card-button1" name="search-content__room678__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room678__room-card__rate-button-label" for="search-content__room678__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room678__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room678__room-card-n-reviews-span">45 </span><span class="room-card-reviews-span search-content__room678__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room450">
+              <div class="room-card search-content__room450__room-card"><a class="room-card-page-link search-content__room450__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room450__room-card-img" src="assets/img/room450.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room450__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room450__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room450__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room450__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room450__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room450__room-card-swipe-radio" type="radio" id="search-content__room450swipe1" name="search-content__room450swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room450__room-card-swipe-checkmark" for="search-content__room450swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room450__room-card-swipe-radio" type="radio" id="search-content__room450swipe2" name="search-content__room450swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room450__room-card-swipe-checkmark" for="search-content__room450swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room450__room-card-swipe-radio" type="radio" id="search-content__room450swipe3" name="search-content__room450swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room450__room-card-swipe-checkmark" for="search-content__room450swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room450__room-card-swipe-radio" type="radio" id="search-content__room450swipe4" name="search-content__room450swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room450__room-card-swipe-checkmark" for="search-content__room450swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room450__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room450__room-card-align-block">
+                    <div class="room-card-room-block search-content__room450__room-card-room-block"><span class="room-card-num-span search-content__room450__room-card-num-span">№</span><span class="room-card-room-span search-content__room450__room-card-room-span"> 450 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room450__room-card-price-block"><span class="room-card-price-span search-content__room450__room-card-price-span">5 300₽ </span><span class="room-card-daily-span search-content__room450__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room450__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room450__room-card-align-block">
+                    <div class="rate-button-div search-content__room450__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room450__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room450__room-card__rate-button-radio" type="radio" id="search-content__room450__room-card-button5" name="search-content__room450__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room450__room-card__rate-button-label" for="search-content__room450__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room450__room-card__rate-button-radio" type="radio" id="search-content__room450__room-card-button4" name="search-content__room450__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room450__room-card__rate-button-label" for="search-content__room450__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room450__room-card__rate-button-radio" type="radio" id="search-content__room450__room-card-button3" name="search-content__room450__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room450__room-card__rate-button-label" for="search-content__room450__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room450__room-card__rate-button-radio" type="radio" id="search-content__room450__room-card-button2" name="search-content__room450__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room450__room-card__rate-button-label" for="search-content__room450__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room450__room-card__rate-button-radio" type="radio" id="search-content__room450__room-card-button1" name="search-content__room450__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room450__room-card__rate-button-label" for="search-content__room450__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room450__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room450__room-card-n-reviews-span">39 </span><span class="room-card-reviews-span search-content__room450__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room350">
+              <div class="room-card search-content__room350__room-card"><a class="room-card-page-link search-content__room350__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room350__room-card-img" src="assets/img/room350.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room350__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room350__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room350__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room350__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room350__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room350__room-card-swipe-radio" type="radio" id="search-content__room350swipe1" name="search-content__room350swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room350__room-card-swipe-checkmark" for="search-content__room350swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room350__room-card-swipe-radio" type="radio" id="search-content__room350swipe2" name="search-content__room350swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room350__room-card-swipe-checkmark" for="search-content__room350swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room350__room-card-swipe-radio" type="radio" id="search-content__room350swipe3" name="search-content__room350swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room350__room-card-swipe-checkmark" for="search-content__room350swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room350__room-card-swipe-radio" type="radio" id="search-content__room350swipe4" name="search-content__room350swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room350__room-card-swipe-checkmark" for="search-content__room350swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room350__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room350__room-card-align-block">
+                    <div class="room-card-room-block search-content__room350__room-card-room-block"><span class="room-card-num-span search-content__room350__room-card-num-span">№</span><span class="room-card-room-span search-content__room350__room-card-room-span"> 350 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room350__room-card-price-block"><span class="room-card-price-span search-content__room350__room-card-price-span">5 000₽ </span><span class="room-card-daily-span search-content__room350__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room350__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room350__room-card-align-block">
+                    <div class="rate-button-div search-content__room350__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room350__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room350__room-card__rate-button-radio" type="radio" id="search-content__room350__room-card-button5" name="search-content__room350__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room350__room-card__rate-button-label" for="search-content__room350__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room350__room-card__rate-button-radio" type="radio" id="search-content__room350__room-card-button4" name="search-content__room350__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room350__room-card__rate-button-label" for="search-content__room350__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room350__room-card__rate-button-radio" type="radio" id="search-content__room350__room-card-button3" name="search-content__room350__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room350__room-card__rate-button-label" for="search-content__room350__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room350__room-card__rate-button-radio" type="radio" id="search-content__room350__room-card-button2" name="search-content__room350__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room350__room-card__rate-button-label" for="search-content__room350__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room350__room-card__rate-button-radio" type="radio" id="search-content__room350__room-card-button1" name="search-content__room350__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room350__room-card__rate-button-label" for="search-content__room350__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room350__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room350__room-card-n-reviews-span">77 </span><span class="room-card-reviews-span search-content__room350__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room666">
+              <div class="room-card search-content__room666__room-card"><a class="room-card-page-link search-content__room666__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room666__room-card-img" src="assets/img/room666.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room666__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room666__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room666__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room666__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room666__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room666__room-card-swipe-radio" type="radio" id="search-content__room666swipe1" name="search-content__room666swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room666__room-card-swipe-checkmark" for="search-content__room666swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room666__room-card-swipe-radio" type="radio" id="search-content__room666swipe2" name="search-content__room666swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room666__room-card-swipe-checkmark" for="search-content__room666swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room666__room-card-swipe-radio" type="radio" id="search-content__room666swipe3" name="search-content__room666swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room666__room-card-swipe-checkmark" for="search-content__room666swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room666__room-card-swipe-radio" type="radio" id="search-content__room666swipe4" name="search-content__room666swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room666__room-card-swipe-checkmark" for="search-content__room666swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room666__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room666__room-card-align-block">
+                    <div class="room-card-room-block search-content__room666__room-card-room-block"><span class="room-card-num-span search-content__room666__room-card-num-span">№</span><span class="room-card-room-span search-content__room666__room-card-room-span"> 666 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room666__room-card-price-block"><span class="room-card-price-span search-content__room666__room-card-price-span">5 000₽ </span><span class="room-card-daily-span search-content__room666__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room666__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room666__room-card-align-block">
+                    <div class="rate-button-div search-content__room666__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room666__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room666__room-card__rate-button-radio" type="radio" id="search-content__room666__room-card-button5" name="search-content__room666__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room666__room-card__rate-button-label" for="search-content__room666__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room666__room-card__rate-button-radio" type="radio" id="search-content__room666__room-card-button4" name="search-content__room666__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room666__room-card__rate-button-label" for="search-content__room666__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room666__room-card__rate-button-radio" type="radio" id="search-content__room666__room-card-button3" name="search-content__room666__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room666__room-card__rate-button-label" for="search-content__room666__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room666__room-card__rate-button-radio" type="radio" id="search-content__room666__room-card-button2" name="search-content__room666__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room666__room-card__rate-button-label" for="search-content__room666__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room666__room-card__rate-button-radio" type="radio" id="search-content__room666__room-card-button1" name="search-content__room666__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room666__room-card__rate-button-label" for="search-content__room666__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room666__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room666__room-card-n-reviews-span">25 </span><span class="room-card-reviews-span search-content__room666__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room444">
+              <div class="room-card search-content__room444__room-card"><a class="room-card-page-link search-content__room444__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room444__room-card-img" src="assets/img/room444.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room444__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room444__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room444__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room444__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room444__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room444__room-card-swipe-radio" type="radio" id="search-content__room444swipe1" name="search-content__room444swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room444__room-card-swipe-checkmark" for="search-content__room444swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room444__room-card-swipe-radio" type="radio" id="search-content__room444swipe2" name="search-content__room444swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room444__room-card-swipe-checkmark" for="search-content__room444swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room444__room-card-swipe-radio" type="radio" id="search-content__room444swipe3" name="search-content__room444swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room444__room-card-swipe-checkmark" for="search-content__room444swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room444__room-card-swipe-radio" type="radio" id="search-content__room444swipe4" name="search-content__room444swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room444__room-card-swipe-checkmark" for="search-content__room444swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room444__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room444__room-card-align-block">
+                    <div class="room-card-room-block search-content__room444__room-card-room-block"><span class="room-card-num-span search-content__room444__room-card-num-span">№</span><span class="room-card-room-span search-content__room444__room-card-room-span"> 444 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room444__room-card-price-block"><span class="room-card-price-span search-content__room444__room-card-price-span">5 000₽ </span><span class="room-card-daily-span search-content__room444__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room444__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room444__room-card-align-block">
+                    <div class="rate-button-div search-content__room444__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room444__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room444__room-card__rate-button-radio" type="radio" id="search-content__room444__room-card-button5" name="search-content__room444__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room444__room-card__rate-button-label" for="search-content__room444__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room444__room-card__rate-button-radio" type="radio" id="search-content__room444__room-card-button4" name="search-content__room444__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room444__room-card__rate-button-label" for="search-content__room444__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room444__room-card__rate-button-radio" type="radio" id="search-content__room444__room-card-button3" name="search-content__room444__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room444__room-card__rate-button-label" for="search-content__room444__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room444__room-card__rate-button-radio" type="radio" id="search-content__room444__room-card-button2" name="search-content__room444__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room444__room-card__rate-button-label" for="search-content__room444__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room444__room-card__rate-button-radio" type="radio" id="search-content__room444__room-card-button1" name="search-content__room444__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room444__room-card__rate-button-label" for="search-content__room444__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room444__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room444__room-card-n-reviews-span">15 </span><span class="room-card-reviews-span search-content__room444__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-content__room352">
+              <div class="room-card search-content__room352__room-card"><a class="room-card-page-link search-content__room352__room-card-page-link" href="book-page.html"><img class="room-card-img search-content__room352__room-card-img" src="assets/img/room352.png" alt="Фотография номера"></a>
+                <div class="room-card-back-img search-content__room352__room-card-back-img"></div>
+                <button class="room-card-back-button search-content__room352__room-card-back-button"></button>
+                <div class="room-card-forth-img search-content__room352__room-card-forth-img"></div>
+                <button class="room-card-forth-button search-content__room352__room-card-forth-button"></button>
+                <div class="room-card-swipe-block search-content__room352__room-card-swipe-block">
+                  <input class="room-card-swipe-radio search-content__room352__room-card-swipe-radio" type="radio" id="search-content__room352swipe1" name="search-content__room352swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room352__room-card-swipe-checkmark" for="search-content__room352swipe1"></label>
+                  <input class="room-card-swipe-radio search-content__room352__room-card-swipe-radio" type="radio" id="search-content__room352swipe2" name="search-content__room352swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room352__room-card-swipe-checkmark" for="search-content__room352swipe2"></label>
+                  <input class="room-card-swipe-radio search-content__room352__room-card-swipe-radio" type="radio" id="search-content__room352swipe3" name="search-content__room352swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room352__room-card-swipe-checkmark" for="search-content__room352swipe3"></label>
+                  <input class="room-card-swipe-radio search-content__room352__room-card-swipe-radio" type="radio" id="search-content__room352swipe4" name="search-content__room352swipe-buttons" hidden>
+                  <label class="room-card-swipe-checkmark search-content__room352__room-card-swipe-checkmark" for="search-content__room352swipe4"></label>
+                </div>
+                <div class="room-card-bottom-block search-content__room352__room-card-bottom-block">
+                  <div class="room-card-align-block search-content__room352__room-card-align-block">
+                    <div class="room-card-room-block search-content__room352__room-card-room-block"><span class="room-card-num-span search-content__room352__room-card-num-span">№</span><span class="room-card-room-span search-content__room352__room-card-room-span"> 352 </span>
+                    </div>
+                    <div class="room-card-price-block search-content__room352__room-card-price-block"><span class="room-card-price-span search-content__room352__room-card-price-span">5 000₽ </span><span class="room-card-daily-span search-content__room352__room-card-daily-span">в сутки</span></div>
+                  </div>
+                  <div class="room-card-line search-content__room352__room-card-line"></div>
+                  <div class="room-card-align-block search-content__room352__room-card-align-block">
+                    <div class="rate-button-div search-content__room352__room-card__rate-button-div">
+                      <div class="rate-button-block search-content__room352__room-card__rate-button-block">
+                        <input class="rate-button-radio search-content__room352__room-card__rate-button-radio" type="radio" id="search-content__room352__room-card-button5" name="search-content__room352__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room352__room-card__rate-button-label" for="search-content__room352__room-card-button5"></label>
+                        <input class="rate-button-radio search-content__room352__room-card__rate-button-radio" type="radio" id="search-content__room352__room-card-button4" name="search-content__room352__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room352__room-card__rate-button-label" for="search-content__room352__room-card-button4"></label>
+                        <input class="rate-button-radio search-content__room352__room-card__rate-button-radio" type="radio" id="search-content__room352__room-card-button3" name="search-content__room352__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room352__room-card__rate-button-label" for="search-content__room352__room-card-button3"></label>
+                        <input class="rate-button-radio search-content__room352__room-card__rate-button-radio" type="radio" id="search-content__room352__room-card-button2" name="search-content__room352__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room352__room-card__rate-button-label" for="search-content__room352__room-card-button2"></label>
+                        <input class="rate-button-radio search-content__room352__room-card__rate-button-radio" type="radio" id="search-content__room352__room-card-button1" name="search-content__room352__room-cardrate-buttons" hidden>
+                        <label class="rate-button-label search-content__room352__room-card__rate-button-label" for="search-content__room352__room-card-button1"></label>
+                      </div>
+                    </div>
+                    <div class="room-card-reviews-block search-content__room352__room-card-reviews-block"><span class="room-card-n-reviews-span search-content__room352__room-card-n-reviews-span">55 </span><span class="room-card-reviews-span search-content__room352__room-card-reviews-span">Отзывов</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<div class="m-pagination" id="pagination-demo"></div><br><br>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div class="page-footer__content-block">
+        <div class="page-footer__logo-block"><img class="page-footer__logo-img" alt="Logo" src="assets/img/logo.svg">
+          <p class="page-footer__description">
+            Бронирование номеров в лучшем
+            отеле 2019 года по версии
+            ассоциации «Отельные взгляды»
+          </p>
+        </div>
+        <div class="page-footer__navigation">
+          <input class="page-footer__checkbox-nav" type="checkbox" id="checkbox-nav" hidden>
+          <label class="page-footer__header-p" for="checkbox-nav">Навигация</label>
+          <div class="page-footer__expand-nav"><a class="page-footer__link" href="#">О нас</a><a class="page-footer__link" href="#">Новости</a><a class="page-footer__link" href="#">Служба поддержки</a><a class="page-footer__link" href="#">Услуги</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-about" type="checkbox" id="checkbox-about" hidden>
+          <label class="page-footer__header-p" for="checkbox-about">О нас</label>
+          <div class="page-footer__expand-about"><a class="page-footer__link" href="#">О сервисе</a><a class="page-footer__link" href="#">Наша команда</a><a class="page-footer__link" href="#">Вакансии</a><a class="page-footer__link" href="#">Инвесторы</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-custom" type="checkbox" id="checkbox-custom" hidden>
+          <label class="page-footer__header-p" for="checkbox-custom">Служба поддержки</label>
+          <div class="page-footer__expand-custom"><a class="page-footer__link" href="#">Соглашения</a><a class="page-footer__link" href="#">Сообщества</a><a class="page-footer__link" href="#">Связь с нами</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-sub" type="checkbox" id="checkbox-sub" hidden>
+          <label class="page-footer__header-p" for="checkbox-sub">Подписка</label>
+          <div class="page-footer__expand-sub">
+            <p class="page-footer__description">Получайте специальные<br>предложения и новости сервиса</p>
+                <div class="text-field-block page-footer__text-field-block">
+                  <div class="text-field-align-block page-footer__text-field-align-block">
+                    <input class="text-field-input-box page-footer__text-field-input-box page-footer__subscribe-button page-footer__input-box_width_footer" placeholder="Email">
+                    <button class="text-field-submit-button page-footer__text-field-submit-button"></button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer__bottom-block">
+      <div class="page-footer__bottom-content">
+        <p class="page-footer__bottom-p">Copyright © 2018 Toxin отель. Все права защищены.</p>
+        <div class="page-footer__bottom-social"><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/twitter.svg" alt="Twitter"></a><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/facebook.svg" alt="Facebook"></a><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/instagram.svg" alt="Instagram"></a></div>
+      </div>
+    </div>
+  <script src="assets/js/app.js"></script></body>
+</html>

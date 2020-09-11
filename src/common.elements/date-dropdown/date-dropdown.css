@@ -688,4 +688,7 @@
   .datepicker {
     width: 280px;
   }
+  .datepicker--content {
+    margin-top: 0;
+  }
 }

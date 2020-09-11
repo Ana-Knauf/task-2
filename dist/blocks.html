@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocks</title>
+  <link href="assets/css/app.css" rel="stylesheet"></head>
+  <body>
+    <div class="page-header">
+      <div class="page-header__content-block"><a href="index.html"><img class="page-header__logo" alt="Logo" src="assets/img/logo.svg"></a>
+        <input class="page-header__expand-checkbox" type="checkbox" id="header-expand" hidden>
+        <label class="page-header__expand-label" for="header-expand"></label>
+        <div class="page-header__navigation"><a class="page-header__link-about" href="#">О нас</a>
+          <div class="page-header__services-block">
+            <input class="page-header__services-checkbox" type="checkbox" id="header-services" hidden>
+            <label class="page-header__services-label" for="header-services">Услуги</label>
+            <div class="page-header__expand-serives"><a class="page-header__expand_link" href="#">Номера</a><br><a class="page-header__expand_link" href="#">Ресторан</a></div>
+          </div><a class="page-header__link" href="#">Вакансии</a><a class="page-header__link" href="#">Новости</a>
+          <div class="page-header__agreements-block">
+            <input class="page-header__agreements-checkbox" type="checkbox" id="header-agreements" hidden>
+            <label class="page-header__agreements-label" for="header-agreements">Соглашения</label>
+            <div class="page-header__expand-agreements"><a class="page-header__expand_link" href="#">Соглашение</a><br><a class="page-header__expand_link" href="#">Соглашение</a></div>
+          </div>
+          <div class="page-header__buttons-block">
+            <button class="button-button page-header__button-button page-header__button-button_back_white page-header__header-button_position page-header__button-button_size_sm" onclick="window.location.href='login-page.html'">Войти</button>
+            <button class="button-button page-header__button-button page-header__button-button_size_lg page-header__header-button_position page-header__button-button_no_arrow" onclick="window.location.href='register-page.html'">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pseudo"></div><a href="UI-kit.html">UI kit</a>
+    <div class="containerBlocks"><br>
+      <div class="hotel-search containerBlocks__hotel-search">
+        <p class="hotel-search-title containerBlocks__hotel-search-title">Найдём номера под ваши пожелания</p>
+        <div class="date-dropdown-block containerBlocks__hotel-search__date-dropdown-block containerBlocks__hotel-search__hotel-search-dates_position">
+          <p class="date-dropdown-title">Даты пребывания в отеле</p>
+          <input class="datepicker-here text-field-input-box containerBlocks__hotel-search__text-field-input-box" type="text" data-range="true" data-multiple-dates-separator=" - " data-language="en" placeholder="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ" readonly><span class="input-box-expand-mark"></span>
+        </div>
+        <div class="dropdown-guests-block containerBlocks__hotel-search__dropdown-guests-block containerBlocks__hotel-search__hotel-search-guests_position">
+          <p class="title-dropdown-guests">Гости</p>
+          <div class="iqdropdown containerBlocks__hotel-search__dropdown-guests">
+            <p class="iqdropdown-selection"></p>
+            <div class="iqdropdown-menu">
+              <div class="iqdropdown-menu-option" data-id="item1">
+                <div>
+                  <p class="iqdropdown-item">Взрослые</p>
+                </div>
+              </div>
+              <div class="iqdropdown-menu-option" data-id="item1">
+                <div>
+                  <p class="iqdropdown-item">Дети</p>
+                </div>
+              </div>
+              <div class="iqdropdown-menu-option" data-id="item1">
+                <div>
+                  <p class="iqdropdown-item">Младенцы</p>
+                </div>
+              </div>
+              <div class="buttons-block">
+                <button class="btn-clear">Очистить</button>
+                <button class="btn-apply">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="button-button containerBlocks__hotel-search__button-button containerBlocks__hotel-search__button-button_size_lg containerBlocks__hotel-search__hotel-search-button_position" onclick="window.location.href='search-page.html'">Подобрать номер</button>
+      </div>
+      <div class="registration ">
+        <p class="registration-title ">Регистрация аккаунта</p>
+        <div class="text-field-block registration__text-field-block registration__registration-input_position">
+          <div class="text-field-align-block registration__text-field-align-block">
+            <input class="text-field-input-box registration__text-field-input-box" placeholder="Имя">
+            <button class="text-field-submit-button registration__text-field-submit-button"></button>
+          </div>
+        </div>
+        <div class="text-field-block registration__text-field-block">
+          <div class="text-field-align-block registration__text-field-align-block">
+            <input class="text-field-input-box registration__text-field-input-box" placeholder="Фамилия">
+            <button class="text-field-submit-button registration__text-field-submit-button"></button>
+          </div>
+        </div>
+        <div class="radio-buttons registration__radio-buttons">
+          <div class="radio-buttons-align-block registration__radio-buttons-align-block">
+            <input class="radio-buttons-radio registration__radio-buttons-radio" type="radio" id="registration-male" name="registration-gender" hidden>
+            <label class="radio-buttons-radio-imit registration__radio-buttons-radio-imit" for="registration-male"></label>
+            <label class="radio-buttons-label registration__radio-buttons-label" for="registration-male">Мужчина</label>
+          </div>
+          <div class="radio-buttons-align-block registration__radio-buttons-align-block">
+            <input class="radio-buttons-radio registration__radio-buttons-radio" type="radio" id="registration-female" name="registration-gender" hidden>
+            <label class="radio-buttons-radio-imit registration__radio-buttons-radio-imit" for="registration-female"></label>
+            <label class="radio-buttons-label registration__radio-buttons-label" for="registration-female">Женщина</label>
+          </div>
+        </div>
+        <div class="text-field-block registration__text-field-block registration__registration-input_position">
+          <p class="text-field-title registration__text-field-title">Дата рождения</p>
+          <div class="text-field-align-block registration__text-field-align-block">
+            <input class="text-field-input-box registration__text-field-input-box" placeholder="ДД.ММ.ГГГГ">
+            <button class="text-field-submit-button registration__text-field-submit-button"></button>
+          </div>
+        </div>
+        <div class="text-field-block registration__text-field-block registration__registration-input_position">
+          <p class="text-field-title registration__text-field-title">Данные для входа в сервис</p>
+          <div class="text-field-align-block registration__text-field-align-block">
+            <input class="text-field-input-box registration__text-field-input-box" placeholder="Email">
+            <button class="text-field-submit-button registration__text-field-submit-button"></button>
+          </div>
+        </div>
+        <div class="text-field-block registration__text-field-block">
+          <div class="text-field-align-block registration__text-field-align-block">
+            <input class="text-field-input-box registration__text-field-input-box" placeholder="Пароль">
+            <button class="text-field-submit-button registration__text-field-submit-button"></button>
+          </div>
+        </div>
+        <div class="toggle-align-block registration__toggle-align-block registration__registration-toggle_position">
+          <input class="toggle-checkbox registration__toggle-checkbox" type="checkbox" id="registration-toggleID" hidden>
+          <label class="toggle-slider registration__toggle-slider" for="registration-toggleID"></label>
+          <label class="toggle-label registration__toggle-label" for="registration-toggleID">Получать спецпредложения</label>
+        </div>
+        <button class="button-button registration__button-button registration__button-button_size_lg registration__registration-button_position" onclick="window.location.href='undefined'">Перейти к оплате</button>
+        <div class="registration-bottom ">
+          <p class="registration-bottom-label ">Уже есть аккаунт на Toxin</p>
+          <button class="button-button registration__button-button registration__button-button_back_white" onclick="window.location.href='undefined'">Войти</button>
+        </div>
+      </div>
+    </div>
+    <div class="containerBlocks2">
+      <div class="log-in ">
+        <p class="log-in-title ">Войти</p>
+        <div class="text-field-block log-in__text-field-block log-in__log-in-input_position">
+          <div class="text-field-align-block log-in__text-field-align-block">
+            <input class="text-field-input-box log-in__text-field-input-box" placeholder="Email">
+            <button class="text-field-submit-button log-in__text-field-submit-button"></button>
+          </div>
+        </div>
+        <div class="text-field-block log-in__text-field-block">
+          <div class="text-field-align-block log-in__text-field-align-block">
+            <input class="text-field-input-box log-in__text-field-input-box" placeholder="Пароль">
+            <button class="text-field-submit-button log-in__text-field-submit-button"></button>
+          </div>
+        </div>
+        <button class="button-button log-in__button-button log-in__button-button_size_lg log-in__log-in-button_position" onclick="window.location.href='undefined'">Войти</button>
+        <div class="log-in-bottom-block ">
+          <p class="log-in-bottom-p ">Нет аккаунта на Toxin?</p>
+          <button class="button-button log-in__button-button log-in__button-button_back_white" onclick="window.location.href='undefined'">Создать</button>
+        </div>
+      </div>
+      <div class="room-card "><a class="room-card-page-link " href="book-page.html"><img class="room-card-img " src="assets/img/room1.png" alt="Фотография номера"></a>
+        <div class="room-card-back-img "></div>
+        <button class="room-card-back-button "></button>
+        <div class="room-card-forth-img "></div>
+        <button class="room-card-forth-button "></button>
+        <div class="room-card-swipe-block ">
+          <input class="room-card-swipe-radio " type="radio" id="undefinedswipe1" name="undefinedswipe-buttons" hidden>
+          <label class="room-card-swipe-checkmark " for="undefinedswipe1"></label>
+          <input class="room-card-swipe-radio " type="radio" id="undefinedswipe2" name="undefinedswipe-buttons" hidden>
+          <label class="room-card-swipe-checkmark " for="undefinedswipe2"></label>
+          <input class="room-card-swipe-radio " type="radio" id="undefinedswipe3" name="undefinedswipe-buttons" hidden>
+          <label class="room-card-swipe-checkmark " for="undefinedswipe3"></label>
+          <input class="room-card-swipe-radio " type="radio" id="undefinedswipe4" name="undefinedswipe-buttons" hidden>
+          <label class="room-card-swipe-checkmark " for="undefinedswipe4"></label>
+        </div>
+        <div class="room-card-bottom-block ">
+          <div class="room-card-align-block ">
+            <div class="room-card-room-block "><span class="room-card-num-span ">№</span><span class="room-card-room-span "> 888 </span><span class="room-card-lux-span ">люкс</span>
+            </div>
+            <div class="room-card-price-block "><span class="room-card-price-span ">9 990₽ </span><span class="room-card-daily-span ">в сутки</span></div>
+          </div>
+          <div class="room-card-line "></div>
+          <div class="room-card-align-block ">
+            <div class="rate-button-div room-card__rate-button-div">
+              <div class="rate-button-block room-card__rate-button-block">
+                <input class="rate-button-radio room-card__rate-button-radio" type="radio" id="room-card-button5" name="room-cardrate-buttons" hidden>
+                <label class="rate-button-label room-card__rate-button-label" for="room-card-button5"></label>
+                <input class="rate-button-radio room-card__rate-button-radio" type="radio" id="room-card-button4" name="room-cardrate-buttons" hidden>
+                <label class="rate-button-label room-card__rate-button-label" for="room-card-button4"></label>
+                <input class="rate-button-radio room-card__rate-button-radio" type="radio" id="room-card-button3" name="room-cardrate-buttons" hidden>
+                <label class="rate-button-label room-card__rate-button-label" for="room-card-button3"></label>
+                <input class="rate-button-radio room-card__rate-button-radio" type="radio" id="room-card-button2" name="room-cardrate-buttons" hidden>
+                <label class="rate-button-label room-card__rate-button-label" for="room-card-button2"></label>
+                <input class="rate-button-radio room-card__rate-button-radio" type="radio" id="room-card-button1" name="room-cardrate-buttons" hidden>
+                <label class="rate-button-label room-card__rate-button-label" for="room-card-button1"></label>
+              </div>
+            </div>
+            <div class="room-card-reviews-block "><span class="room-card-n-reviews-span ">145 </span><span class="room-card-reviews-span ">Отзывов</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div class="page-footer__content-block">
+        <div class="page-footer__logo-block"><img class="page-footer__logo-img" alt="Logo" src="assets/img/logo.svg">
+          <p class="page-footer__description">
+            Бронирование номеров в лучшем
+            отеле 2019 года по версии
+            ассоциации «Отельные взгляды»
+          </p>
+        </div>
+        <div class="page-footer__navigation">
+          <input class="page-footer__checkbox-nav" type="checkbox" id="checkbox-nav" hidden>
+          <label class="page-footer__header-p" for="checkbox-nav">Навигация</label>
+          <div class="page-footer__expand-nav"><a class="page-footer__link" href="#">О нас</a><a class="page-footer__link" href="#">Новости</a><a class="page-footer__link" href="#">Служба поддержки</a><a class="page-footer__link" href="#">Услуги</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-about" type="checkbox" id="checkbox-about" hidden>
+          <label class="page-footer__header-p" for="checkbox-about">О нас</label>
+          <div class="page-footer__expand-about"><a class="page-footer__link" href="#">О сервисе</a><a class="page-footer__link" href="#">Наша команда</a><a class="page-footer__link" href="#">Вакансии</a><a class="page-footer__link" href="#">Инвесторы</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-custom" type="checkbox" id="checkbox-custom" hidden>
+          <label class="page-footer__header-p" for="checkbox-custom">Служба поддержки</label>
+          <div class="page-footer__expand-custom"><a class="page-footer__link" href="#">Соглашения</a><a class="page-footer__link" href="#">Сообщества</a><a class="page-footer__link" href="#">Связь с нами</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-sub" type="checkbox" id="checkbox-sub" hidden>
+          <label class="page-footer__header-p" for="checkbox-sub">Подписка</label>
+          <div class="page-footer__expand-sub">
+            <p class="page-footer__description">Получайте специальные<br>предложения и новости сервиса</p>
+                <div class="text-field-block page-footer__text-field-block">
+                  <div class="text-field-align-block page-footer__text-field-align-block">
+                    <input class="text-field-input-box page-footer__text-field-input-box page-footer__subscribe-button page-footer__input-box_width_footer" placeholder="Email">
+                    <button class="text-field-submit-button page-footer__text-field-submit-button"></button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer__bottom-block">
+      <div class="page-footer__bottom-content">
+        <p class="page-footer__bottom-p">Copyright © 2018 Toxin отель. Все права защищены.</p>
+        <div class="page-footer__bottom-social"><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/twitter.svg" alt="Twitter"></a><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/facebook.svg" alt="Facebook"></a><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/instagram.svg" alt="Instagram"></a></div>
+      </div>
+    </div>
+  <script src="assets/js/app.js"></script></body>
+</html>

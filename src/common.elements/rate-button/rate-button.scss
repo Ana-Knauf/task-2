@@ -1,6 +1,7 @@
 .rate-button-label {
     background-image: url('../../img/star_border.svg');
     background-size: contain;
+    background-repeat: no-repeat;
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -26,6 +27,7 @@
     position: absolute;
     background-image: url('../../img/star.svg');
     background-size: contain;
+    background-repeat: no-repeat;
     width: 20px;
     height: 20px;
     transition: .4s;

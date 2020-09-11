@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Отель Toxin</title>
+  <link href="assets/css/app.css" rel="stylesheet"></head>
+  <body>
+    <div class="page-header">
+      <div class="page-header__content-block"><a href="index.html"><img class="page-header__logo" alt="Logo" src="assets/img/logo.svg"></a>
+        <input class="page-header__expand-checkbox" type="checkbox" id="header-expand" hidden>
+        <label class="page-header__expand-label" for="header-expand"></label>
+        <div class="page-header__navigation"><a class="page-header__link-about" href="#">О нас</a>
+          <div class="page-header__services-block">
+            <input class="page-header__services-checkbox" type="checkbox" id="header-services" hidden>
+            <label class="page-header__services-label" for="header-services">Услуги</label>
+            <div class="page-header__expand-serives"><a class="page-header__expand_link" href="#">Номера</a><br><a class="page-header__expand_link" href="#">Ресторан</a></div>
+          </div><a class="page-header__link" href="#">Вакансии</a><a class="page-header__link" href="#">Новости</a>
+          <div class="page-header__agreements-block">
+            <input class="page-header__agreements-checkbox" type="checkbox" id="header-agreements" hidden>
+            <label class="page-header__agreements-label" for="header-agreements">Соглашения</label>
+            <div class="page-header__expand-agreements"><a class="page-header__expand_link" href="#">Соглашение</a><br><a class="page-header__expand_link" href="#">Соглашение</a></div>
+          </div>
+          <div class="page-header__buttons-block">
+            <button class="button-button page-header__button-button page-header__button-button_back_white page-header__header-button_position page-header__button-button_size_sm" onclick="window.location.href='login-page.html'">Войти</button>
+            <button class="button-button page-header__button-button page-header__button-button_size_lg page-header__header-button_position page-header__button-button_no_arrow" onclick="window.location.href='register-page.html'">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="landing-pseudo"></div>
+    <div class="landing-wrapper">
+      <div class="landing-content">
+        <div class="hotel-search landing-content__hotel-search">
+          <p class="hotel-search-title landing-content__hotel-search-title">Найдём номера под ваши пожелания</p>
+          <div class="date-dropdown-block landing-content__hotel-search__date-dropdown-block landing-content__hotel-search__hotel-search-dates_position">
+            <p class="date-dropdown-title">Даты пребывания в отеле</p>
+            <input class="datepicker-here text-field-input-box landing-content__hotel-search__text-field-input-box" type="text" data-range="true" data-multiple-dates-separator=" - " data-language="en" placeholder="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ" readonly><span class="input-box-expand-mark"></span>
+          </div>
+          <div class="dropdown-guests-block landing-content__hotel-search__dropdown-guests-block landing-content__hotel-search__hotel-search-guests_position">
+            <p class="title-dropdown-guests">Гости</p>
+            <div class="iqdropdown landing-content__hotel-search__dropdown-guests">
+              <p class="iqdropdown-selection"></p>
+              <div class="iqdropdown-menu">
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Взрослые</p>
+                  </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Дети</p>
+                  </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="item1">
+                  <div>
+                    <p class="iqdropdown-item">Младенцы</p>
+                  </div>
+                </div>
+                <div class="buttons-block">
+                  <button class="btn-clear">Очистить</button>
+                  <button class="btn-apply">Применить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button-button landing-content__hotel-search__button-button landing-content__hotel-search__button-button_size_lg landing-content__hotel-search__hotel-search-button_position" onclick="window.location.href='search-page.html'">Подобрать номер</button>
+        </div>
+        <p class="landing-content__label">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div class="page-footer__content-block">
+        <div class="page-footer__logo-block"><img class="page-footer__logo-img" alt="Logo" src="assets/img/logo.svg">
+          <p class="page-footer__description">
+            Бронирование номеров в лучшем
+            отеле 2019 года по версии
+            ассоциации «Отельные взгляды»
+          </p>
+        </div>
+        <div class="page-footer__navigation">
+          <input class="page-footer__checkbox-nav" type="checkbox" id="checkbox-nav" hidden>
+          <label class="page-footer__header-p" for="checkbox-nav">Навигация</label>
+          <div class="page-footer__expand-nav"><a class="page-footer__link" href="#">О нас</a><a class="page-footer__link" href="#">Новости</a><a class="page-footer__link" href="#">Служба поддержки</a><a class="page-footer__link" href="#">Услуги</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-about" type="checkbox" id="checkbox-about" hidden>
+          <label class="page-footer__header-p" for="checkbox-about">О нас</label>
+          <div class="page-footer__expand-about"><a class="page-footer__link" href="#">О сервисе</a><a class="page-footer__link" href="#">Наша команда</a><a class="page-footer__link" href="#">Вакансии</a><a class="page-footer__link" href="#">Инвесторы</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-custom" type="checkbox" id="checkbox-custom" hidden>
+          <label class="page-footer__header-p" for="checkbox-custom">Служба поддержки</label>
+          <div class="page-footer__expand-custom"><a class="page-footer__link" href="#">Соглашения</a><a class="page-footer__link" href="#">Сообщества</a><a class="page-footer__link" href="#">Связь с нами</a></div>
+        </div>
+        <div class="page-footer__links">
+          <input class="page-footer__checkbox-sub" type="checkbox" id="checkbox-sub" hidden>
+          <label class="page-footer__header-p" for="checkbox-sub">Подписка</label>
+          <div class="page-footer__expand-sub">
+            <p class="page-footer__description">Получайте специальные<br>предложения и новости сервиса</p>
+                <div class="text-field-block page-footer__text-field-block">
+                  <div class="text-field-align-block page-footer__text-field-align-block">
+                    <input class="text-field-input-box page-footer__text-field-input-box page-footer__subscribe-button page-footer__input-box_width_footer" placeholder="Email">
+                    <button class="text-field-submit-button page-footer__text-field-submit-button"></button>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer__bottom-block">
+      <div class="page-footer__bottom-content">
+        <p class="page-footer__bottom-p">Copyright © 2018 Toxin отель. Все права защищены.</p>
+        <div class="page-footer__bottom-social"><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/twitter.svg" alt="Twitter"></a><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/facebook.svg" alt="Facebook"></a><a class="page-footer__bottom-link" href="#"><img class="page-footer__bottom-img" src="assets/img/instagram.svg" alt="Instagram"></a></div>
+      </div>
+    </div>
+  <script src="assets/js/app.js"></script></body>
+</html>

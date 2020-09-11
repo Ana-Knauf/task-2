@@ -85,14 +85,7 @@
     }
 }
 
-@media screen and (max-width: 1128px) {
-    .search-filter {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-}
-
-@media screen and (max-width: 1098px) {
+@media screen and (max-width: 1150px) {
     .search-filter {
         display: none;
         margin: 0;
@@ -113,8 +106,6 @@
     .search-content__label-filter {
         display: inline;
         position: absolute;
-        // left: 135px;
-        // top: -2px;
         left: 20px;
         top: -5px;
         font-family: Montserrat;
@@ -137,12 +128,9 @@
     .search-pseudo {
         height: 100px;
     }
-    .search-content__label-filter {
-        // left: 135px;
-    }
 }
 
-@media screen and (max-width: 824px) {
+@media screen and (max-width: 842px) {
     .search-results {
         max-width: 550px;
     }
@@ -154,13 +142,10 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 566px) {
     .search-content {
         display: flex;
         justify-content: center;
-    }
-    .search-content__label-filter {
-        // left: 115px;
     }
     .search-align .room-card {
         width: 320px;
@@ -182,5 +167,11 @@
     }
     .search-results {
         max-width: 320px;
+    }
+}
+
+@media only screen and (max-device-width: 812px) {
+    .search-pseudo {
+        height: 0;
     }
 }
