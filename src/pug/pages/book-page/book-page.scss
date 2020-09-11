@@ -62,7 +62,6 @@
 .book-content__middle {
     margin-top: -3px;
     margin-bottom: 20px;
-    margin-left: -1px; //can be a problem
 }
 
 .book-content__reviews-title {
@@ -95,7 +94,7 @@
 }
 
 .book-content__rules {
-    margin-left: -1px; //can be a problem
+    margin-left: 3px;
 }
 
 .book-content__cancel {
@@ -111,4 +110,153 @@
 
 .book-content__booking-block {
     margin-top: 51px;
+}
+
+.book-content__booking {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1038px) {
+    .book-content {
+        flex-wrap: wrap;
+    }
+    .book-content__booking {
+        margin-left: 0;
+    }
+    .book-content__booking-block {
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .book-content__info-block {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .book-content__rating {
+        margin-right: 0;
+    }
+    .book-content__cancel {
+        margin-right: 0;
+    }
+    .book-content__review1__review-bar-review {
+        max-width: 750px;
+    }
+    .book-content__review2__review-bar-review {
+        max-width: 750px;
+    }
+    .book-content__bottom {
+        margin-bottom: 0;
+    }
+}
+
+
+@media screen and (max-width: 957px) {
+    .book-pseudo {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .book-content__info-block {
+        max-width: 700px;
+    }
+    .book-content__review1__review-bar-review {
+        max-width: 650px;
+    }
+    .book-content__review2__review-bar-review {
+        max-width: 650px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .book-content__info-block {
+        max-width: 600px;
+    }
+    .book-content__review1__review-bar-review {
+        max-width: 550px;
+    }
+    .book-content__review2__review-bar-review {
+        max-width: 550px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .book-pseudo {
+        height: 0;
+    }
+    .book-content__info-block {
+        max-width: 500px;
+    }
+    .book-content__rate-diagram-div {
+        flex-wrap: wrap;
+    }
+    .book-content__review1__review-bar-review {
+        max-width: 450px;
+    }
+    .book-content__review2__review-bar-review {
+        max-width: 450px;
+    }
+    .book-content__bottom {
+        flex-wrap: wrap;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+    .book-content__rate-diagram-key {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .book-content__rating {
+        margin-left: 40px;
+    }
+    .book-content__rules .book-content__title {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .book-content__info-block {
+        max-width: 400px;
+    }
+    .book-content__top {
+        flex-wrap: wrap;
+    }
+    .book-content__review1__review-bar-review {
+        max-width: 350px;
+    }
+    .book-content__review2__review-bar-review {
+        max-width: 350px;
+    }
+    .book-content__rate-diagram-key {
+        margin-left: 30px;
+        margin-top: 0;
+    }
+    .book-content__details {
+        margin: 0 auto;
+    }
+    .book-content__top {
+        margin-top: 0;
+    }
+    .book-content__middle {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 442px) {
+    .book-content__info-block {
+        max-width: 400px;
+    }
+    // .book-content__review1__review-bar-review {
+    //     max-width: 300px;
+    // }
+    // .book-content__review2__review-bar-review {
+    //     max-width: 300px;
+    // }
+}
+
+
+@media only screen and (max-device-width: 812px) {
+    .book-pseudo {
+        height: 0;
+    }
 }

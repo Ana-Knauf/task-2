@@ -74,3 +74,9 @@
         right: 0;
     }
 }
+
+@media only screen and (max-device-width: 812px) {
+    .search-pseudo {
+        height: 0;
+    }
+}
