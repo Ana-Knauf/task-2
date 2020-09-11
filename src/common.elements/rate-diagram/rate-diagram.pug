@@ -1,0 +1,18 @@
+mixin rate-diagram(rateDiagramData)
+    -
+        let {blockName} = rateDiagramData
+
+        let divClass = `rate-diagram-div ${ (blockName) ? blockName + '__rate-diagram-div' : '' }`;
+        let diagramClass = `rate-diagram-diagram ${ (blockName) ? blockName + '__rate-diagram-diagram' : '' }`;
+        let keyClass = `rate-diagram-key ${ (blockName) ? blockName + '__rate-diagram-key' : '' }`;
+        let listClass = `rate-diagram-list ${ (blockName) ? blockName + '__rate-diagram-list' : '' }`;
+        let labelClass = `rate-diagram-label ${ (blockName) ? blockName + '__rate-diagram-label' : '' }`;
+
+    div(class = divClass)
+        div(class = diagramClass)
+        div(class = keyClass)
+            ul(class = listClass)
+                li(class = labelClass) Великолепно
+                li(class = labelClass) Хорошо
+                li(class = labelClass) Удовлетворительно
+                li(class = labelClass) Разочарован

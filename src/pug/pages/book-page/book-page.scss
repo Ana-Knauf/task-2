@@ -1,0 +1,114 @@
+.book-pseudo {
+    height: 70px;
+}
+
+.book-wrapper {
+    border-bottom: 1px solid $darkShade25;
+}
+
+.book-pics {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.book-pics__pic1 {
+    background: url("../../../img/book888-1.png") 70%/cover no-repeat;
+}
+
+.book-pics__pic2 {
+    height: 243px;
+    background: url("../../../img/book888-2.png") 50%/cover no-repeat;
+}
+
+.book-pics__pic3 {
+    height: 242px;
+    background: url("../../../img/book888-3.png") 50%/cover no-repeat;
+}
+
+.book-content {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 19px;
+}
+
+.book-content__top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.book-content__info-block .book-content__title {
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    color: $darkShade100;
+}
+
+.book-content__details .book-content__title {
+    margin-bottom: -3px;
+}
+
+.book-content__rating .book-content__title {
+    margin-bottom: 18px;
+}
+
+.book-content__rating {
+    margin-right: 40px;
+}
+
+.book-content__middle {
+    margin-top: -3px;
+    margin-bottom: 20px;
+    margin-left: -1px; //can be a problem
+}
+
+.book-content__reviews-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-content__n-reviews {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.5);
+    margin-top: 21px;
+    margin-right: 1px;
+}
+
+.book-content__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -8px;
+    margin-bottom: 78px;
+}
+
+.book-content__bottom .book-content__title {
+    margin-bottom: 17px;
+}
+
+.book-content__rules .book-content__title {
+    margin-left: 20px;
+}
+
+.book-content__rules {
+    margin-left: -1px; //can be a problem
+}
+
+.book-content__cancel {
+    margin-right: 27px;
+}
+
+.book-content__cancel__p {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+}
+
+.book-content__booking-block {
+    margin-top: 51px;
+}

@@ -2,7 +2,7 @@ include ../../common.elements/like-button/like-button.pug
 
 mixin review-bar(reviewBarData)
     -
-        let {blockName, reviewer, date, review, modBlock} = reviewBarData;
+        let {blockName, reviewer, date, img, review, modBlock} = reviewBarData;
 
         let divClass = `review-bar ${ (blockName) ? blockName + '__review-bar' : '' }`;
         let div1Class = `review-bar-div1 ${ (blockName) ? blockName + '__review-bar-div1' : '' }`;
@@ -21,9 +21,12 @@ mixin review-bar(reviewBarData)
             divClass += " " + blockName + `__${modifBlock.join(` ${blockName}__`)}`;
         }
 
+        let imgPath = "assets/img/";
+        imgPath = imgPath + img;
+
     div(class = divClass)
         div(class = div1Class)
-            div(class = imgClass)
+            img(class = imgClass src = imgPath alt = "Фото гостя")
             div(class = block1Class)
                 p(class = nameClass)= reviewer
                 p(class = dateClass)= date

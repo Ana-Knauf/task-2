@@ -1,4 +1,9 @@
 include ../../../common.blocks/header/header.pug
+include ../../../common.elements/rate-diagram/rate-diagram.pug
+include ../../../common.elements/room-details/room-details.pug
+include ../../../common.blocks/book-form/book-form.pug
+include ../../../common.elements/review-bar/review-bar.pug
+include ../../../common.elements/bullet-list/bullet-list.pug
 
 doctype html
 html(lang="en")
@@ -9,3 +14,56 @@ html(lang="en")
     body
         - const headerData = {  }
         +header(headerData)
+        .book-pseudo
+        .book-wrapper
+            .book-pics
+                .book-pics__pic1
+                .book-pics__wrapper
+                    .book-pics__pic2
+                    .book-pics__pic3
+            .book-content
+                .book-content__info-block
+                    .book-content__top
+                        .book-content__details
+                            p(class = "book-content__title") Сведения о номере
+                            - const roomDetailsData = { blockName: "book-content", label1: "Комфорт", label2: "Шумопоглощающие стены" }
+                            +room-details(roomDetailsData)
+                            - const roomDetailsData2 = { blockName: "book-content", label1: "Удобство", label2: "Окно в каждой из спален" }
+                            +room-details(roomDetailsData2)
+                            - const roomDetailsData3 = { blockName: "book-content", label1: "Уют", label2: "Номер оснащён камином" }
+                            +room-details(roomDetailsData3)
+                        .book-content__rating
+                            p(class = "book-content__title") Впечатления от номера
+                            - const rateDiagramData = { blockName: "book-content" }
+                            +rate-diagram(rateDiagramData)
+                    .book-content__middle
+                        .book-content__reviews-title
+                            p(class = "book-content__title") Отзывы посетителей номера
+                            p(class = "book-content__n-reviews") 2 отзыва
+                        .book-content__review1
+                            - const reviewBarData1 = { blockName: "book-content__review1", reviewer: "Мурад Сарафанов", date: "5 дней назад", img: "guest1.png", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей." }
+                            +review-bar(reviewBarData1)
+                        .book-content__review2
+                            - const reviewBarData2 = { blockName: "book-content__review2", reviewer: "Патрисия Стёклышкова", date: "Неделю назад", img: "guest2.png", review: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент" }
+                            +review-bar(reviewBarData2)
+                    .book-content__bottom
+                        .book-content__rules
+                            p(class = "book-content__title") Правила
+                            - const bulletListData = { blockName: "book-content", points: "Нельзя с питомцами Без вечеринок и мероприятий Время прибытия — после 13:00" }
+                            +bullet-list(bulletListData)
+                        .book-content__cancel
+                            p(class = "book-content__title") Отмена
+                            p(class = "book-content__cancel__p")
+                                | Бесплатная отмена в течение 48 ч. После
+                                br
+                                | этого при отмене не позднее чем за 5 дн. до
+                                br
+                                | прибытия вы получите полный возврат за
+                                br
+                                | вычетом сбора за услуги.
+
+                .book-content__booking-block
+                    - const bookFormData = { blockName: "book-content", room: "888", lux: true, price: "9990", days: "4", servicePrice: "скидка 2179", addServicePrice: "300" }
+                    +book-form(bookFormData)
+
+        include ../../../common.blocks/footer/footer.pug
