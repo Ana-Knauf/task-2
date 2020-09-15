@@ -6,7 +6,7 @@
     align-items: center;
     position: fixed;
     background: white;
-    z-index: 2;
+    z-index: 3;
 }
 
 .page-header__content-block {
@@ -95,7 +95,7 @@
     margin-left: -40px;
     padding: 20px 20px 20px;
     border: 1px solid $darkShade25;
-    z-index: 2;
+    z-index: 3;
     top: 18px;
 }
 
@@ -141,7 +141,7 @@
     margin-left: -20px;
     padding: 20px 20px 20px;
     border: 1px solid $darkShade25;
-    z-index: 2;
+    z-index: 3;
     top: 18px;
 }
 
@@ -240,7 +240,7 @@
         box-shadow: 0px 20px 20px rgba(31, 32, 65, 0.05);
         border-radius: 4px;
         visibility: hidden;
-        z-index: 2;
+        z-index: 3;
         margin-right: 0;
         border: 1px solid $darkShade10;
         box-sizing: border-box;

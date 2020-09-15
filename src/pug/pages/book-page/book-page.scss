@@ -76,6 +76,7 @@
     color: rgba(31, 32, 65, 0.5);
     margin-top: 21px;
     margin-right: 1px;
+    margin-left: 5px;
 }
 
 .book-content__bottom {
@@ -106,6 +107,7 @@
     font-size: 14px;
     line-height: 24px;
     color: $darkShade75;
+    max-width: 341px;
 }
 
 .book-content__booking-block {
@@ -240,20 +242,51 @@
     .book-content__middle {
         margin-top: 20px;
     }
+    .book-content__rating {
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 442px) {
     .book-content__info-block {
         max-width: 400px;
     }
-    // .book-content__review1__review-bar-review {
-    //     max-width: 300px;
-    // }
-    // .book-content__review2__review-bar-review {
-    //     max-width: 300px;
-    // }
+    .book-content__middle {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .book-content__bottom {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .book-pics__pic2 {
+        height: 151px;
+    }
+    .book-pics__pic3 {
+        height: 150px;
+    }
 }
 
+@media screen and (max-width: 442px) {
+    .book-content__booking-total-line {
+        max-width: 149px;
+    }
+    .book-content__booking-align-block {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 372px) {
+    .book-content__reviews-title {
+        flex-wrap: wrap;
+    }
+    .book-content__n-reviews {
+        margin-top: 0;
+    }
+    .book-content__reviews-title > .book-content__title {
+        margin-bottom: 0;
+    }
+}
 
 @media only screen and (max-device-width: 812px) {
     .book-pseudo {

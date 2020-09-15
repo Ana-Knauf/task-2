@@ -35,7 +35,7 @@ mixin room-card(roomCardData)
         let roomNumber = room.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
         roomNumber = " " + roomNumber + " ";
         let roomPrice = price.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
-        roomPrice = roomPrice + "₽ ";
+        roomPrice = roomPrice + "\u20BD ";
         let roomReviews = reviews.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
         roomReviews = roomReviews + " ";
 
